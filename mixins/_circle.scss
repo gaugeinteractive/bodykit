@@ -1,0 +1,45 @@
+//*
+// Draw a CSS ellipse
+//
+// @param list|number $size [default: n] The size (width, height) of the ellipse.
+//    A single value will make a circle.
+//
+@mixin ellipse (
+    $size: n
+) {
+
+    border-radius: 50%;
+    display: inline-block;
+    @include size($size);
+
+}
+
+//*
+// Draw a CSS circle
+//
+// @param list|number $size [default: n] The size (width, height) of the ellipse.
+//    A single, non-null value will make a circle.
+//
+@mixin circle (
+    $diameter: n
+) {
+
+    @include ellipse($diameter);
+
+}
+
+//*
+// Draw a CSS obround
+//
+// @param list|number $size [default: n] The size (width, height) of the obround.
+//    A single, non-null value will make a circle.
+//
+@mixin obround (
+    $size: n
+) {
+
+    border-radius: 9999px;
+    display: inline-block;
+    @include size($size);
+
+}

@@ -1,0 +1,142 @@
+.zero {
+  border: 0; }
+
+.zero-unit {
+  border: 0; }
+
+.width {
+  border: 2px solid; }
+
+.string-width {
+  border: thin solid; }
+
+.color {
+  border: red solid; }
+
+.style {
+  border: dashed; }
+
+.width-color {
+  border: 2px red solid; }
+
+.width-style {
+  border: 2px dashed; }
+
+.color-style {
+  border: red dashed; }
+
+.width--zero {
+  border: solid;
+  border-width: 2px 0; }
+
+.zero--width {
+  border: solid;
+  border-width: 0 2px; }
+
+.width--width {
+  border: solid;
+  border-width: 2px 5px; }
+
+.equal--width {
+  border: 2px solid; }
+
+.zero--null {
+  border-top: 0 solid;
+  border-bottom: 0 solid; }
+
+.width--null {
+  border-top: 2px solid;
+  border-bottom: 2px solid; }
+
+.null--width {
+  border-left: 10px solid;
+  border-right: 10px solid; }
+
+.width-color--width-style-color {
+  border-width: 2px 5px;
+  border-color: red blue;
+  border-style: solid dashed; }
+
+/*
+NOTICE:
+border: 2px blue solid;
+border-left: 10px white dashed;
+border-right: 10px white dashed;
+// Smaller compressed (84b -> 74b)
+// OR //
+// Smaller uncompressed (73b -> 82b)
+border-width: 2px 10px;
+border-color: blue white;
+border-style: solid dashed;
+*/
+.width-color--width-color {
+  border: solid;
+  border-width: 2px 5px;
+  border-color: red blue; }
+
+.width-color--style {
+  border: 2px red;
+  border-style: solid dashed; }
+
+.width-style-color--width {
+  border: red dashed;
+  border-width: 2px 5px; }
+
+.width-color--width--width {
+  border: red solid;
+  border-width: 2px 5px 10px; }
+
+.width--width-color {
+  border: solid;
+  border-width: 2px 5px;
+  border-left-color: red;
+  border-right-color: red; }
+
+.width-style-color--width--width-color {
+  border: dashed;
+  border-width: 2px 5px 10px;
+  border-color: red red blue; }
+
+.width--width-style-color--width-color {
+  border-width: 2px 5px 10px;
+  border-bottom-color: red;
+  border-left-color: blue;
+  border-right-color: blue;
+  border-style: solid dashed; }
+
+.width-style-color--width-style-color--width-style-color {
+  border-width: 2px 5px 10px;
+  border-color: red blue green;
+  border-style: dashed double inset; }
+
+.width-style-color--width--width--width {
+  border: red dashed;
+  border-width: 2px 5px 10px 20px; }
+
+.null--width-style-color--color {
+  border-bottom: 2px blue dashed;
+  border-left: 2px red dashed;
+  border-right: 2px red dashed; }
+
+.width-color--equal-width--equal-color {
+  border: 2px red solid; }
+
+.width-color--equal-width--equal-color--null {
+  border-top: 2px red solid;
+  border-bottom: 2px red solid;
+  border-right: 2px red solid; }
+
+.width-color--width-style-color--null {
+  border-top: 2px red solid;
+  border-left: 5px blue dashed;
+  border-right: 5px blue dashed; }
+
+.width-color-style--width-color {
+  border: dashed;
+  border-width: 2px 5px;
+  border-color: red blue; }
+
+.width-style-color--width-style-color--style-color--width-color {
+  border-width: 2px 5px 2px 10px;
+  border-color: red blue green yellow;
+  border-style: dashed double inset dashed; }

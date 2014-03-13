@@ -1,0 +1,198 @@
+//*
+// Parse and order width, color, and style values
+// NOTE: Sets default style to `solid`, if necessary.
+//
+// @param list $wcs The width, color, and style (in any order)
+// @param list $defaults [default: `null`] A list of default width, color,
+//    and style values to inherit
+// @return list The width, color, style
+//
+@function _wcs (
+    $wcs,
+    $defaults: null
+){
+
+    // We can't do anything with null
+    @if $wcs == null { @return $wcs; }
+
+    @if $defaults {
+        $defaults: _wcs($defaults);
+    }
+    @else {
+        $defaults: null null null;
+    }
+    
+    // Parse defaults
+    $w: nth($defaults, 1);
+    $c: nth($defaults, 2);
+    $s: nth($defaults, 3);
+    $s: if($s, $s, solid);
+
+    @each $prop in $wcs {
+        
+        $prop-type: type-of($prop);
+
+        @if $prop-type == number
+            or in-list($prop, (thin, medium, thick)) {
+            
+            $w: $prop;
+
+            @if $prop-type != string 
+                and $w == 0 {
+                // Strip unit off  zero value
+                $w: 0;
+            }
+
+        }
+        @elseif $prop-type == color
+            or $prop == currentColor {
+            // currentColor is a color, but it's not a Sass color
+            $c: $prop;
+        }
+        @elseif $prop-type == string {
+            // Valid Styles
+            // none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset
+            $s: $prop;
+        }
+        
+    }
+
+    @return $w $c $s;
+}
+
+//*
+// Set `border`(s)
+// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
+//
+// @param list $borders The `borders`(s) to be set
+//
+@mixin border (
+    $borders...
+) {
+
+    // Store length for performance
+    $len: length($borders);
+
+    // Dealias shorthand values
+    $tmp-borders: ();
+    @each $val in $borders {
+        $tmp-borders: append($tmp-borders, _alias($val));
+    }
+    $borders: $tmp-borders;
+
+
+    // Initialize defaults
+    $defaults: null null null;
+
+    // Defaults are established by the first non-null property
+    // TODO: Shouldn't properties inherit from their "TRBL partner"?
+    $i: 1;
+    @while nth($borders, $i) == null {
+        $i: $i + 1;
+    }
+    $defaults: _wcs(nth($borders, $i));
+
+
+    // Parse all borders
+    $tmp-borders: ();
+    @each $border in $borders {
+        $border: _wcs($border, $defaults);
+        $tmp-borders: append($tmp-borders, $border);
+    }
+    $borders: $tmp-borders;
+
+
+    // Attempt to use the `border` shorthand
+    @if not in-list(null, $borders) {
+
+        // Create shorthand properties
+        $border-width: ();
+        $border-color: ();
+        $border-style: ();
+
+        @each $border in $borders {
+
+            // Initialize values to `null`
+            $w: null;
+            $c: null;
+            $s: null;
+
+            @if $border {
+                $w: nth($border, 1);
+                $c: nth($border, 2);
+                $s: nth($border, 3);
+            }
+
+            $border-width: append($border-width, nth($border, 1));
+            $border-color: append($border-color, nth($border, 2));
+            $border-style: append($border-style, nth($border, 3));
+
+        }
+
+        // Count unique values
+        $ubw: length(unique($border-width));
+        $ubc: length(unique($border-color));
+        $ubs: length(unique($border-style));
+
+        // If there is only one unique value lets add that to the `border` shorthand
+        $shw: if($ubw==1, nth($border-width, 1), null);
+        $shc: if($ubc==1, nth($border-color, 1), null);
+        $shs: if($ubs==1, nth($border-style, 1), null);
+
+        // If `border: 0`, leave off the `border-style`
+        @if $len == 1
+            and $shw == 0
+            and $shs == solid {
+            $shs: null;
+        }
+
+        $shorthand: $shw $shc $shs;
+        
+        // Print `border(-*)` shorthand properties
+        border: $shorthand;
+        @if $ubw>1 { @include _trbl($border-width, border-width); }
+        @if $ubc>1 { @include _trbl($border-color, border-color); }
+        @if $ubs>1 { @include _trbl($border-style, border-style); }
+    }
+    @else {
+        // Print `border-side` shorthand properties
+        @include _trbl($borders, border);
+    }
+
+}
+
+//*
+// Set `border-color`(s)
+// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
+//
+// @param number|list $color The `border-color`(s) to be set
+//
+@mixin border-color (
+    $color
+){
+    @include _trbl($color, border-color);
+}
+
+//*
+// Set `border-style`(s)
+// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
+//
+// @param number|list $style The `border-style`(s) to be set
+//
+@mixin border-style (
+    $style
+){
+    @include _trbl($style, border-style);
+}
+
+//*
+// Set `border-width`(s)
+// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
+//
+// @param number|list $width The `border-width`(s) to be set
+//
+@mixin border-width (
+    $width
+){
+    @include _trbl($width, border-width);
+}

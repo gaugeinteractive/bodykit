@@ -1,0 +1,35 @@
+//*
+// Ensure all rows are justified.
+//
+//  @param string $space-collaspe Accepts either "extreme" or "none". Using
+//   "extreme" will set both the `font-size` and `line-height` to 0. Should
+//   *not* be used if element contains text nodes.
+// @param string $selector ':after' The selector which specifies the element or
+//   psuedo-element to be used to force justification. This *must* be `(:):after`,
+//   `:last-child`, or an equivilent, as the last element in the conatiner is
+//   the only element able to force justification.
+// @content `> *` Only applies when using `$space-collapse: extreme`. Intended
+//    to be used to reset the `font-size`, `line-heigh`, and any other properties
+//    which rely on these values for all direct descendants.
+//
+@mixin force-justify (
+    $space-collase: none,
+    $selector: ':after'
+){
+    text-align: justify;
+
+    @if $space-collase == 'extreme'{
+        line-height: 0;
+        font-size: 0;
+
+        > * {
+            @content;
+        }
+    }
+
+    &#{$selector} {
+        content: '';
+        display: inline-block;
+        width: 100%;
+    }
+}

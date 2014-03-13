@@ -1,0 +1,33 @@
+//*
+// Collapse whitespace between inline block elements
+//
+// @param string $method [optional] The method to use for collapsing
+//   space. There are two methods that may be used: "font-family" (default)
+//   and "font-size".
+//   - The "font-family" method uses a custom font family, "blank",
+//     that replaces the default space character with a zero width character.
+//     This allows the current `font-size` to cascade, however the `font-family`
+//     must be reset on all direct descendants.
+//   - The "font-size" method sets the `font-size` to zero. This prevents `font-size`
+//     from cascading, and it affects the value of an `em` for the element. The 
+//     `font-size` must be reset on all direct descendants. This should generally
+//     be set to a `rem` value.
+// @content `& > *` Intended to be used to reset the `font-family`, or `font-size`,
+//    and any other properties which rely on these values for all direct descendants,
+//    depending upon the method used.
+//
+@mixin text-space-collapse (
+    $method: 'font-family'
+){
+    @if $method == "font-family" {
+        font-family: 'blank';
+    } @else if $method == "font-size" {
+        font-size: 0;
+    } @else {
+        @warn "text-space-collapse(): $method must be 'font-family' or 'font-size'.";
+    }
+
+    > * {
+        @content;
+    }
+}

@@ -1,0 +1,45 @@
+@function flex-grid($columns, $container-columns: $fg-max-columns) {
+    $width: $columns + ($columns - 1) * $fg-gutter;
+    $container-width: $container-columns * $fg-column + ($container-columns - 1) * $fg-gutter;
+    @return percentage($width / $container-width);
+}
+
+@function flex-gutter($container-columns: $fg-max-columns, $gutter: $fg-gutter) {
+    $container-width: $container-columns * $fg-column + ($container-columns - 1) * $fg-gutter;
+    @return percentage($gutter / $container-width);
+}
+
+
+//*
+//
+//
+//
+@mixin span-columns(
+    $span: $columns of $container-columns,
+    $display: block
+){
+    $columns: nth($span, 1);
+    $container-columns: container-span($span);
+
+    float: left;
+
+    @if $display != block {
+        display: block;
+    }
+
+    @if $display == block-collapse {
+        width: flex-grid($columns, $container-columns) + flex-gutter($container-columns);
+
+        &:last-child {
+            width: flex-grid($columns, $container-columns);
+        }
+
+    } @else {
+        margin-right: flex-gutter($container-columns);
+        width: flex-grid($columns, $container-columns);
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

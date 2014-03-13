@@ -1,0 +1,36 @@
+//*
+// Expand an abbreviation
+//
+// @param string $abbr The abbreviation to be expanded
+// @param list $defs A dictionary of definitions to search for the expansion
+// @return string The expanded abbreviation, or the original string, if the string
+//   could not be expanded
+//
+@function expand-abbr(
+    $abbr,
+    $defs: ()
+){
+    @for $i from 1 through length($defs){
+        $def: nth($defs, $i);
+        @if $abbr == nth($def, 1) {
+            @return nth($def, 2);
+        }
+      }
+      @return $abbr;
+}
+
+//*
+// Find the alias of a string
+//
+// @param string $alias The alias to 
+// @return string The expanded abbreviation, or the original string, if the string
+//   could not be expanded 
+//
+@function _alias(
+    $alias
+){
+    $defs: append((),(
+        n null
+    ));
+    @return expand-abbr($alias, $defs);
+}

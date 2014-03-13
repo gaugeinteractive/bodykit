@@ -1,0 +1,122 @@
+//*
+// Remove default styling from a list
+//
+// @param bool $no-margin [Default: true] If `true`, top and bottom margins will be
+//    removed from the list.
+//
+@mixin list-unstyled (
+    $no-margin: true
+){
+
+    list-style-type: none;
+    padding-left: 0;
+
+    @if $no-margin {
+        @include margin(0 n);
+    }
+
+}
+
+//*
+//
+//
+//
+@mixin list-inline (
+    margin: true
+) {
+
+    @include list-unstyled($no-margin);
+
+    & > li {
+        display: inline-block;
+    }
+
+}
+
+//*
+//
+//
+//
+@mixin list-floated (
+    $dir: left,
+    $no-margin: true
+){
+
+    @include list-unstyled($no-margin);
+    @include clearfix;
+
+    & > li {
+        float: $dir;
+    }
+
+}
+
+//*
+//
+//
+//
+@mixin list-punctuated (
+  $divider: ", ",
+  $display: inline,
+  $no-margin: true
+) {
+
+    @include list-unstyled($no-margin);
+
+    & > li {
+        display: $display;
+
+        &:not(:last-child):after {
+            content: $divider;
+        }
+    }
+
+}
+
+//*
+// Create a numbered nested ordered list. For example:
+//   1. Thing One
+//     1.1. Point One
+//     1.2. Point Two
+//   2. Thing Two
+//     2.1. Point Two
+//  NOTE: This should only be used on ordered lists
+//
+//  @param number $depth How deep the nesting should go
+//  @param number $counter-start [Default: 1] The number at which the nesting 
+//    should start
+//  @param string $counter-style [Default: decimal] The number at which the nesting 
+//    should start. Must be a valid `list-style-type` as defined by the W3C.
+//  @param string $counter-seperator [Default: '.'] The content that will sperate
+//    the sections of the counter 
+//  @param string $counter-after [Default: $counter-seperator] The content to
+//    appear after the counter (e.g. the ')' in '1.1)')
+//
+//  @link http://www.w3.org/TR/CSS21/generate.html#propdef-list-style-type
+//
+@mixin list-number-nested (
+    $depth,
+    $counter-start: 1,
+    $counter-style: decimal,
+    $counter-seperator: '.',
+    $counter-after: $counter-seperator
+){
+
+    list-style-type: none;
+
+    $content: counter(l0, $style);
+    @for $i from 0 to $depth {
+
+        & #{$selector} {
+            counter-reset: l#{$i} if($i == 0, $start - 1, null);
+
+            li:before {
+                content: $content $counter-after;
+                counter-increment: level#{$i};
+            }
+        }
+
+        $selector: $selector + ' ol';
+        $content: $content $seperator counter(l#{$i+1}, $style);
+    }
+}

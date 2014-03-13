@@ -1,0 +1,3 @@
+@import '../../sncss';
+
+.absolute-number-null { @include absolute(5px n); }

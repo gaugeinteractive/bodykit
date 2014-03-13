@@ -1,0 +1,23 @@
+//*
+// Set `margin`(s)
+// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
+//
+// @param number|list $margin The `margin`(s) to be set
+//
+@mixin margin (
+    $margin
+){
+    @include _trbl($margin, margin);
+}
+
+//*
+// Set `padding`(s)
+// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
+//
+// @param number|list $padding The `padding`(s) to be set
+//
+@mixin padding (
+    $padding
+){
+    @include _trbl($padding, padding);
+}

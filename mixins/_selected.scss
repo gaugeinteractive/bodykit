@@ -1,0 +1,28 @@
+//*
+// Apply rules to `:hover` and `:focus` (and, optionally, `:active`) states.
+// More friendly for touchscreens, keyboard navigators, etc.; account for the
+// various means of targeting elements.
+//
+// @param bool $active [default: `false`] Declare whether or not to target the
+//    `:active` state
+// @content To be applied to the selected states
+//
+@mixin selected (
+  $active: false
+) {
+
+    @if $active {
+        &:hover,
+        &:focus,
+        &:active {
+            @content;
+        }
+    }
+    @else {
+        &:hover,
+        &:focus {
+            @content;
+        }
+    }
+
+}

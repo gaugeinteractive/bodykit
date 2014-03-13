@@ -1,0 +1,66 @@
+@import '../../sncss';
+
+.zero { @include border(0); }
+.zero-unit { @include border(0px); }
+.width { @include border(2px); }
+.string-width { @include border(thin); }
+.color { @include border(red); }
+.style { @include border(dashed); }
+.width-color { @include border(2px red); }
+.width-style { @include border(2px dashed); }
+.color-style { @include border(red dashed); }
+.width--zero { @include border(2px, 0); }
+.zero--width { @include border(0, 2px); }
+.width--width { @include border(2px, 5px); }
+.equal--width { @include border(2px, 2px); }
+.zero--null { @include border(0, null); }
+.width--null { @include border(2px, null); }
+.null--width { @include border(null, 10px); }
+.width-color--width-style-color { @include border(2px red, 5px dashed blue); }
+/*
+NOTICE:
+border: 2px blue solid;
+border-left: 10px white dashed;
+border-right: 10px white dashed;
+// Smaller compressed (84b -> 74b)
+// OR //
+// Smaller uncompressed (73b -> 82b)
+border-width: 2px 10px;
+border-color: blue white;
+border-style: solid dashed;
+*/
+.width-color--width-color { @include border(2px red, 5px blue); }
+.width-color--style { @include border(2px red, dashed); }
+.width-style-color--width { @include border(2px dashed red, 5px); }
+.width-color--width--width { @include border(2px red, 5px, 10px); }
+.width--width-color { @include border(2px, 5px red); }
+.width-style-color--width--width-color {
+    @include border(2px dashed red, 5px, 10px blue);
+}
+.width--width-style-color--width-color {
+    @include border(2px, 5px dashed blue, 10px red); 
+}
+.width-style-color--width-style-color--width-style-color {
+    @include border(2px dashed red, 5px double blue, 10px inset green);
+}
+.width-style-color--width--width--width {
+    @include border(2px dashed red, 5px, 10px, 20px);
+}
+.null--width-style-color--color {
+    @include border(n, 2px dashed red, blue);
+}
+.width-color--equal-width--equal-color {
+    @include border(2px red, 2px, red);    
+}
+.width-color--equal-width--equal-color--null {
+    @include border(2px red, 2px, red, n);
+}
+.width-color--width-style-color--null {
+    @include border(2px red, 5px dashed blue, n);
+}
+.width-color-style--width-color {
+    @include border(2px red dashed, 5px blue);
+}
+.width-style-color--width-style-color--style-color--width-color {
+    @include border(2px dashed red, 5px double blue, inset green, 10px yellow);
+}

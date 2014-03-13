@@ -1,0 +1,135 @@
+// Sets box model to include padding and border
+*, *:before, *:after { @include box-sizing(border-box); }
+
+
+// Base styles: opinionated defaults
+
+//This sets the default font size to 10px (`rem` value)
+
+html {
+    color: $body-color;
+    font-family: $signika;
+    font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.4;
+}
+
+// Body styles
+body {
+    @include font-size(16);
+    background-color: $body-background;
+    background-image: url('../images/dust.png');
+}
+
+::selection { background: $selection-color; }
+
+::-moz-selection { background: $selection-color; }
+
+// Base link styles
+a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:hover, &:focus { color: $category-accent; }
+}
+
+
+// Reset margins and padding
+
+button, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+// A better looking default horizontal rule
+hr {
+    border: 0;
+    border-top: 1px solid hsl(0, 0, 80%);
+    display: block;
+    height: 1px;
+    margin: 1em 0;
+    padding: 0;
+}
+
+// Media Elements
+
+// Remove the gap between images, videos, audio and canvas and the bottom of
+// their containers: h5bp.com/i/440
+
+audio, canvas, img, svg, video { vertical-align: middle; }
+
+// Makes all images semi-responsive
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+// Remove default fieldset styles.
+
+
+// Form Elements
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+// Allow only vertical resizing of textareas.
+textarea { resize: vertical; }
+
+address { font-style: normal; }
+
+// Floats and Clears
+.clearfix { @extend %clearfix; }
+
+.left { float: left; }
+
+.right { float: right; }
+
+// Print styles.
+// Inlined to avoid required HTTP connection: h5bp.com/r
+@media print {
+    * {
+        background: transparent !important;
+        box-shadow: none !important;
+        // Black prints faster: h5bp.com
+        color: hsl(0, 0, 0) !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after { content: " (" attr(href) ")"; }
+
+    abbr[title]:after { content: " (" attr(title) ")"; }
+
+
+    // Don't show links for images, or javascript/internal links
+
+    a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+
+    pre,
+    blockquote {
+        border: 1px solid hsl(0, 0, 60%);
+        page-break-inside: avoid;
+    }
+
+    thead { display: table-header-group; }
+
+    tr, img { page-break-inside: avoid; }
+
+    img { max-width: 100% !important; }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2, h3 { page-break-after: avoid; }
+}

@@ -1,0 +1,50 @@
+//*
+// Hide only visually, but have it available for screenreaders
+//
+// @param bool $focusable [optional] Allow the element to be focusable
+//   when navigated to via the keyboard. Default is false.
+//
+// @link h5bp.com/v
+// @link h5bp.com/p
+//
+@mixin hide-visually (
+    $focusable: false
+){
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+
+    @if $focusable {
+        &:active,
+        &:focus {
+            clip: auto;
+            height: auto;
+            margin: 0;
+            overflow: visible;
+            position: static;
+            width: auto;
+        }
+    }
+}
+
+//*
+// Hide visually and from screenreaders, but maintain layout
+//
+@mixin invisible {
+    visibility: hidden;
+}
+
+//*
+// Hide from both screenreaders and browsers
+//
+// @link h5bp.com/u
+//
+@mixin hidden {
+    display: none !important;
+    visibility: hidden;
+}

@@ -1,0 +1,78 @@
+//*
+//
+//
+//
+// The keyword `from` is an alias for the default media feature
+// The keywords `to` and `through` are aliased to the opposite
+// of the default media feature
+// The keyword `to` is one less than the passed value, while depending upon wether it is greater
+// than or less than the preceding
+//
+@mixin media(
+    $query
+){
+
+    // Store length for performance
+    $len: length($query);
+
+    // A single query uses the default media feature
+    @if $len == 1 {
+        $value: nth($query, 1);
+        @media screen and (min-width: $value) {
+            @content;
+        }
+    }
+
+    @else {
+        $mediaQuery: 'screen and ';
+
+        $last: $len - ($len % 2);
+
+        $i: 1;
+        @while $i <= $last {
+            $feature: nth($query, $i);
+            $value: nth($query, $i + 1);
+
+
+            @if $feature == from {
+                $feature: 'min-width';
+            }
+            @elseif in-list($feature, (to, through)) {
+                @if $feature == to  {
+                    // TODO: Make the use of calc optional
+                    $value: calc(#{$value} - 1px);
+                }
+                $feature: 'max-width';
+            }
+
+
+            $mediaQuery: $mediaQuery + "(#{$feature}: #{$value})";
+
+            @if ($i + 1) != $last {
+                $mediaQuery: $mediaQuery + 'and ';
+            }
+
+            $i: $i + 2;
+        }
+
+        @media #{$mediaQuery} {
+            @content;
+        }
+    }
+}
+
+
+//*
+//
+//
+//
+@mixin hd(
+    $ratio: 1.3
+){
+
+    @media screen and (-webkit-min-device-pixel-ratio: #{$ratio}),
+         screen and (min-resolution: #{round(96 * $ratio)}dpi) {
+        @content;
+    }
+
+}

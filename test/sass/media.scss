@@ -1,0 +1,33 @@
+@import '../../sncss';
+
+.from-to {
+    @include media(from 500px to 800px) {
+        color: red;
+    }
+}
+
+.from-through {
+    @include media(from 800px through 500px) {
+        color: red;
+    }
+}
+
+.single-nested-to-through {
+    @include media(500px) {
+        color: red;
+
+        @include media(to 700px) {
+            color: blue;
+        }
+
+        @include media(through 700px) {
+            color: blue;
+        }
+    }
+}
+
+.hd {
+    @include hd {
+        color: red;
+    }
+}

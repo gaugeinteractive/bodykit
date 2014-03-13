@@ -1,0 +1,92 @@
+//*
+// Prints top, right, bottom, left values for a given property.
+//
+// As with other CSS properties, if there is only one component value, it applies
+// to all sides. If there are two values, the top and bottom paddings are set to
+// the first value and the right and left paddings are set to the second. If there
+// are three values, the top is set to the first value, the left and right are set
+// to the second, and the bottom is set to the third. If there are four values,
+// they apply to the top, right, bottom, and left, respectively.
+//
+// NOTE: Passing `null` for a value will disable rule creation for the 
+// corresponding side(s)
+//
+// @param list $trbl A list of TRBL (top, right, bottom, left) values.
+// @param string $property [default: `''`]The property.
+//
+@mixin _trbl (
+    $trbl,
+    $property: ''
+){
+
+    // Store length for performance
+    $len: length($trbl);
+    
+    // @if $len == 1 {
+    //     $trbl: nth($trbl, 1);
+    //     // Reset length to new list
+    //     $len: length($trbl);
+    // }
+
+    $tmp-trbl: ();
+    @each $val in $trbl {
+        $tmp-trbl: append($tmp-trbl, _alias($val));
+    }
+    $trbl: $tmp-trbl;
+
+
+    $prefix: '';
+    $suffix: '';
+    @if in-list($property, ('margin', 'padding', 'border')) {
+        $prefix: $property + '-';
+    }
+    @elseif str-index($property, 'border-') == 1 {
+        $prefix: str-slice($property, 1, str-index($property, '-'));
+        $suffix: str-slice($property, str-index($property, '-'), str-length($property));
+    }
+    
+    // Initialize top, right, bottom, left
+    $t: nth($trbl, 1);
+    $r: $t;
+    $b: $t;
+    $l: $t;
+
+    // Set top, right, bottom, left based on input
+    @if $len >= 2 {
+        $r: nth($trbl, 2);
+        $l: $r;
+        @if $len >= 3 {
+            $b: nth($trbl, 3);
+            @if $len >= 4 {
+                $l: nth($trbl, 4);
+            }
+        }
+    }
+
+    // Print rule(s)
+    @if not(in-list(null, $trbl)) 
+        and $prefix != ''
+        and $property != border {
+
+        // Join top, right, bottom, left values as succinctly as possible
+        $value: $t;
+        @if $len == 4 and $r != $l {
+            $value: join($value, $r $b $l);
+        }
+        @elseif $len >= 3 and $t != $b {
+            $value: join($value, $r $b);
+        }
+        @elseif $len >= 2 and $t != $r {
+            $value: join($value, $r);
+        }
+        
+        // Use shorthand
+        #{$property}: $value;
+    }
+    @else {
+        @if $t { #{$prefix}top#{$suffix}:    $t; }
+        @if $b { #{$prefix}bottom#{$suffix}: $b; }
+        @if $l { #{$prefix}left#{$suffix}:   $l; }
+        @if $r { #{$prefix}right#{$suffix}:  $r; }
+    }
+}

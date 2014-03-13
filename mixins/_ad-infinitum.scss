@@ -1,0 +1,91 @@
+//*
+// Create a visual row that spans the full width of the viewport, while
+// maintaining relative content width
+// NOTE: This will create overflow scrolling on the x axis. To resolve this, a 
+// containing element spanning 100% of the viewport width must have 
+// `overflow-x: hidden;` set. This may be done gloabally via the `html, body`
+// elements, although that is generally not recomended; it is better to use a 
+// wrapper `div` around the content of the page.
+// ```
+// .wrapper {
+//    overflow-x: hidden;
+// }
+// ```
+//
+// @param string $push [default: padding] The method to be used to push the content
+// @param string $pull [default: margin] The method to be used to pull the content
+// @param string $direction [default: both] The direction in which to span ad inifinitum
+// @param bool $content-box [default: true] Set `box-sizing: content-box` when
+//   set to `true`, only applicable when using `$pull: position`.
+//
+@mixin ad-infinitum (
+    $push: padding,
+    $pull: margin,
+    $direction: both,
+    $content-box: true
+) {
+  
+    @if $push == padding {
+        @if $direction != right {
+            padding-left: 9999px;
+        }
+        @if $direction != left {
+            padding-right: 9999px;
+        }
+       
+    }
+    @else if $push == border {
+        @if $direction != right {
+            border-left: 9999px solid transparent;
+        }
+        @if $direction != left {
+            border-right:  9999px solid transparent;
+        }
+    }
+
+    @if $pull == margin {
+        @if $direction != right {
+            margin-left: -9999px;
+        }
+        @if $direction != left {
+            margin-right: -9999px;
+        }
+    }
+    @else if $pull == position {
+        @if $direction != right {
+              @include relative(n n n -9999px);
+        }
+        width: 100%;
+    }
+
+    @if $content-box and $pull == position {
+        box-sizing: content-box;
+    } 
+    
+    // @include padding(n 9999px);
+    // @include margin(n -9999px);
+}
+
+//*
+// Create a visual row that spans the full width of the viewport, while
+// maintaining relative content width using pseduo elements
+//
+@mixin ad-infinitum-pseudo (
+){
+    position: relative;
+
+    &:before,
+    &:after {
+        content: '';
+        @include absolute(0 n);
+        width: 9999px;
+    }
+
+    &:before {
+        right: 100%; 
+    }
+
+    &:after {
+        left: 100%;
+    }
+}

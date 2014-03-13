@@ -1,0 +1,94 @@
+//*
+// Get the opposing side
+//
+// @param string $side The side.
+// @return string|null The opposing side, or null if there is no opposing side
+//
+@function _sideOppositeTo(
+    $side
+){
+    @if not(in-list($side, ("top", "right", "bottom", "left"))){
+        @warn '_sideOppositeTo(): $side only accepts "top", "right", "bottom", or "left".';
+    }
+    @if $side == "top" {
+        @return "bottom";
+    }
+    @if $side == "right" {
+        @return "left";
+    }
+    @if $side == "bottom" {
+        @return "top";
+    }
+    @if $side == "left" {
+        @return "right";
+    }
+    @return null;
+}
+
+//*
+// Draw a CSS trangle
+//
+// @param string $direction The direction which the triangle should point.
+//    Accepts "up", "down", "left", "right".
+// @param number|list $size The size of the triangle. Accepts up to two values.
+//    If only one value is passed an equilateral triangle will be drawn. If two
+//    values are passed, the first value defines the base and the second
+//    value defines the height of the triangle.
+// @param color $color [optional] The color of the triangle. Defaults to `currentColor`
+//
+@mixin triangle (
+    $direction,
+    $size,
+    $color: currentColor
+){
+    @if not(in-list($direction, ("up", "down", "left", "right"))){
+        @warn 'triangle(): $direction only accepts "up", "down", "left", or "right".';
+    }
+    
+    @if length($size) > 2 {
+        @warn 'triangle(): $size only accepts ($base, $height).';
+    }
+
+    @if in-list($direction, ("top", "bottom")){
+        $direction: null;
+    }
+
+    $base:   0;
+    $height: 0;
+    @if type-of($size) == 'list' {
+        @if length($size) >= 2 {
+            $base:   nth($size, 1);
+            $height: nth($size, 2);
+        } @else {
+            $base:   nth($size, 1);
+            $height: $base;
+        }
+    } @else {
+        $base:   $size;
+        $height: $base;
+    }
+
+    display: inline-block;
+    width:  0;
+    height: 0;
+    overflow: hidden;
+    border: ($base/2) solid transparent;
+
+
+    @if $direction == "up" {
+        $direction: "top";
+    }
+
+    @if $direction == "down" {
+        $direction: "bottom";
+    }
+
+    
+    $oppositeSide: _sideOppositeTo($direction);
+
+    @if ($base/2) != $height {
+        border-#{$oppositeSide}-width: $height;
+    }
+    border-#{$oppositeSide}-color: $color;
+    border-#{$direction}: 0;
+}

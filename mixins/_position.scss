@@ -1,0 +1,60 @@
+//*
+// Set coordinate system offsets
+//
+// @param number|list $coords
+// @param string $position The position
+//
+@mixin coords (
+    $coords,
+    $position: ''
+){
+    @if in-list($position, (absolute, fixed, relative)) {
+        position: $position;
+    }
+    @include _trbl($coords);
+}
+
+//*
+// Absolutely position an element and assign its coordinates
+//
+// @param number|list $coords
+//
+@mixin absolute (
+    $coords: n
+){
+    @include coords($coords, absolute);
+}
+
+//*
+// Fixedly position an element and assign its coordinates
+//
+// @param number|list $coords
+//
+@mixin fixed (
+    $coords: n
+){
+    @include coords($coords, fixed);
+}
+
+//*
+// Relatively position an element and assign its coordinates
+// @link http://www.w3.org/TR/CSS21/visuren.html#relative-positioning 
+//
+// @param number|list $coords
+//
+@mixin relative (
+    $coords: n
+){
+    @include coords($coords, relative);
+}
+
+//*
+// Stretch an element over its positioning parent
+//
+// @param number|list $coords
+//
+@mixin stretch (
+    $coords: 0
+){
+    @include absolute($coords);
+}

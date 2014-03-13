@@ -1,0 +1,52 @@
+//*
+// Draws decorative lines on sides of the element.
+// The element will be centered.
+//
+// @param number $padding The padding to be applied to the left and right of
+//    the element.
+// @param bool $both [optional] Defines how `@content` should be used. The
+//    default value, "true", will apply the content to both the `:before` and
+//    `:after` psuedo elements. If "false", the content will be applied to the
+//    element itself, allowing different values to be applied to `:before` and
+//    `:after`.
+// @content mixed The decoration that should be applied to the
+//    element. Generally the default properties that should be passed are:
+//    ```
+//    background-position: 50%;
+//    background-repeat: repeat-x;
+//    background-size: $w $h;
+//    ```
+//
+@mixin line-on-sides (
+    $padding,
+    $both: true
+) {
+    @if unit($padding) == '%' {
+        @warn "border-width may not be defined as a percentage";
+    }
+
+    display: table;
+    text-align: center;
+    white-space: nowrap;
+  
+
+    &:before,
+    &:after {
+        content: '';
+        width: 50%;
+        display: table-cell;
+        background-clip: padding-box;
+        border: 0 solid transparent;
+        @if $both { @content; }
+    }
+
+    &:before {
+        border-right-width: $padding;
+    }
+  
+    &:after {
+        border-left-width: $padding;
+    }
+
+    @if not $both { @content; }
+}
