@@ -18,19 +18,3 @@
       }
       @return $abbr;
 }
-
-//*
-// Find the alias of a string
-//
-// @param string $alias The alias to 
-// @return string The expanded abbreviation, or the original string, if the string
-//   could not be expanded 
-//
-@function _alias(
-    $alias
-){
-    $defs: append((),(
-        n null
-    ));
-    @return expand-abbr($alias, $defs);
-}

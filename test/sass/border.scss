@@ -1,4 +1,4 @@
-@import '../../sncss';
+@import '../../essence';
 
 .zero { @include border(0); }
 .zero-unit { @include border(0px); }
@@ -63,4 +63,8 @@ border-style: solid dashed;
 }
 .width-style-color--width-style-color--style-color--width-color {
     @include border(2px dashed red, 5px double blue, inset green, 10px yellow);
+}
+
+.style {
+    @include border(red);
 }

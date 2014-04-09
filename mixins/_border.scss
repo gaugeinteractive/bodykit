@@ -7,7 +7,7 @@
 //    and style values to inherit
 // @return list The width, color, style
 //
-@function _wcs (
+@function _parse-wcs (
     $wcs,
     $defaults: null
 ){
@@ -15,12 +15,8 @@
     // We can't do anything with null
     @if $wcs == null { @return $wcs; }
 
-    @if $defaults {
-        $defaults: _wcs($defaults);
-    }
-    @else {
-        $defaults: null null null;
-    }
+    @if $defaults { $defaults: _parse-wcs($defaults); }
+    @else         { $defaults: null null null;  }
     
     // Parse defaults
     $w: nth($defaults, 1);
@@ -73,13 +69,11 @@
     // Store length for performance
     $len: length($borders);
 
-    // Dealias shorthand values
-    $tmp-borders: ();
-    @each $val in $borders {
-        $tmp-borders: append($tmp-borders, _alias($val));
-    }
-    $borders: $tmp-borders;
-
+    // Expand shorthand arguments
+    $defs: append((),(
+        n null
+    ));
+    $borders: list-walk($borders, expand-abbr, $defs);
 
     // Initialize defaults
     $defaults: null null null;
@@ -87,76 +81,79 @@
     // Defaults are established by the first non-null property
     // TODO: Shouldn't properties inherit from their "TRBL partner"?
     $i: 1;
-    @while nth($borders, $i) == null {
+    @while nth($borders, $i) == null and $i < $len {
         $i: $i + 1;
     }
-    $defaults: _wcs(nth($borders, $i));
+    $defaults: _parse-wcs(nth($borders, $i));
 
 
     // Parse all borders
-    $tmp-borders: ();
-    @each $border in $borders {
-        $border: _wcs($border, $defaults);
-        $tmp-borders: append($tmp-borders, $border);
-    }
-    $borders: $tmp-borders;
+    $borders: list-walk($borders, _parse-wcs, $defaults);
 
 
     // Attempt to use the `border` shorthand
     @if not in-list(null, $borders) {
 
-        // Create shorthand properties
-        $border-width: ();
-        $border-color: ();
-        $border-style: ();
+        // Separate shorthand properties
+        $border-wcs: () () ();
 
         @each $border in $borders {
 
-            // Initialize values to `null`
-            $w: null;
-            $c: null;
-            $s: null;
-
             @if $border {
-                $w: nth($border, 1);
-                $c: nth($border, 2);
-                $s: nth($border, 3);
+                // NOTE: length($border) == 3
+                @for $i from 1 through 3 {
+                    $border-wcs: replace-nth(
+                        $border-wcs,
+                        $i,
+                        append(nth($border-wcs, $i), nth($border, $i))
+                    );
+                }
             }
 
-            $border-width: append($border-width, nth($border, 1));
-            $border-color: append($border-color, nth($border, 2));
-            $border-style: append($border-style, nth($border, 3));
-
         }
 
-        // Count unique values
-        $ubw: length(unique($border-width));
-        $ubc: length(unique($border-color));
-        $ubs: length(unique($border-style));
+        // Create shorthand property
+        $shorthand: ();
 
-        // If there is only one unique value lets add that to the `border` shorthand
-        $shw: if($ubw==1, nth($border-width, 1), null);
-        $shc: if($ubc==1, nth($border-color, 1), null);
-        $shs: if($ubs==1, nth($border-style, 1), null);
+        @for $i from 1 through 3 {
+            
+            $shorthand-values: nth($border-wcs, $i);
 
-        // If `border: 0`, leave off the `border-style`
+            // If there is only one unique value, it can be added to the
+            // `border` shorthand property
+            $shorthand: append(
+                $shorthand,
+                if(length(unique($shorthand-values)) == 1, nth($shorthand-values, 1), null)
+            );
+        }
+
+        // Print properties
         @if $len == 1
-            and $shw == 0
-            and $shs == solid {
-            $shs: null;
-        }
+            and nth($shorthand, 1) == 0
+            and nth($shorthand, 3) == solid {
 
-        $shorthand: $shw $shc $shs;
+            // If `border: 0`, omit `style`
+            border: replace-nth($shorthand, 3, null);
         
-        // Print `border(-*)` shorthand properties
-        border: $shorthand;
-        @if $ubw>1 { @include _trbl($border-width, border-width); }
-        @if $ubc>1 { @include _trbl($border-color, border-color); }
-        @if $ubs>1 { @include _trbl($border-style, border-style); }
+        }
+        @else {
+            
+            // Print `border(-*)` shorthand properties as necessary
+            border: $shorthand;
+            $shorthand-properties: width color style;
+            @for $i from 1 through 3 {
+                @if nth($shorthand, $i) == null {
+                    @include _trbl(nth($border-wcs, $i), border-#{nth($shorthand-properties, $i)});
+                }
+            }
+
+        }
     }
     @else {
-        // Print `border-side` shorthand properties
+
+        // Print `border-[side]` shorthand properties
         @include _trbl($borders, border);
+
     }
 
 }

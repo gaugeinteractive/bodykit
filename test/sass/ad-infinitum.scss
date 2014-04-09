@@ -1,0 +1,10 @@
+@import '../../essence';
+
+.both { @include ad-infinitum; }
+.border { @include ad-infinitum(border); }
+.position { @include ad-infinitum($pull: position); }
+.position-top { @include ad-infinitum($pull: position, $direction: t); }
+.x { @include ad-infinitum($direction: x); }
+.y { @include ad-infinitum($direction: y); }
+.top-right { @include ad-infinitum($direction: top right); }
+.b-r { @include ad-infinitum($direction: b r); }

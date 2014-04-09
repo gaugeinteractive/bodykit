@@ -1,11 +1,11 @@
 //*
 // Create a visual row that spans the full width of the viewport, while
 // maintaining relative content width
-// NOTE: This will create overflow scrolling on the x axis. To resolve this, a 
-// containing element spanning 100% of the viewport width must have 
-// `overflow-x: hidden;` set. This may be done gloabally via the `html, body`
-// elements, although that is generally not recomended; it is better to use a 
-// wrapper `div` around the content of the page.
+// NOTE: This mixin will overflow the parent container in the given direction.
+// To prevent overflow scrolling, and other issues, a containing element must have 
+// `overflow-*: hidden;` set on the matching axis. In some cases, this may be done
+// gloabally via the `html, body` elements, although that is generally not recomended;
+// it is better to use a wrapper.
 // ```
 // .wrapper {
 //    overflow-x: hidden;
@@ -14,56 +14,103 @@
 //
 // @param string $push [default: padding] The method to be used to push the content
 // @param string $pull [default: margin] The method to be used to pull the content
-// @param string $direction [default: both] The direction in which to span ad inifinitum
+// @param string $direction [default: horizontal] The direction in which to span ad inifinitum
 // @param bool $content-box [default: true] Set `box-sizing: content-box` when
 //   set to `true`, only applicable when using `$pull: position`.
 //
 @mixin ad-infinitum (
     $push: padding,
     $pull: margin,
-    $direction: both,
+    $direction: horizontal,
     $content-box: true
 ) {
-  
+
+    // Initialize variables
+    $t: null;
+    $r: null;
+    $b: null;
+    $l: null;
+
+    // Expand shorthand arguments
+    $defs: (
+        h horizontal,
+        x horizontal,
+        v vertical,
+        y vertical,
+        t top,
+        r right,
+        b bottom,
+        l left
+    );
+    $direction: list-walk($direction, expand-abbr, $defs);
+
+    // Set variables
+    @if in-list(horizontal, $direction) {
+        $direction: join($direction, right left);
+    }
+    @if in-list(vertical, $direction) {
+        $direction: join($direction, top bottom);
+    }
+    
+    // Set variables
+    @if in-list(top,    $direction) { $t: $RLN; }
+    @if in-list(right,  $direction) { $r: $RLN; }
+    @if in-list(bottom, $direction) { $b: $RLN; }
+    @if in-list(left,   $direction) { $l: $RLN; }
+
+    // Push methods
     @if $push == padding {
-        @if $direction != right {
-            padding-left: 9999px;
-        }
-        @if $direction != left {
-            padding-right: 9999px;
-        }
-       
+
+        @include padding($t $r $b $l);
+
     }
     @else if $push == border {
-        @if $direction != right {
-            border-left: 9999px solid transparent;
-        }
-        @if $direction != left {
-            border-right:  9999px solid transparent;
-        }
+
+        @include border(
+            if($t, $t transparent, null),
+            if($r, $r transparent, null),
+            if($b, $b transparent, null),
+            if($l, $l transparent, null)
+        );
+
     }
 
+    // Pull methods
     @if $pull == margin {
-        @if $direction != right {
-            margin-left: -9999px;
-        }
-        @if $direction != left {
-            margin-right: -9999px;
-        }
+
+        @include margin(
+            if($t, -$t, null)
+            if($r, -$r, null)
+            if($b, -$b, null)
+            if($l, -$l, null)
+        );
+
     }
     @else if $pull == position {
-        @if $direction != right {
-              @include relative(n n n -9999px);
+
+        @if $l or $r {
+            width: 100%;
         }
-        width: 100%;
+        
+        @if $t or $l {
+            // When using relative positioning, only one value is ever needed
+            // per axis. Because `left == -1 * right`, we can add a positive value
+            // to the opposite side rather then using a negative value
+            // http://www.w3.org/TR/css3-positioning/#relative-positioning
+            @include relative(
+                null
+                if($l, $l, null)
+                if($t, $t, null)
+                null
+            );
+        }
+
+        @if $content-box {
+            box-sizing: content-box;
+        }
+
     }
 
-    @if $content-box and $pull == position {
-        box-sizing: content-box;
-    } 
-    
-    // @include padding(n 9999px);
-    // @include margin(n -9999px);
 }
 
 //*
@@ -72,13 +119,14 @@
 //
 @mixin ad-infinitum-pseudo (
 ){
+
     position: relative;
 
     &:before,
     &:after {
         content: '';
-        @include absolute(0 n);
-        width: 9999px;
+        @include absolute(0 null);
+        width: $RLN;
     }
 
     &:before {

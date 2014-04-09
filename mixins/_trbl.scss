@@ -22,17 +22,19 @@
     // Store length for performance
     $len: length($trbl);
     
+    // If a list is passed in
     // @if $len == 1 {
     //     $trbl: nth($trbl, 1);
     //     // Reset length to new list
     //     $len: length($trbl);
     // }
-
-    $tmp-trbl: ();
-    @each $val in $trbl {
-        $tmp-trbl: append($tmp-trbl, _alias($val));
-    }
-    $trbl: $tmp-trbl;
+    
+    
+    // Expand shorthand arguments
+    $defs: append((),(
+        n null
+    ));
+    $trbl: list-walk($trbl, expand-abbr, $defs);
 
 
     $prefix: '';

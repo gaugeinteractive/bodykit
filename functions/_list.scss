@@ -5,7 +5,7 @@
 // @param list $haystack The list
 //
 @function in-list($needle, $haystack){
-    @return not(not(index($haystack, $needle)));
+    @return not not index($haystack, $needle);
 }
 
 //*
@@ -71,7 +71,32 @@
     @return $result;
 }
 
-// Alias
+// Alias of `remove-duplicates`
 @function unique($list) {
     @return remove-duplicates($list);
+}
+
+//*
+// Applies the callback to the elements of the given list
+//
+// @param list $list A list to run through the callback function.
+// @param string $callback Callback function to run for each element in each list.
+// @param list $args [default: null] Variable list of arguments to run through 
+//    the callback function.
+//
+// @return A list containing all the elements of `$list` after applying the
+//    callback function to each one. 
+//
+@function list-walk (
+    $list,
+    $callback,
+    $arg: null
+){
+
+    $tmp: ();
+    @each $item in $list {
+        @if $arg { $tmp: append($tmp, call($callback, $item, $arg)); }
+        @else    { $tmp: append($tmp, call($callback, $item)); }
+    }
+    @return $tmp;
 }

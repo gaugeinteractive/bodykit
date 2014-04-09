@@ -1,4 +1,4 @@
-@import '../../sncss';
+@import '../../essence';
 
 .from-to {
     @include media(from 500px to 800px) {
@@ -17,6 +17,10 @@
         color: red;
 
         @include media(to 700px) {
+            color: blue;
+        }
+
+        @include media(to 200px) {
             color: blue;
         }
 

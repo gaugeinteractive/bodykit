@@ -1,0 +1,91 @@
+//*
+//
+//
+@function outer-stroke(
+    $width,
+    $color: currentColor,
+    $blur: 0,
+    $font-weight: normal
+) {
+
+    // Validate font-weight value
+    @if ( type-of($font-weight) == string ) {
+        @if     ( $font-weight == normal  ) { $font-weight: 400; }
+        @elseif ( $font-weight == bold    ) { $font-weight: 700; }
+        @elseif ( $font-weight == bolder  ) { $font-weight: 900; }
+        @elseif ( $font-weight == lighter ) { $font-weight: 200; }
+    } @elseif ( type-of($font-weight) == number )
+          and ( $font-weight % 100 == 0 )
+          and ( $font-weight <= 900 )
+          and ( $font-weight >= 100 ) {
+    } @else {
+        @warn unquote("$font-weight expects a valid font-weight value");
+        @return null;
+    }
+
+    // Disect $width
+    $width-unit : unquote(unit($width));
+    $width-num  : strip-unit($width);
+
+    // Inferred font width
+    // Larger font-widths result in fewer steps
+    // Multiply by four to reduce number of steps
+    $ifw    : 4*$font-weight/100;
+
+    // Initialize variables
+    $stroke     : join((),(),comma);
+    $steps      : ceil($width-num/$ifw);
+    //$step-width : ceil($width-num/$ifw);
+
+    // Draw "circles" around letterform beginning with the smallest
+    @for $step from 1 through $steps {
+
+        // (Re)initialize variables
+        $x         : 0;
+        $y         : 0;
+        $draw      : false;
+        $draw-blur : false;
+          
+        // Calculate step width
+        $offset: $ifw * $step;
+          
+        // Only on final step
+        @if ( $step == $steps ) {
+            // Final offset is precise
+            $offset    : $width-num;
+            // Final offset recieves blur
+            $draw-blur : true;    
+        }
+         
+        // Number of instances around the circle
+        // Multiply by two for additional precision
+        // Add $step/$steps for increased precision at larger steps
+        $spokes     : ceil(2*($offset+($step/$steps)));
+        $spoke-diff : 360/$spokes;
+
+        // Offset each
+        @for $spoke from 1 through $spokes {
+          
+            // Create temporary variables for offsets
+            $angle: $spoke * $spoke-diff * 1deg;
+            $tx: cos( $angle ) * $offset;
+            $ty: sin( $angle ) * $offset;
+
+            // Assign values only if x or y has changed significantly
+            @if ( round($tx) != round($x) )
+             or ( round($ty) != round($y) ) {
+                $x: $tx; //round($tx);
+                $y: $ty; //round($ty);
+                $draw: true;
+            }
+
+            // Append values to stroke
+            @if $draw {
+                $draw: false;
+                $stroke: append($stroke, ($x+$width-unit $y+$width-unit if($draw-blur, $blur, null) $color));
+            }
+        }
+    }
+
+    @return $stroke;
+}
