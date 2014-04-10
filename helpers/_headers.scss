@@ -1,0 +1,28 @@
+//
+// All the headers
+//
+@function headers(
+    $from, 
+    $to: false
+) {
+    @if $from and not $to {
+        @if $from == all {
+            $from: 1;
+            $to: 6;
+        } @else {
+            $to: $from;
+            $from: 1;
+        }
+    } @else {
+        $from: if($from, $from, 1);
+        $to: if($to, $to, 6);
+    }
+
+    $headers: ();
+
+    @for $i from $from through $to {
+        $headers: append($headers, #{h}$i, comma);
+    }
+
+    @return $headers;
+}

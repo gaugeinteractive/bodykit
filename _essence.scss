@@ -1,14 +1,26 @@
 @import
     'settings'
     
-  , 'functions/list'
-  , 'functions/number'
-  , 'functions/string'
+  , 'helpers/list'
+  , 'helpers/number'
+  , 'helpers/string'
+  , 'helpers/colors'
+
+  , 'helpers/headers'
     
   , 'mixins/trbl'
+
+  , 'mixins/size'
   , 'mixins/box-model'
   , 'mixins/border'
   , 'mixins/position'
+  , 'mixins/aspect-ratio'
+  , 'mixins/clearfix'
+  , 'mixins/selected'
+
   , 'mixins/media'
+
   , 'mixins/ad-infinitum'
+  , 'mixins/image-replace'
+  , 'mixins/lists'
  ;

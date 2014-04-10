@@ -22,7 +22,7 @@
 //
 //
 @mixin list-inline (
-    margin: true
+    $no-margin: true
 ) {
 
     @include list-unstyled($no-margin);
@@ -37,7 +37,7 @@
 //
 //
 //
-@mixin list-floated (
+@mixin list-float (
     $dir: left,
     $no-margin: true
 ){

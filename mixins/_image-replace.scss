@@ -2,17 +2,28 @@
 // Replace text with an image
 //
 @mixin image-replace (
-    $size
+    $size,
+    $method: pseudo
 ){
-    @include size($size);
+    
+    @if type-of($size) == number
+        and unitless($size) {
+        @include aspect-ratio($size);
+    }
+    @else {
+        @include size($size);
+    }
     overflow: hidden;
 
-    &:before {
-      content: '';
-      display: block;
-      @include size(0 150%);
+    @if $method == pseudo {
+        &:before {
+            content: '';
+            display: block;
+            @include size(0 150%);
+        }
     }
-
-    // text-indent: 100%;
-    // white-space: nowrap;
+    @elseif $method == text-indent {
+        text-indent: 100%;
+        white-space: nowrap;
+    }
 }
