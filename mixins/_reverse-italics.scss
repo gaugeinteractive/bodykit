@@ -1,0 +1,21 @@
+//*
+// Italicize a section of text while de-italicizing those elements that would
+// normally be italicized — such as `<em>`, `<cite>`, and `<i>`.
+//
+// @param string|list $selectors A list of CSS selectors that will not be italicized
+//
+@mixin reverse-italics (
+    $selectors: null
+) {
+
+    $selector-list: em, cite, i;
+    @each $selector in $selectors {
+        $selector: append($selector-list, unquote($selector), comma)
+    }
+
+    font-style: italic;
+    #{$selector-list} {
+        font-style: normal;
+    }
+
+}

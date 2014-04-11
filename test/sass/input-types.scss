@@ -1,4 +1,7 @@
 @import '../../essence';
 
-#{input-types()} { color: red; }
-#{input-types((email, date))} { color: red; }
+#{text-inputs()} { /* All text inputs */ }
+#{text-inputs($exclude: (email, number))} { /* Exclude some text inputs */ }
+
+#{button-inputs()} { /* All button inputs */ }
+#{button-inputs($exclude: submit)} { /* Exclude some button inputs */ }

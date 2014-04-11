@@ -1,0 +1,147 @@
+//*
+// Make everything a border-box
+//
+@mixin reset-border-box {
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+}
+
+
+//*
+// Make headers and <b> semantic, not presentational.
+//
+@mixin reset-semanticize {
+    #{headers()} {
+        font-size: 1em;
+        font-weight: normal;
+        margin: 0;
+    }
+    b {
+        font-weight: normal;
+    }
+}
+
+//*
+// Clickable form elements should have a pointer.
+//
+@mixin reset-pointer {
+    label,
+    select,
+    option,
+    button {
+        cursor: pointer;
+    }
+}
+
+//*
+//
+//
+@mixin reset-form {
+    fieldset {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+    textarea {
+        resize: vertical;
+    }
+}
+
+//*
+// Reset default button styles, which are never used.
+//
+@mixin reset-button {
+    #{button-inputs()},
+    button {
+        background: transparent;
+        border: 0;
+        color: inherit;
+        font: inherit;
+        margin: 0;
+        outline: none;
+        padding: 0;
+        width: auto;
+        user-select: none;
+
+        // An ugly hack to fix rendering in Firefox
+        &::-moz-focus-inner {
+            padding: 0;
+            border: 0;
+        }
+    }
+}
+
+//*
+// Some paragraph margins just get in the way.
+//
+@mixin reset-paragraph {
+    p:first-of-type {
+        margin-top: 0;
+    }
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+//*
+// Make content fluid by default
+//
+@mixin reset-fluid {
+    audio,
+    canvas,
+    iframe,
+    img,
+    select,
+    svg,
+    textarea,
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+//*
+// Remove margins
+//
+@mixin reset-figure {
+    figure {
+        margin: 0;
+    }
+}
+
+//*
+// Call them all, minus exclusions!
+//
+// @param
+//
+@mixin reset (
+    $exclude: false
+){
+    @if not index($exclude, border-box) {
+        @include reset-border-box;
+    }
+    @if not index($exclude, semanticize) {
+        @include reset-semanticize;
+    }
+    @if not index($exclude, pointer) {
+        @include reset-pointer;
+    }
+    @if not index($exclude, form) {
+        @include reset-form;
+    }
+    @if not index($exclude, button) {
+        @include reset-button;
+    }
+    @if not index($exclude, paragraph) {
+        @include reset-paragraph;
+    }
+    @if not index($exclude, fluid) {
+        @include reset-fluid;
+    }
+    @if not index($exclude, figure) {
+        @include reset-figure;
+    }
+}

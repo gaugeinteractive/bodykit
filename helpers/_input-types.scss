@@ -1,35 +1,62 @@
 //*
-// Get a list of header selectors
-// Will return all header selectors by default
+// Get a list of input type selectors
+// Will return all input type selectors by default
 //
-// @param number $from [default: 1] The header index to start with
-// @param number $through [default: 6] The header index to end with
-// @return list A list of header selectors
+// @param list $exclude [default: ()] The types to exclude
+// @return list A list of input type selectors
 //
-@function input-types(
-    $exclude: ()
+@function attribute-selectors(
+    $elements,
+    $attributes,
+    $values: null
 ){
+    
+    $selectors: ();
 
+    @each $element in $elements {
+        @each $attribute in $attributes {
+            @each $value in $values {
+                $value: if(is-true($value), unquote('="#{$value}"'), '');
+                $selectors: append($selectors, unquote('#{$element}[#{$attribute}#{$value}]'), comma);
+            }
+        }
+    }
+
+    @return $selectors;
+
+}
+
+//*
+// Get a list of text-based input selectors
+// Will return all text-based input selectors by default
+//
+// @param list $exclude [default: ()] The types to exclude
+// @return list A list of text-based input selectors
+//
+@function text-inputs(
+    $exclude: null
+){
     $types: (
-            email
-            number
-            password
-            search
-            tel
-            text
-            url
-        );
+        email,
+        number,
+        password,
+        search,
+        tel,
+        text,
+        url
+    );
 
-    // Webkit & Gecko may change the display of these in the future
+    // Browser vendores may change the display of these types in the future
     $types: join($types, (
-            color
-            date
-            datetime
-            datetime-local
-            month
-            time
-            week
-        ));
+        color,
+        date,
+        datetime,
+        datetime-local,
+        month,
+        time,
+        week
+    ));
+
 
     @each $type in $exclude {
         $types: remove($types, $type);
@@ -37,11 +64,30 @@
 
     $types: purge($types);
     
-    $input-types: ();
-    @each $type in $types {
-        $input-types: append($input-types, unquote('input[type="#{$type}"]'), comma);
+    @return attribute-selectors(input, type, $types);
+}
+
+//*
+// Get a list of button-based input selectors
+// Will return all button-based input selectors by default
+//
+// @param list $exclude [default: ()] The types to exclude
+// @return list A list of button-based input selectors
+//
+@function button-inputs(
+    $exclude: null
+){
+    $types: (
+        button,
+        reset,
+        submit
+    );
+    
+    @each $type in $exclude {
+        $types: remove($types, $type);
     }
 
-    @return $input-types;
-
+    $types: purge($types);
+    
+    @return attribute-selectors(input, type, $types);
 }
