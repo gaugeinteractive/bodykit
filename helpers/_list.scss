@@ -4,8 +4,71 @@
 // @param mixed $needle The searched value
 // @param list $haystack The list
 //
-@function in-list($needle, $haystack){
+@function in-list(
+    $needle,
+    $haystack
+){
     @return not not index($haystack, $needle);
+}
+
+//*
+// Removes all false and null values from $list
+//
+@function purge(
+    $list
+){
+    $result: ();
+
+    @each $item in $list {
+        @if is-true($item) {
+            $result: append($result, $item, list-separator($list));
+        }
+    }
+
+    @return $result;
+}
+
+//*
+// Replace a value(s) in a list
+//
+// @param list $list The list to work on
+// @param mixed $old The value to be replaced
+// @param mixed $value The value to replace with
+//
+@function replace(
+    $list,
+    $old,
+    $value
+){
+      $running: true;
+
+      @while $running {
+            $index: index($list, $old);
+
+            @if not $index {
+                $running: false;
+            }
+
+            @else {
+                $list: set-nth($list, $index, $value);
+            }
+
+      }
+
+      @return if(not is-true($value), purge($list), $list);
+}
+
+//*
+// Removes value(s) from a list
+//
+// @param list $list The list to work on
+// @param mixed $old The value to be removed
+//
+@function remove(
+    $list,
+    $value
+){
+  @return replace($list, $value, null);
 }
 
 //*
@@ -15,38 +78,18 @@
 // @param number $index The index of the item to be replaced
 // @param mixed $value The value to replace with
 //
-@function replace-nth($list, $index, $value) {
-    $result: null;
-    $separator: list-separator($list);
+@function replace-nth(
+    $list,
+    $index,
+    $value
+){
+      @if type-of($index) != "number" or $index == 0 or abs($index) > length($list) {
+            @warn "Invalid index (#{$index}) for `replace-nth`.";
+            @return false;
+      }
 
-    @if type-of($index) != number {
-        @warn "$index: #{quote($index)} is not a number for `replace-nth`.";
-    }
-
-    @else if $index == 0 {
-        @warn "List index 0 must be a non-zero integer for `replace-nth`.";
-    }
-
-    @else if abs($index) > length($list) {
-        @warn "List index is #{$index} but list is only #{length($list)} item long for `replace-nth`.";
-    }
-
-    @else {
-        $result: ();
-        $index: if($index < 0, length($list) + $index + 1, $index);  
-
-        @for $i from 1 through length($list) {
-            @if $i == $index {
-                $result: append($result, $value, $separator);
-            }
-
-            @else {
-                $result: append($result, nth($list, $i), $separator);
-            }
-        }
-    }
-
-    @return $result;
+      $list: set-nth($list, $index, $value);
+      @return if(not is-true($value), purge($list), $list);
 }
 
 //*
@@ -71,8 +114,12 @@
     @return $result;
 }
 
+//
 // Alias of `remove-duplicates`
-@function unique($list) {
+//
+@function unique(
+    $list
+){
     @return remove-duplicates($list);
 }
 

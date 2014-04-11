@@ -1,0 +1,4 @@
+@import '../../essence';
+
+#{input-types()} { color: red; }
+#{input-types((email, date))} { color: red; }

@@ -1,0 +1,5 @@
+@import '../../essence';
+
+.hide-text { @include hide-text; }
+.hide-text-indent { @include hide-text(indent); }
+.hide-text-font { @include hide-text(font); }

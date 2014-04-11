@@ -1,26 +1,22 @@
+//*
+// Get a list of header selectors
+// Will return all header selectors by default
 //
-// All the headers
+// @param number $from [default: 1] The header index to start with
+// @param number $through [default: 6] The header index to end with
+// @return list A list of header selectors
 //
 @function headers(
-    $from, 
-    $to: false
+    $from: 1, 
+    $through: 6
 ) {
-    @if $from and not $to {
-        @if $from == all {
-            $from: 1;
-            $to: 6;
-        } @else {
-            $to: $from;
-            $from: 1;
-        }
-    } @else {
-        $from: if($from, $from, 1);
-        $to: if($to, $to, 6);
-    }
+
+    @if $from < 1 { $from: 1; }
+    @if $through > 6 { $through: 6; }
+
 
     $headers: ();
-
-    @for $i from $from through $to {
+    @for $i from $from through $through {
         $headers: append($headers, #{h}$i, comma);
     }
 

@@ -1,0 +1,47 @@
+//*
+// Get a list of header selectors
+// Will return all header selectors by default
+//
+// @param number $from [default: 1] The header index to start with
+// @param number $through [default: 6] The header index to end with
+// @return list A list of header selectors
+//
+@function input-types(
+    $exclude: ()
+){
+
+    $types: (
+            email
+            number
+            password
+            search
+            tel
+            text
+            url
+        );
+
+    // Webkit & Gecko may change the display of these in the future
+    $types: join($types, (
+            color
+            date
+            datetime
+            datetime-local
+            month
+            time
+            week
+        ));
+
+    @each $type in $exclude {
+        $types: remove($types, $type);
+    }
+
+    $types: purge($types);
+    
+    $input-types: ();
+    @each $type in $types {
+        $input-types: append($input-types, unquote('input[type="#{$type}"]'), comma);
+    }
+
+    @return $input-types;
+
+}

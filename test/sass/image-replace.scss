@@ -1,4 +1,0 @@
-@import '../../essence';
-
-.size-units { @include image-replace(512px 128px); }
-.size-unitless { @include image-replace(512/128); }

@@ -1,12 +1,14 @@
 @import
     'settings'
     
+  , 'helpers/bool'
   , 'helpers/list'
   , 'helpers/number'
   , 'helpers/string'
   , 'helpers/colors'
 
   , 'helpers/headers'
+  , 'helpers/input-types'
     
   , 'mixins/trbl'
 
@@ -21,6 +23,6 @@
   , 'mixins/media'
 
   , 'mixins/ad-infinitum'
-  , 'mixins/image-replace'
+  , 'mixins/hide-text'
   , 'mixins/lists'
  ;
