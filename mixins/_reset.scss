@@ -11,7 +11,7 @@
 
 
 //*
-// Make headers and <b> semantic, not presentational.
+// Make headers and <b> semantic, not presentational
 //
 @mixin reset-semanticize {
     #{headers()} {
@@ -25,7 +25,7 @@
 }
 
 //*
-// Clickable form elements should have a pointer.
+// Make clickable form elements have a pointer
 //
 @mixin reset-pointer {
     label,
@@ -37,7 +37,7 @@
 }
 
 //*
-//
+// Reset form styling and constrain `textarea` resize
 //
 @mixin reset-form {
     fieldset {
@@ -51,7 +51,7 @@
 }
 
 //*
-// Reset default button styles, which are never used.
+// Reset default button styles
 //
 @mixin reset-button {
     #{button-inputs()},
@@ -75,7 +75,7 @@
 }
 
 //*
-// Some paragraph margins just get in the way.
+// Some paragraph margins just get in the way
 //
 @mixin reset-paragraph {
     p:first-of-type {
@@ -104,11 +104,20 @@
 }
 
 //*
-// Remove margins
+// Remove margins from figures
 //
 @mixin reset-figure {
     figure {
         margin: 0;
+    }
+}
+
+//*
+// Reset `address` `font-style`
+//
+@mixin reset-address {
+    address {
+        font-style: normal;
     }
 }
 
@@ -143,5 +152,8 @@
     }
     @if not index($exclude, figure) {
         @include reset-figure;
+    }
+    @if not index($exclude, address) {
+        @include reset-address;
     }
 }
