@@ -1,0 +1,53 @@
+//*
+// Create responsive tables where table headers label each "row" of table data
+// Unless the content of each `td` is wrapped in a styling hook, a hack is needed to
+// add left padding and/or a left border to the data. Add the following to the
+// @content block:
+// ```
+//   border-right: 10px solid transparent; /* The "padding" */
+//   box-shadow: inset -1px 0 #ddd; /* The "border" */
+// ```
+// 
+//
+// @param list $labels A list of labels, equivalent to the table headers (in order)
+// @content `td:before`
+//
+@mixin responsive-table(
+  $labels
+){
+  
+    /* Tables display block */
+    &,
+    caption,
+    thead,
+    tfoot,
+    tbody,
+    th,
+    td,
+    tr { 
+        display: block; 
+    }
+
+    /* Hide table headers and footers */
+    thead,
+    tfoot { 
+        @include hide-visually;
+    }
+
+    td {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    td:before {
+        display: table-cell;
+        @content;
+    }
+  
+    /* Label Data */
+    @for $i from 1 through length($labels) {
+        td:nth-of-type(#{$i}):before { content: "#{nth($labels, $i)}" }
+    }
+
+}
