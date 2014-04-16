@@ -61,7 +61,7 @@
         color: inherit;
         font: inherit;
         margin: 0;
-        outline: none;
+        outline: 0;
         padding: 0;
         width: auto;
         user-select: none;
@@ -70,6 +70,19 @@
         &::-moz-focus-inner {
             padding: 0;
             border: 0;
+        }
+    }
+}
+
+//*
+// Reset default text fields
+//
+@mixin reset-textfield {
+    #{text-inputs()},
+    textarea {
+        border-style: solid;
+        &:focus {
+            outline: 0;
         }
     }
 }
@@ -143,6 +156,9 @@
     }
     @if not index($exclude, button) {
         @include reset-button;
+    }
+    @if not index($exclude, textfield) {
+        @include reset-textfield;
     }
     @if not index($exclude, paragraph) {
         @include reset-paragraph;

@@ -7,8 +7,9 @@
   , 'helpers/string'
   , 'helpers/colors'
 
-  , 'helpers/headers'
-  , 'helpers/input-types'
+  , 'selectors/headers'
+  , 'selectors/input-types'
+  , 'selectors/selected'
     
   , 'mixins/trbl'
 
@@ -18,11 +19,14 @@
   , 'mixins/position'
   , 'mixins/aspect-ratio'
   , 'mixins/clearfix'
-  , 'mixins/selected'
+  , 'mixins/circle'
+
+  , 'mixins/center'
 
   , 'mixins/media'
 
   , 'mixins/ad-infinitum'
+  , 'mixins/hide-visually'
   , 'mixins/hide-text'
   , 'mixins/lists'
   , 'mixins/reset'

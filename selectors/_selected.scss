@@ -5,24 +5,19 @@
 //
 // @param bool $active [default: `false`] Declare whether or not to target the
 //    `:active` state
-// @content To be applied to the selected states
 //
-@mixin selected (
+@function selected(
   $active: false
 ) {
 
+    $selectors: (
+        '&:hover',
+        '&:focus'
+    );
+
     @if $active {
-        &:hover,
-        &:focus,
-        &:active {
-            @content;
-        }
-    }
-    @else {
-        &:hover,
-        &:focus {
-            @content;
-        }
+        $selectors: append($selectors, '&:active');
     }
 
+    @return list-walk($selectors, unquote);
 }

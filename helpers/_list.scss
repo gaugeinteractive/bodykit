@@ -128,7 +128,7 @@
 //
 // @param list $list A list to run through the callback function.
 // @param string $callback Callback function to run for each element in each list.
-// @param list $args [default: null] Variable list of arguments to run through 
+// @param argList $args Variable list of arguments to run through 
 //    the callback function.
 //
 // @return A list containing all the elements of `$list` after applying the
@@ -137,13 +137,16 @@
 @function list-walk (
     $list,
     $callback,
-    $arg: null
+    $args...
 ){
-
-    $tmp: ();
-    @each $item in $list {
-        @if $arg { $tmp: append($tmp, call($callback, $item, $arg)); }
-        @else    { $tmp: append($tmp, call($callback, $item)); }
+    @if not function-exists($callback) {
+        @warn "There is no `#{$callback}` function.";
+        @return false;
     }
-    @return $tmp;
+    
+    @for $i from 1 through length($list) {
+        $list: set-nth($list, $i, call($callback, nth($list, $i), $args...));
+    }
+  
+    @return $list;
 }
