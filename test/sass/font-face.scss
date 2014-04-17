@@ -1,0 +1,4 @@
+@import '../../essence';
+
+@include font-face(Test, test/test);
+@include font-face(TestBold, test/testbold, 700);

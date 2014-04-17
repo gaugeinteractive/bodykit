@@ -1,0 +1,71 @@
+//*
+//
+//
+@function font-src (
+    $formats,
+    $file-path,
+    $font-family
+){
+
+    // Return the list of `src` values, in order, that
+    // a good `@font-face` will need, including only
+    // those formats specified in the list `$formats`.
+    $srcs: join((),(),comma);
+    @each $format in $formats {
+        
+        $format-file-path: '#{$file-path}.#{$format}';
+
+        @if $format == eot {
+            $format-file-path: '#{$format-file-path}?#iefix';
+            $format: embedded-opentype;
+        }
+        @elseif $format == ttf {
+            $format: truetype;
+        }
+        @elseif $format == svg {
+            $format-file-path: '#{$format-file-path}##{$font-family}';
+        }
+
+        $srcs: append($srcs, url('#{$format-file-path}') format('#{$format}'));
+    }
+
+    @return $srcs;
+
+}
+
+//*
+// Order of the includes matters, and it is: normal, bold, italic, bold+italic.
+// TODO: Add `unicode-range` and other properties
+//
+@mixin font-face (
+  $font-family,
+  $file-path,
+  $weight: normal,
+  $style: normal,
+  $formats: eot woff ttf svg
+){
+
+    @if index('italic' 'oblique', $weight) {
+        $style: $weight;
+        $weight: normal;
+    }
+
+    @font-face {
+        font-family: $font-family;
+        
+        @if $weight != normal {
+            font-weight: $weight;
+        }
+
+        @if $style != normal {
+            font-style: $style;
+        }
+
+        @if index($formats, eot) {
+            src: url('#{$file-path}.eot');
+        }
+
+        src: font-src($formats, $file-path, $font-family);
+    }
+
+}
