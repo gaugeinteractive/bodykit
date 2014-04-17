@@ -53,7 +53,7 @@
         transition-duration: $duration;
     }
 
-    @include selected {
+    #{selected()} {
         // $on is treated the same as $off, above.
         @if $on-is-list {
             color: nth($on, 1);
