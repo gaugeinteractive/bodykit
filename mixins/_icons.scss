@@ -1,0 +1,15 @@
+//*
+//
+//
+@mixin icons(
+    $icons,
+    $prefix: 'icon-',
+    $suffix: null
+){
+
+    @each $icon in map-keys($icons) {
+        .#{$prefix}#{$icon}#{suffix}:before {
+            content: map-get($icons, $icon);
+        }
+    }
+}
