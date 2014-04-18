@@ -38,7 +38,7 @@
     $size: n
 ) {
 
-    border-radius: 9999px;
+    border-radius: $RLN;
     display: inline-block;
     @include size($size);
 

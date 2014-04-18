@@ -74,6 +74,82 @@
 }
 
 //*
+//
+//
+@mixin list-divided (
+    $no-margin: true
+){
+    @include list-unstyled($no-margin);
+    & {
+        display: table;
+        table-layout: fixed;
+
+        & > li {
+            display: table-cell;
+            vertical-align: middle;
+            @content;
+
+            &:first-child {
+                border-left: 0;
+            }
+
+            &:last-child {
+                border-right: 0;
+            }
+        }
+    }
+}
+
+//*
+//
+//
+// @mixin list-divided (
+//   $divider: "|",
+//   $space: 0.5em,
+//   $dir: left,
+//   $height: false,
+//   $no-margin: true
+// ) {
+
+//   @include list-floated($dir: $dir, $no-margin: $no-margin);
+
+//   $pseudo: if($dir == left, 'before', 'after');
+
+//   // If an explicit height is passed,
+//   // things are different: All <li>s
+//   // need the pseudo-element (to force height),
+//   // but the first's must be hidden.
+
+//   @if $height {
+//     & > li {
+//       height: $height;
+//     }
+//     & > li:#{$pseudo} {
+//       height: $height;
+//       content: $divider;
+//       display: inline-block;
+//       vertical-align: middle;
+//       @content;
+//     }
+//     & > li:first-child:#{$pseudo} {
+//       width: 0;
+//       visibility: hidden;
+//     }
+//   }
+
+//   & > li + li:#{$pseudo} {
+//     @if not $height {
+//       content: $divider;
+//       display: inline-block;
+//       @content;
+//     }
+//     margin-left: $space;
+//     margin-right: $space;
+//   }
+
+// }
+
+//*
 // Create a numbered nested ordered list. For example:
 //   1. Thing One
 //     1.1. Point One
