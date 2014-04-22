@@ -20,7 +20,7 @@
     float: right;
     @include relative(0 0 0 -50%);
 
-    > #{$inner} {
+    & > #{$inner} {
         @include relative(0 0 0 50%);
     }        
 }

@@ -180,19 +180,20 @@
 
     list-style-type: none;
 
-    $content: counter(l0, $style);
+    $content: counter(l0, $counter-style);
+    $selector: '';
     @for $i from 0 to $depth {
 
         & #{$selector} {
-            counter-reset: l#{$i} if($i == 0, $start - 1, null);
+            counter-reset: l#{$i} if($i == 0, $counter-start - 1, null);
 
             li:before {
                 content: $content $counter-after;
-                counter-increment: level#{$i};
+                counter-increment: l#{$i};
             }
         }
 
         $selector: $selector + ' ol';
-        $content: $content $seperator counter(l#{$i+1}, $style);
+        $content: $content $counter-seperator counter(l#{$i+1}, $counter-style);
     }
 }
