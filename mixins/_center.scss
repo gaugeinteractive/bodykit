@@ -18,10 +18,10 @@
     $inner
 ){
     float: right;
-    @include relative(0 0 0 -50%);
+    @include relative(null null null -50%);
 
     & > #{$inner} {
-        @include relative(0 0 0 50%);
+        @include relative(null null null 50%);
     }        
 }
 
