@@ -36,6 +36,10 @@
     ));
     $trbl: list-walk($trbl, expand-abbr, $defs);
 
+    $t-prop: top;
+    $r-prop: right;
+    $b-prop: bottom;
+    $l-prop: left;
 
     $prefix: '';
     $suffix: '';
@@ -45,6 +49,12 @@
     @elseif str-index($property, 'border-') == 1 {
         $prefix: str-slice($property, 1, str-index($property, '-'));
         $suffix: str-slice($property, str-index($property, '-'), str-length($property));
+        @if $suffix == -radius {
+            $t-prop: top-left;
+            $r-prop: top-right;
+            $b-prop: bottom-right;
+            $l-prop: bottom-left;
+        }
     }
     
     // Initialize top, right, bottom, left
@@ -86,9 +96,9 @@
         #{$property}: $value;
     }
     @else {
-        @if $t { #{$prefix}top#{$suffix}:    $t; }
-        @if $b { #{$prefix}bottom#{$suffix}: $b; }
-        @if $l { #{$prefix}left#{$suffix}:   $l; }
-        @if $r { #{$prefix}right#{$suffix}:  $r; }
+        @if $t { #{$prefix}#{$t-prop}#{$suffix}: $t; }
+        @if $b { #{$prefix}#{$b-prop}#{$suffix}: $b; }
+        @if $l { #{$prefix}#{$l-prop}#{$suffix}: $l; }
+        @if $r { #{$prefix}#{$r-prop}#{$suffix}: $r; }
     }
 }
