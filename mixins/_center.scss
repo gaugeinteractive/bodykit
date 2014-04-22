@@ -18,10 +18,10 @@
     $inner
 ){
     float: right;
-    @include relative(null null null -50%);
+    @include relative(null -50%);
 
     & > #{$inner} {
-        @include relative(null null null 50%);
+        @include relative(null 50%);
     }        
 }
 
@@ -34,7 +34,7 @@
     $max-width: null
 ){
 
-    @include margin(n auto);
+    @include margin(null auto);
     @if $max-width != null {
         max-width: $max-width;
     }
