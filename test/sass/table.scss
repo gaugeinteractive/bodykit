@@ -1,0 +1,7 @@
+@import '../../essence';
+
+.table {
+    @include table(
+        $td: ".td, .th"
+    );
+}

@@ -81,11 +81,9 @@
 ){
     @include list-unstyled($no-margin);
     & {
-        display: table;
-        table-layout: fixed;
+        @include table($td: "& > li");
 
         & > li {
-            display: table-cell;
             vertical-align: middle;
             @content;
 

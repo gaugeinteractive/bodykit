@@ -1,0 +1,25 @@
+//*
+// Quickly create CSS table layouts
+//
+// @param string|list $td
+//
+@mixin table (
+    $td: null,
+    $tr: null,
+    $thead: null,
+    $tfoot: null,
+    $tbody: null,
+    $layout: fixed 
+) {
+    
+    display: table;
+    @if $layout != null and $layout != auto {
+        table-layout: $layout;
+    }
+
+    @if $td    != null { #{$td}    { display: table-cell } }
+    @if $tr    != null { #{$tr}    { display: table-row } }
+    @if $thead != null { #{$thead} { display: table-header-group } }
+    @if $tfoot != null { #{$tfoot} { display: table-footer-group } }
+    @if $tbody != null { #{$tbody} { display: table-row-group } }
+}
