@@ -7,3 +7,5 @@
 .left { @include border-left-radius(4px); }
 
 .opposites { @include border-radius(4px 10px); }
+
+.x-null { @include border-radius(2px n); }

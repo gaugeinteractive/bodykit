@@ -1,37 +1,28 @@
-//
+//*
 // Remove last element gutter
 //
 //
 @mixin omega(
-    $query: block,
-    $direction: default
-) {
-    $table: if(belongs-to(table, $query), true, false);
-    $auto: if(belongs-to(auto, $query), true, false);
+    $nth: block,
+){
 
-    @if $direction != default {
-        @warn "The omega mixin will no longer take a $direction argument. To change the layout direction, use row($direction) or set $default-layout-direction instead.";
-    } @else {
-        $direction: get-direction($layout-direction, $default-layout-direction);
-    }
-
-    @if length($query) == 1 {
+    @if length($nth) == 1 {
         @if $auto {
             &:last-child {
                 margin-#{$direction}: 0;
             }
         }
 
-        @else if contains-display-value($query) and $table == false {
+        @else if contains-display-value($nth) and $table == false {
             margin-#{$direction}: 0;
         }
 
         @else {
-            @include nth-child($query, $direction);
+            @include nth-child($nth, $direction);
         }
     }
 
-    @else if length($query) == 2 {
+    @else if length($nth) == 2 {
         @if $auto {
             &:last-child {
                 margin-#{$direction}: 0;
@@ -39,7 +30,7 @@
         }
 
         @else {
-            @include nth-child(nth($query, 1), $direction);
+            @include nth-child(nth($nth, 1), $direction);
         }
     }
 
@@ -48,16 +39,44 @@
     }
 }
 
-@mixin nth-child($query, $direction) {
+@mixin nth-child(
+    $nth,
+    $direction
+){
     $opposite-direction: get-opposite-direction($direction);
 
-    &:nth-child(#{$query}) {
+    &:nth-child(#{$nth}) {
         margin-#{$direction}: 0;
     }
 
-    @if type-of($query) == number {
-        &:nth-child(#{$query}+1) {
-          clear: $opposite-direction;
+    @if type-of($nth) == number {
+        &:nth-child(#{$nth}+1) {
+            clear: $opposite-direction;
         }
+    }
+}
+
+.grid {
+  @include make-grid($columns: 3, $column-element: '.column');
+}
+
+$columns: 3;
+
+.grid {
+    @include clearfix;
+}
+
+.column {
+    width: percentage(1/$columns);
+    float: left;
+
+    $nth: #{$columns}n;
+
+    &:last-child,
+    &:nth-child(#{$nth}) {
+        margin-right: 0;
+    }
+    &:nth-child(#{$nth}+1) {
+        clear: left;
     }
 }

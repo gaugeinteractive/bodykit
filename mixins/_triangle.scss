@@ -10,18 +10,10 @@
     @if not(in-list($side, ("top", "right", "bottom", "left"))){
         @warn '_sideOppositeTo(): $side only accepts "top", "right", "bottom", or "left".';
     }
-    @if $side == "top" {
-        @return "bottom";
-    }
-    @if $side == "right" {
-        @return "left";
-    }
-    @if $side == "bottom" {
-        @return "top";
-    }
-    @if $side == "left" {
-        @return "right";
-    }
+    @if $side == "top" { @return "bottom"; }
+    @if $side == "bottom" { @return "top"; }
+    @if $side == "right" { @return "left"; }
+    @if $side == "left" { @return "right"; }
     @return null;
 }
 

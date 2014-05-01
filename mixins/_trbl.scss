@@ -36,10 +36,19 @@
     ));
     $trbl: list-walk($trbl, expand-abbr, $defs);
 
+    // Target sides
     $t-prop: top;
     $r-prop: right;
     $b-prop: bottom;
     $l-prop: left;
+
+    // Target corners
+    @if in-list($property, ('border-radius')) {
+        $t-prop: top-left;
+        $r-prop: top-right;
+        $b-prop: bottom-right;
+        $l-prop: bottom-left;
+    }
 
     $prefix: '';
     $suffix: '';
@@ -49,12 +58,6 @@
     @elseif str-index($property, 'border-') == 1 {
         $prefix: str-slice($property, 1, str-index($property, '-'));
         $suffix: str-slice($property, str-index($property, '-'), str-length($property));
-        @if $suffix == -radius {
-            $t-prop: top-left;
-            $r-prop: top-right;
-            $b-prop: bottom-right;
-            $l-prop: bottom-left;
-        }
     }
     
     // Initialize top, right, bottom, left
