@@ -1,86 +1,57 @@
-// //*
-// // Remove last element gutter
-// //
-// //
-// @mixin omega(
-//     $nth: block,
-// ){
-
-//     @if length($nth) == 1 {
-//         @if $auto {
-//             &:last-child {
-//                 margin-#{$direction}: 0;
-//             }
-//         }
-
-//         @else if contains-display-value($nth) and $table == false {
-//             margin-#{$direction}: 0;
-//         }
-
-//         @else {
-//             @include nth-child($nth, $direction);
-//         }
-//     }
-
-//     @else if length($nth) == 2 {
-//         @if $auto {
-//             &:last-child {
-//                 margin-#{$direction}: 0;
-//             }
-//         }
-
-//         @else {
-//             @include nth-child(nth($nth, 1), $direction);
-//         }
-//     }
-
-//     @else {
-//         @warn "Too many arguments passed to the omega() mixin.";
-//     }
-// }
-
-// @mixin nth-child(
-//     $nth,
-//     $direction
-// ){
-//     $opposite-direction: get-opposite-direction($direction);
-
-//     &:nth-child(#{$nth}) {
-//         margin-#{$direction}: 0;
-//     }
-
-//     @if type-of($nth) == number {
-//         &:nth-child(#{$nth}+1) {
-//             clear: $opposite-direction;
-//         }
-//     }
-// }
-
-
-
-@mixin make-grid (
-    $columns,
-    $column-element
+//*
+// Remove last element gutter
+//
+//
+@mixin omega(
+    $nth: block,
 ){
-    //@include clearfix;
 
-    #{$column-element} {
-        width: percentage(1/$columns);
-        float: left;
-
-        $nth: #{$columns}n;
-
-        &:last-child,
-        &:nth-child(#{$nth}) {
-            margin-right: 0;
+    @if length($nth) == 1 {
+        @if $auto {
+            &:last-child {
+                margin-#{$direction}: 0;
+            }
         }
-        &:nth-child(#{$nth}+1) {
-            clear: left;
+
+        @else if contains-display-value($nth) and $table == false {
+            margin-#{$direction}: 0;
+        }
+
+        @else {
+            @include nth-child($nth, $direction);
         }
     }
 
+    @else if length($nth) == 2 {
+        @if $auto {
+            &:last-child {
+                margin-#{$direction}: 0;
+            }
+        }
+
+        @else {
+            @include nth-child(nth($nth, 1), $direction);
+        }
+    }
+
+    @else {
+        @warn "Too many arguments passed to the omega() mixin.";
+    }
 }
 
-.grid {
-    @include make-grid($columns: 3, $column-element: '.column');
+@mixin nth-child(
+    $nth,
+    $direction
+){
+    $opposite-direction: get-opposite-direction($direction);
+
+    &:nth-child(#{$nth}) {
+        margin-#{$direction}: 0;
+    }
+
+    @if type-of($nth) == number {
+        &:nth-child(#{$nth}+1) {
+            clear: $opposite-direction;
+        }
+    }
 }

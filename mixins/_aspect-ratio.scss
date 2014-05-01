@@ -9,32 +9,38 @@
 //    Photos and videos usually come in 4/3 or 16/9 ratios.
 // @param string $element [Default: `:after`] The element to use to create
 //    the aspect ratio.
-// @param bool $stretch [Defualt: `true`] Then true, direct descendants will be
+// @param bool $stretch [Default: `true`] If `true`, direct descendants will be
 //    stretched over the container
-// @content `> *` Intended to be used set the absolute position of direct
-//    descendants
+// @param bool $overwrite [Default: `false`] If `true`, only the bottom padding
+//    of the element will be printed. Used to overwrite an existing aspect ratio
+//    in responsive layouts 
 //
 @mixin aspect-ratio (
     $ratio,
     $element: ":after",
-    $stretch: true
+    $stretch: true,
+    $overwrite: false
 ){
-    position: relative;
-    overflow: hidden;
+    @if not $overwrite {
+        position: relative;
+        overflow: hidden;
 
-    &#{$element} {
-        content: '';
-        display: block;
-        height: 0;
-        padding-bottom: percentage(1 / $ratio);
-    }
-
-    & > * {
-        @if $stretch {
-            @include absolute(0);
+        &#{$element} {
+            content: '';
+            display: block;
+            height: 0;
+            padding-bottom: percentage(1 / $ratio);
         }
-        @else {
-            @content;
+
+        & > * {
+            @if $stretch {
+                @include absolute(0);
+            }
+        }
+    }
+    @else {
+        &#{$element} {
+            padding-bottom: percentage(1 / $ratio);
         }
     }
 }
