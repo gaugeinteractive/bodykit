@@ -18,10 +18,10 @@
     $inner
 ){
     float: right;
-    @include relative(0 0 0 -50%);
+    @include relative(null -50%);
 
-    > #{$inner} {
-        @include relative(0 0 0 50%);
+    & > #{$inner} {
+        @include relative(null 50%);
     }        
 }
 
@@ -34,7 +34,7 @@
     $max-width: null
 ){
 
-    @include margin(n auto);
+    @include margin(null auto);
     @if $max-width != null {
         max-width: $max-width;
     }
@@ -61,12 +61,12 @@
         $translate: translate(-50%, -50%);
     }
     @else if $axis == x {
-        $coords: 50% n n;
+        $coords: n n n 50%;
         $margin: n auto;
         $translate: translateX(-50%);
     }
     @else if $axis == y {
-        $coords: n n n 50%;
+        $coords: 50% n n n;
         $margin: auto n;
         $translate: translateY(-50%);
     }

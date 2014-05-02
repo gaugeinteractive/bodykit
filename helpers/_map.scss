@@ -1,0 +1,9 @@
+//*
+//
+//
+@function map-search($map, $value) {
+    $values: map-values($map);
+    $keys: map-keys($map);
+    $index: index(map-values($map), $value);
+    @return if($index, nth($keys, $index), false);
+}

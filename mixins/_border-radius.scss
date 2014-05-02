@@ -1,20 +1,48 @@
-// Single side border-radius
-@mixin border-top-radius($radius) {
-  border-top-right-radius: $radius;
-  border-top-left-radius: $radius;
+//*
+// Set border radius or radii
+// Passing `null` will prevent a rule from a being applied to the corresponding corner(s)
+//
+// @param number|list $radius The radius/radii to be set
+//
+@mixin border-radius(
+    $radius
+){
+    @include _trbl($radius, border-radius);
 }
 
-@mixin border-right-radius($radius) {
-  border-bottom-right-radius: $radius;
-  border-top-right-radius: $radius;
+//*
+//
+//
+@mixin border-top-radius(
+    $radius
+){
+    @include border-radius($radius $radius null null);
+
 }
 
-@mixin border-bottom-radius($radius) {
-  border-bottom-right-radius: $radius;
-  border-bottom-left-radius: $radius;
+//*
+//
+//
+@mixin border-right-radius(
+    $radius
+){
+    @include border-radius(null $radius $radius null);
 }
 
-@mixin border-left-radius($radius) {
-  border-bottom-left-radius: $radius;
-  border-top-left-radius: $radius;
+//*
+//
+//
+@mixin border-bottom-radius(
+    $radius
+){
+    @include border-radius(null null $radius $radius);
+}
+
+//*
+//
+//
+@mixin border-left-radius(
+    $radius
+){
+    @include border-radius($radius null null $radius);
 }

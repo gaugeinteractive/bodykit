@@ -1,0 +1,11 @@
+@import '../../essence';
+
+.all { @include border-radius(4px); }
+.top { @include border-top-radius(4px); }
+.right { @include border-right-radius(4px); }
+.bottom { @include border-bottom-radius(4px); }
+.left { @include border-left-radius(4px); }
+
+.opposites { @include border-radius(4px 10px); }
+
+.x-null { @include border-radius(2px n); }

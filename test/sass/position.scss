@@ -1,3 +1,8 @@
 @import '../../essence';
 
+.relative-1 { @include relative(5px); }
+.relative-2 { @include relative(5px 10px); }
+.relative-Xn { @include relative(5px n); }
+.relative-nX { @include relative(n 5px); }
+
 .absolute-number-null { @include absolute(5px n); }

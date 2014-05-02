@@ -9,6 +9,7 @@
 
   , 'selectors/headers'
   , 'selectors/input-types'
+  , 'selectors/media-elements'
   , 'selectors/selected'
     
   , 'mixins/trbl'
@@ -16,10 +17,13 @@
   , 'mixins/size'
   , 'mixins/box-model'
   , 'mixins/border'
+  , 'mixins/border-radius'
   , 'mixins/position'
+  , 'mixins/table'
   , 'mixins/aspect-ratio'
   , 'mixins/clearfix'
   , 'mixins/circle'
+  , 'mixins/triangle'
   , 'mixins/center'
 
   , 'mixins/font-face'
@@ -33,4 +37,5 @@
   , 'mixins/reset'
   , 'mixins/icons'
   , 'mixins/triangle'
-  ;
+  
+  , 'grid/grid-float';

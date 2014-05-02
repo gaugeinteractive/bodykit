@@ -1,0 +1,16 @@
+//*
+//
+//
+@function opposite-of($var) {
+    $opposites: (
+        top   : bottom,
+        right : left
+    );
+
+    $opposite: map-get($opposites, $var);
+    @if $opposite == null {
+        $opposite: map-search($opposites, $var);
+    }
+
+    @return $opposite;
+}

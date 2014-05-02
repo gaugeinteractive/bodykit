@@ -25,6 +25,16 @@
 }
 
 //*
+// Remove the gap between images, videos, audio and canvas and the bottom of
+// their containers: h5bp.com/i/440
+//
+@mixin reset-vertical-alignment {
+    #{media-elements()} {
+        vertical-align: middle;
+    }
+}
+
+//*
 // Make clickable form elements have a pointer
 //
 @mixin reset-pointer {
@@ -147,6 +157,9 @@
     }
     @if not index($exclude, semanticize) {
         @include reset-semanticize;
+    }
+    @if not index($exclude, vertical-alignment) {
+        @include reset-vertical-alignment;
     }
     @if not index($exclude, pointer) {
         @include reset-pointer;

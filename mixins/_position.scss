@@ -20,7 +20,7 @@
 // @param number|list $coords
 //
 @mixin absolute (
-    $coords: n
+    $coords: null
 ){
     @include coords($coords, absolute);
 }
@@ -31,20 +31,38 @@
 // @param number|list $coords
 //
 @mixin fixed (
-    $coords: n
+    $coords: null
 ){
     @include coords($coords, fixed);
 }
 
 //*
 // Relatively position an element and assign its coordinates
-// @link http://www.w3.org/TR/CSS21/visuren.html#relative-positioning 
+// The coordinates for a relatively positioned element should only contain one
+// non-auto value on each axis to prevent over-constraining the position, which
+// may produce unexpected results.
+// Passing a single value will define both `top` and `left` values.`
+// Passing two values will define the `top` and `left` values respectively.
+// Passing more than two values will rely on the default coordinate system.
 //
-// @param number|list $coords
+// @link http://www.w3.org/TR/CSS21/visuren.html#relative-positioning
+//
+// @param number|list $coords A list (top, left) or a number whiche defines
+//   both values
 //
 @mixin relative (
-    $coords: n
+    $coords: null
 ){
+    $len: length($coords);
+    
+    @if $len == 1 {
+        $coords: $coords $coords;
+    }
+
+    @if $len <= 2 {
+        $coords: nth($coords, 1) null null nth($coords, 2);
+    }
+
     @include coords($coords, relative);
 }
 

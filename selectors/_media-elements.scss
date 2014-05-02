@@ -1,0 +1,27 @@
+//*
+// Get a list of media elements
+// Will return all media element selectors by default
+//
+// @return list A list of media element selectors
+//
+@function media-elements(
+    $exclude: null
+) {
+
+    $elements: (
+        audio,
+        canvas,
+        img,
+        svg,
+        video
+    );
+
+    @each $element in $exclude {
+        $elements: remove($elements, $element);
+    }
+
+    $elements: purge($elements);
+
+    @return $elements;
+
+}
