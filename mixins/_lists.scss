@@ -180,6 +180,7 @@
 
     $content: counter(l0, $counter-style);
     $selector: '';
+    
     @for $i from 0 to $depth {
 
         & #{$selector} {
