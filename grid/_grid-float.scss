@@ -27,7 +27,13 @@
             margin-right: 0;
         }
     }
+
+    // Hide rounding errors in "the middle"
+    &:nth-child(#{$nth}) {
+        float: right;
+    }
     
+    // Ensure each row is aligned properly
     &:nth-child(#{$nth}+1) {
         clear: left;
     }
