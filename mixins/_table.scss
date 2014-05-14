@@ -9,10 +9,11 @@
     $thead: null,
     $tfoot: null,
     $tbody: null,
-    $layout: fixed 
+    $layout: auto 
 ) {
     
-    display: table;
+    // display: table;
+    // width: 100%;
     @if $layout != null and $layout != auto {
         table-layout: $layout;
     }

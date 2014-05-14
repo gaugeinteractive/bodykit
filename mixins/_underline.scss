@@ -1,0 +1,12 @@
+
+@mixin underline(
+  $size,
+  $color : currentColor,
+  $baseline: 0.12em
+){
+  text-decoration: none;
+  background-image: linear-gradient(if($color!=currentColor, $color, ($color, $color)));
+  background-size: 1px $size;
+  background-repeat: repeat-x;
+  background-position: bottom $baseline left;
+}

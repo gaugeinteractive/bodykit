@@ -145,7 +145,8 @@
 // @param string $inner A CSS selector for the inner element. Wrap your selector in quotes.
 //
 @mixin center-inline-block (
-    $inner: ".inner"
+    $inner: ".inner",
+    $space: -0.25em
 ){
 
     // The inner element is vertically centered
@@ -160,7 +161,7 @@
         // A small negative right margin is set
         // to account for the default
         // word-spacing of inline-block.
-        margin-right: -0.25em;
+        margin-right: $space;
     }
 
     > #{$inner} {

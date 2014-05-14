@@ -1,0 +1,31 @@
+
+@mixin faux-border(
+    $values...
+) {
+
+    $len: length($values);
+    $last-value: nth($values, $len);
+    $print: true;
+
+    @if type-of($last-value) == bool and not $last-value {
+        $print: false;
+    }
+
+    @each $swc in $values {
+        $color: null;
+        $width: null;
+        $setting: null;
+        @each $value in $swc {
+            @if type-of($value) == color {
+                $color: $value;
+            }
+            @elseif type-of($value) == number {
+                $width: $value;
+            }
+            @elseif $value == inset {
+                $setting: $value;
+            }
+        }
+        $box-shadow: append($box-shadow, ($setting 0 0 0 $width $color)) !global;
+    }
+} 
