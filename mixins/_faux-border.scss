@@ -1,20 +1,32 @@
-
+//*
+// Draw a faux border, using `box-shadow`, that does not affect the deminsions of
+// the element
+//
+// @param mixed $values A list of faux borders to draw. Each faux border may include
+//  up to three values: a width, a color, and an optional setting. The setting determines
+//  where the faux border will be drawn in relationship to the elements box model.
+//  If the setting is `inset`, it will be drawn inside the `border-box`, otherwise
+//  it will be drawn outside the `border-box`. Color defaults to `currentColor`, if not set.
+//
 @mixin faux-border(
     $values...
 ) {
 
-    $len: length($values);
-    $last-value: nth($values, $len);
-    $print: true;
+    // $len: length($values);
+    // $last-value: nth($values, $len);
+    // $print: true;
 
-    @if type-of($last-value) == bool and not $last-value {
-        $print: false;
-    }
+    // @if type-of($last-value) == bool and not $last-value {
+    //     $print: false;
+    // }
 
+    $box-shadow: join((),(),comma);
+    
     @each $swc in $values {
         $color: null;
         $width: null;
         $setting: null;
+
         @each $value in $swc {
             @if type-of($value) == color {
                 $color: $value;
@@ -26,6 +38,15 @@
                 $setting: $value;
             }
         }
-        $box-shadow: append($box-shadow, ($setting 0 0 0 $width $color)) !global;
+
+        @if $setting != inset {
+            $setting: null;
+        }
+
+        @if $width > 0 {
+            $box-shadow: append($box-shadow, ($setting 0 0 0 $width $color));
+        }
     }
+
+    box-shadow: $box-shadow;
 } 

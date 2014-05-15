@@ -1,0 +1,57 @@
+$em-base: 16 !default;
+$rem-base: 16 !default;
+
+//*
+// Convert pixels to `em`s
+//
+// @param number|list The pixel value(s) to be converted to `em`s
+// @return number|list The `em` value(s)
+//
+@function em (
+    $pixels,
+    $base: $em-base
+) {
+
+    // $base could be in em or px (no unit = px).
+    // Adjust accordingly to create a $divisor that
+    // serves as context for $pixels.
+    $multiplier: if(unit($base) == em, 16, 1);
+    $divisor: strip-unit($base) * $multiplier;
+
+    $em-vals: ();
+    @each $val in $pixels {
+        @if unit($val) != px {
+            @warn "rem(): Using nonpixel units may product unexpected results";
+        }
+
+        $val-in-ems: strip-unit($val) / $divisor * 1em;
+        $em-vals: append($em-vals, $val-in-ems);
+    }
+
+    @return single-out($em-vals); 
+
+}
+
+//*
+// Convert pixels to `rem`s
+//
+// @param number|list The pixel value(s) to be converted to `rem`s
+// @return number|list The `rem` value(s)
+//
+@function rem (
+    $pixels
+) {
+
+    $rem-vals: ();
+    @each $val in $pixels {
+        @if unit($val) != px {
+            @warn "rem(): Using nonpixel units may product unexpected results";
+        }
+        
+        $val-in-rems: strip-unit($val) / $rem-base * 1rem;
+        $rem-vals: append($rem-vals, $val-in-rems);
+    }
+
+    @return single-out($rem-vals);
+
+}

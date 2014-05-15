@@ -1,12 +1,19 @@
-
+//*
+// Draw a customizable underline
+//
+// @param number $height The height of the underline
+// @param color $color The color of the underline
+// @param number $location [default: 0.12em] The location on the vertical axis
+//  where the line should be drawn (offset from the bottom)
+//
 @mixin underline(
-  $size,
+  $height,
   $color : currentColor,
-  $baseline: 0.12em
+  $location: 0.12em
 ){
   text-decoration: none;
   background-image: linear-gradient(if($color!=currentColor, $color, ($color, $color)));
-  background-size: 1px $size;
+  background-size: 1px $height;
   background-repeat: repeat-x;
-  background-position: bottom $baseline left;
+  background-position: bottom $location left;
 }

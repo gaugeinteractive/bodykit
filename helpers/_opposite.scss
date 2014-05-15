@@ -1,11 +1,21 @@
 //*
+// Return the opposite of a value, or `null` if an opposite is not found
 //
+// @param mixed $var The value to find the opposite of
+// @param map $opposites A map holding the association of values and their opposites
+// @return The opposite value
 //
-@function opposite-of($var) {
-    $opposites: (
-        top   : bottom,
-        right : left
-    );
+@function opposite-of(
+    $var,
+    $opposites: null
+) {
+
+    @if $opposites == null {
+        $opposites: (
+            top   : bottom,
+            right : left
+        );
+    }
 
     $opposite: map-get($opposites, $var);
     @if $opposite == null {

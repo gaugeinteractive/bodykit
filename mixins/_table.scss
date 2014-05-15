@@ -12,9 +12,9 @@
     $layout: auto 
 ) {
     
-    // display: table;
-    // width: 100%;
-    @if $layout != null and $layout != auto {
+    display: table;
+    @if   $layout != null
+      and $layout != auto {
         table-layout: $layout;
     }
 

@@ -23,8 +23,8 @@
         white-space: nowrap;
     }
     @elseif $method == font {
-        line-height: 0;
-        font-size: 0;
+        font: 0/0 a;
+        text-shadow: none;
         color: transparent;
     }
 }

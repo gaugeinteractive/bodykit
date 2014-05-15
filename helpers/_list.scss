@@ -150,3 +150,14 @@
   
     @return $list;
 }
+
+//*
+// Return a single value if the list is only one element long, otherwise return the list
+//
+// @param list $list The list check for a single value
+// @return list|mixed The first (only) value, if the list only contains one element,
+//  otherwise the list
+//
+@function single-out($list){
+  @return if(length($list) == 1, nth($list, 1), $list);
+}

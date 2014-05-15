@@ -1,0 +1,8 @@
+@import '../../essence';
+
+.em-16px { font-size: em(16px); }
+.em-16px.base-12px { font-size: em(16px, 12px); }
+.em-10px.base-2em { font-size: em(10px, 2em); }
+
+.rem-16px { font-size: rem(16px); }
+.rem-12px { font-size: rem(12px); }

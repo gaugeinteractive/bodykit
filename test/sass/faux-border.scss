@@ -1,0 +1,5 @@
+@import '../../essence';
+
+.faux-inset-1px { @include faux-border(inset 1px); }
+.faux-1em { @include faux-border(1em #000); }
+.faux-multiple { @include faux-border(1em #000, 2em red); }
