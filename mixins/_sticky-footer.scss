@@ -28,9 +28,9 @@
     #{$footer} {
         display: table-row;
         // The hight of a table row will automatically expand to accomodate
-        // it's content. A height of `0` ensures the row will take up no more
+        // it's content. A height of `1px` ensures the row will take up no more
         // space than necessary
-        height: 0;
+        height: 1px;
     }
 
 }
