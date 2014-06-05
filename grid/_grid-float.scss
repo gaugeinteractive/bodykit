@@ -35,7 +35,7 @@
     
     // Ensure each row is aligned properly
     &:nth-child(#{$nth}+1) {
-        clear: left;
+        clear: right;
     }
 
 }
