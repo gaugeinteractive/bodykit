@@ -164,7 +164,7 @@
         margin-right: $space;
     }
 
-    > #{$inner} {
+    & > #{$inner} {
         display: inline-block;
         vertical-align: middle;
     }

@@ -1,0 +1,36 @@
+//*
+// Create a fluid sticky footer
+//
+// @param selector $wrapper [default: `"body"`] The wrapper in which the footer is contained
+// @param selector $footer [default: `"footer"`] The footer element
+// @link http://pixelsvsbytes.com/blog/2011/09/sticky-css-footers-the-flexible-way/
+//
+@mixin sticky-footer (
+  $wrapper: "body",
+  $footer: "footer"
+) {
+
+    // The `html` and `body` elements must be 100% height to allow the container
+    // to fill the full vertical width of the viewport
+    html,
+    body {
+        height: 100%;
+    }
+
+    #{$wrapper} {
+        display: table;
+        // A width and height of 100% ensures the wrapper covers all available space
+        // NOTE: Table height is treated as a minimum height
+        // @link http://www.w3.org/TR/CSS21/tables.html#height-layout
+        @include size(100%);
+    }
+
+    #{$footer} {
+        display: table-row;
+        // The hight of a table row will automatically expand to accomodate
+        // it's content. A height of `1px` ensures the row will take up no more
+        // space than necessary
+        height: 1px;
+    }
+
+}

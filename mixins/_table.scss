@@ -1,7 +1,12 @@
 //*
 // Quickly create CSS table layouts
 //
-// @param string|list $td
+// @param string|list $td Selector(s) of table cells
+// @param string|list $tr Selector(s) of table rows
+// @param string|list $thead Selector(s) of table header groups
+// @param string|list $tfoot Selector(s) of table footer groups
+// @param string|list $tbody Selector(s) of table row groups
+// @param string|list $layout 
 //
 @mixin table (
     $td: null,
@@ -9,7 +14,7 @@
     $thead: null,
     $tfoot: null,
     $tbody: null,
-    $layout: auto 
+    $layout: auto
 ) {
     
     display: table;

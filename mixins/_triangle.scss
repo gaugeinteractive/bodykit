@@ -47,17 +47,20 @@
 
     $base:   0;
     $height: 0;
+
+    // Parse width and height from `$size`
+    // Equilateral triangle is created by multiplying base by sqrt(3)/2 (0.866025404)
     @if type-of($size) == 'list' {
         @if length($size) >= 2 {
             $base:   nth($size, 1);
             $height: nth($size, 2);
         } @else {
             $base:   nth($size, 1);
-            $height: $base;
+            $height: $base * 0.866025404;
         }
     } @else {
         $base:   $size;
-        $height: $base;
+        $height: $base * 0.866025404;
     }
 
     display: inline-block;
