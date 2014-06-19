@@ -1,0 +1,20 @@
+//*
+// Make an element fill its positioning parent
+//
+// @param bool $use-size Rather than setting each coordinate to `0`, use `100%`
+//   width and height
+//
+@mixin fill (
+  $use-size: false
+) {
+
+  $coords: 0;
+
+  @if $size {
+    $coords: 0 n n 0;
+    @include size(100%);
+  }
+
+  @include absolute($coords)
+
+}
