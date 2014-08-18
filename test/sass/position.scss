@@ -1,4 +1,4 @@
-@import '../../essence';
+@import '../../bodykit';
 
 .relative-1 { @include relative(5px); }
 .relative-2 { @include relative(5px 10px); }
