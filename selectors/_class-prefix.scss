@@ -1,0 +1,9 @@
+//*
+// Generate class prefix selector
+//
+// @param string $prefix The class prefix
+//
+@function class-prefix($prefix){
+    //unquote('&[class^="#{$prefix}"], &[class*=" #{$prefix}"]');
+    @return unquote('[class^="#{$prefix}"], [class*=" #{$prefix}"]');
+}
