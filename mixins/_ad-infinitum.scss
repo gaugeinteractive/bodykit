@@ -52,6 +52,12 @@
         $direction: join($direction, top bottom);
     }
     
+    // TODO: Consider that some accounts of degraded perfomance
+    // have been noted when elements with extremely large boxes are drawn.
+    // It may be better to use viewport units, vw/vh depending upon 
+    // which sides are being set, or possibly, vmin if all sides are
+    // set. 50vw should always be sufficent to cover width
+
     // Set variables
     @if in-list(top,    $direction) { $t: $RLN; }
     @if in-list(right,  $direction) { $r: $RLN; }
