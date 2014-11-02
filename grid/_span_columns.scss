@@ -1,19 +1,25 @@
+///
+///
+///
 @function flex-grid($columns, $container-columns: $fg-max-columns) {
     $width: $columns + ($columns - 1) * $fg-gutter;
     $container-width: $container-columns * $fg-column + ($container-columns - 1) * $fg-gutter;
     @return percentage($width / $container-width);
 }
 
+///
+///
+///
 @function flex-gutter($container-columns: $fg-max-columns, $gutter: $fg-gutter) {
     $container-width: $container-columns * $fg-column + ($container-columns - 1) * $fg-gutter;
     @return percentage($gutter / $container-width);
 }
 
 
-//*
-//
-//
-//
+///
+///
+///
+///
 @mixin span-columns(
     $span: $columns of $container-columns,
     $display: block

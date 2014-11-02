@@ -1,6 +1,9 @@
-//*
-// Returns truthiness of a value
-//
+///
+/// Returns truthiness of a value
+///
+/// @param {mixed} $value - The value to check the truthiness of 
+/// @return {bool} - The boonlean equivalent of the value 
+///
 @function is-true(
     $value
 ){

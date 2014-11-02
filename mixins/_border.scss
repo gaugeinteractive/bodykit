@@ -1,12 +1,12 @@
-//*
-// Parse and order width, color, and style values
-// NOTE: Sets default style to `solid`, if necessary.
-//
-// @param list $wcs The width, color, and style (in any order)
-// @param list $defaults [default: `null`] A list of default width, color,
-//    and style values to inherit
-// @return list The width, color, style
-//
+///
+/// Parse and order width, color, and style values
+/// NOTE: Sets default style to `solid`, if necessary.
+///
+/// @param {list} $wcs - The width, color, and style (in any order)
+/// @param {list} $defaults (null) - A list of default width, color,
+///    and style values to inherit
+/// @return {list} - The width, color, style
+///
 @function _parse-wcs (
     $wcs,
     $defaults: null
@@ -56,12 +56,12 @@
     @return $w $c $s;
 }
 
-//*
-// Set `border`(s)
-// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
-//
-// @param list $borders The `borders`(s) to be set
-//
+///
+/// Set `border`(s)
+/// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
+///
+/// @param {list} $borders - The `borders`(s) to be set
+///
 @mixin border (
     $borders...
 ) {
@@ -158,36 +158,36 @@
 
 }
 
-//*
-// Set `border-color`(s)
-// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
-//
-// @param number|list $color The `border-color`(s) to be set
-//
+///
+/// Set `border-color`(s)
+/// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
+///
+/// @param {number|list} $color - The `border-color`(s) to be set
+///
 @mixin border-color (
     $color
 ){
     @include _trbl($color, border-color);
 }
 
-//*
-// Set `border-style`(s)
-// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
-//
-// @param number|list $style The `border-style`(s) to be set
-//
+///
+/// Set `border-style`(s)
+/// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
+///
+/// @param {number|list} $style - The `border-style`(s) to be set
+///
 @mixin border-style (
     $style
 ){
     @include _trbl($style, border-style);
 }
 
-//*
-// Set `border-width`(s)
-// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
-//
-// @param number|list $width The `border-width`(s) to be set
-//
+///
+/// Set `border-width`(s)
+/// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
+///
+/// @param {number|list} $width - The `border-width`(s) to be set
+///
 @mixin border-width (
     $width
 ){

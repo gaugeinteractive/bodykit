@@ -1,9 +1,9 @@
-//*
-// Get a list of media elements
-// Will return all media element selectors by default
-//
-// @return list A list of media element selectors
-//
+///
+/// Get a list of media elements
+/// Will return all media element selectors by default
+///
+/// @return {list} - A list of media element selectors
+///
 @function media-elements(
     $exclude: null
 ) {

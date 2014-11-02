@@ -1,19 +1,23 @@
-//*
-//
-//
+///
+/// Reset colors for faster, cleaner printing
+///
+/// @link http://www.sanbeiji.com/archives/953 Black prints faster
+///
 @mixin print-reset-color {
     * {
         background: transparent !important;
+        color: #000 !important;
         box-shadow: none !important;
-        /* Black prints faster: h5bp.com */
-        color: hsl(0, 0, 0) !important;
         text-shadow: none !important;
     }
 }
 
-//*
-//
-//
+///
+/// Print destinations for links
+///
+/// Underlines links, print's link URLs (excluding fragment identifiers and
+/// links using the `javascript:` pseudo protocol)
+///
 @mixin print-links {
 
     /* Underline links */
@@ -27,17 +31,20 @@
         content: " (" attr(href) ")";
     }
 
-    /* Do not print URIs for images, or javascript/internal links */
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
         content: "";
     }
 
 }
 
-//*
-//
-//
+///
+/// Print titles for abbreviations
+///
 @mixin print-abbrs {
     
     /* Show abbr titles */
@@ -47,9 +54,9 @@
 
 }
 
-//*
-//
-//
+///
+/// Minimize akward page breaks
+///
 @mixin print-breaks {
 
     pre,
@@ -75,9 +82,12 @@
 
 }
 
-//*
-//
-//
+///
+/// Attempt to ensure that table headers are displayed on every page,
+/// if a table span more the one page 
+///
+/// @link http://css-discuss.incutio.com/wiki/Printing_Tables
+///
 @mixin print-tables {
 
     thead {
@@ -86,9 +96,9 @@
 
 }
 
-//*
-//
-//
+///
+/// Contain images
+///
 @mixin print-media {
 
     img {
@@ -97,9 +107,11 @@
 
 }
 
-//*
-//
-//
+///
+/// Wrapper mixin for all print resets
+///
+/// @param {list} $exclude (false) - The resets to exclude
+///
 @mixin print-reset (
     $exclude: false
 ){

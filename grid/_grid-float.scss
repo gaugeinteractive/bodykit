@@ -1,6 +1,6 @@
-//*
-//
-//
+///
+///
+///
 @mixin grid-float (
     $columns,
     $gutter: 0
@@ -39,92 +39,3 @@
     }
 
 }
-
-////////////////////////////////////////////////////////////////////////////////
-
-
-// $gutter: 0;
-
-// //*
-// //
-// //
-// @mixin set-gutter(
-//   $gutter
-// ) {
-//   $gutter: $gutter !global;
-// }
-
-// //*
-// // Contain floated grid
-// // Grids with fixed width gutter should specify a gutter width
-// // Grids with fluid (percentage based) gutters need not
-// //  specify gutter width
-// //
-// //
-// //
-// @mixin grid-container(
-//     $gutter-width: $gutter
-// ){
-  
-//     @include clearfix;
-
-//     @if unit($gutter-width) != '%' and $gutter-width != 0 {
-//         margin-right: -1 * $gutter-width;
-//     }
-// }
-
-// //*
-// //
-// //
-// //
-// //
-// @mixin grid-column(
-//     $columns,
-//     $total-columns,
-//     $gutter-width: $gutter
-// ){
-  
-//     float: left;
-
-//     @if unit($gutter-width) == '%' {
-//         //width: (100% - $gutter-width * ($columns - 1))/$columns;
-//         $one-column-width: (100% - $gutter * ($total-columns - 1))/$total-columns;
-  
-//         $width: ($one-column-width * $columns) + ($gutter * ($columns - 1));
-//         width: $width;
-//         margin-right: $gutter-width;
-//     }
-//     @else {
-//         width: 100% * $columns / $total-columns;
-//         padding-right: $gutter-width;
-//         // Make background-cip optional?
-//         background-clip: content-box;
-//         // Check for global border-box?
-//         box-sizing: border-box;
-//     }
-
-//     &:last-child {
-//         // Last child might NOT be right most child
-//         // Do not float it right
-//         //float: right;
-//         margin-right: 0;
-//     }
-// }
-
-//*
-// Clears the last column in a row
-//
-//
-// @mixin omega(
-//     $nth: null
-// ){
-//     //:last-child?
-//     &:nth-child(#{$nth}){
-//         // Hide rounding errors in the "middle" (optional?)
-//         float: right;
-//         margin-right: 0;   
-//     }
-
-//     //&:nth-child(#{$nth}+1){
-//     // clear: both;
-// }

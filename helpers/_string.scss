@@ -1,9 +1,9 @@
 //*
 // Expand an abbreviation
 //
-// @param string $abbr The abbreviation to be expanded
-// @param list $defs A dictionary of definitions to search for the expansion
-// @return string The expanded abbreviation, or the original string, if the string
+// @param {string} $abbr - The abbreviation to be expanded
+// @param {list} $defs (()) - A dictionary of definitions to search for the expansion
+// @return {string} - The expanded abbreviation, or the original string, if the string
 //   could not be expanded
 //
 @function expand-abbr(

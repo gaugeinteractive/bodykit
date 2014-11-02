@@ -1,9 +1,9 @@
-//*
-// Checks if a value exists in a list
-//
-// @param mixed $needle The searched value
-// @param list $haystack The list
-//
+///
+/// Checks if a value exists in a list
+///
+/// @param {mixed} $needle - The searched value
+/// @param {list} $haystack - The list
+///
 @function in-list(
     $needle,
     $haystack
@@ -11,9 +11,9 @@
     @return not not index($haystack, $needle);
 }
 
-//*
-// Removes all false and null values from $list
-//
+///
+/// Removes all false and null values from $list
+///
 @function purge(
     $list
 ){
@@ -28,13 +28,13 @@
     @return $result;
 }
 
-//*
-// Replace a value(s) in a list
-//
-// @param list $list The list to work on
-// @param mixed $old The value to be replaced
-// @param mixed $value The value to replace with
-//
+///
+/// Replace a value(s) in a list
+///
+/// @param {list} $list - The list to work on
+/// @param {mixed} $old - The value to be replaced
+/// @param {mixed} $value - The value to replace with
+///
 @function replace(
     $list,
     $old,
@@ -58,12 +58,12 @@
       @return if(not is-true($value), purge($list), $list);
 }
 
-//*
-// Removes value(s) from a list
-//
-// @param list $list The list to work on
-// @param mixed $old The value to be removed
-//
+///
+/// Removes value(s) from a list
+///
+/// @param {list} $list - The list to work on
+/// @param {mixed} $old - The value to be removed
+///
 @function remove(
     $list,
     $value
@@ -71,13 +71,13 @@
   @return replace($list, $value, null);
 }
 
-//*
-// Replace value at index
-//
-// @param list $list The list to work on
-// @param number $index The index of the item to be replaced
-// @param mixed $value The value to replace with
-//
+///
+/// Replace value at index
+///
+/// @param {list} $list - The list to work on
+/// @param {number} $index - The index of the item to be replaced
+/// @param {mixed} $value - The value to replace with
+///
 @function replace-nth(
     $list,
     $index,
@@ -92,14 +92,14 @@
       @return if(not is-true($value), purge($list), $list);
 }
 
-//*
-// Removes duplicate values from $list
-//
-// @param list $list The list to work on.
-// @param bool $recursive If `true`, recursively search list
-//
-// @return list
-//
+///
+/// Removes duplicate values from $list
+///
+/// @param {list} $list - The list to work on.
+/// @param {bool} $recursive - If `true`, recursively search list
+///
+/// @return {list} - The list with elements remove
+///
 @function remove-duplicates(
     $list
 ){
@@ -114,26 +114,26 @@
     @return $result;
 }
 
-//
-// Alias of `remove-duplicates`
-//
+///
+/// Alias of `remove-duplicates`
+///
 @function unique(
     $list
 ){
     @return remove-duplicates($list);
 }
 
-//*
-// Applies the callback to the elements of the given list
-//
-// @param list $list A list to run through the callback function.
-// @param string $callback Callback function to run for each element in each list.
-// @param argList $args Variable list of arguments to run through 
-//    the callback function.
-//
-// @return A list containing all the elements of `$list` after applying the
-//    callback function to each one. 
-//
+///
+/// Applies the callback to the elements of the given list
+///
+/// @param {list} $list - A list to run through the callback function.
+/// @param {string} $callback - Callback function to run for each element in each list.
+/// @param {argList} $args - Variable list of arguments to run through 
+///    the callback function.
+///
+/// @return {list} - A list containing all the elements of `$list` after applying the
+///    callback function to each one. 
+///
 @function list-walk (
     $list,
     $callback,
@@ -151,13 +151,13 @@
     @return $list;
 }
 
-//*
-// Return a single value if the list is only one element long, otherwise return the list
-//
-// @param list $list The list check for a single value
-// @return list|mixed The first (only) value, if the list only contains one element,
-//  otherwise the list
-//
+///
+/// Return a single value if the list is only one element long, otherwise return the list
+///
+/// @param {list} $list - The list check for a single value
+/// @return {list|mixed} - The first (only) value, if the list only contains one element,
+///  otherwise the list
+///
 @function single-out($list){
   @return if(length($list) == 1, nth($list, 1), $list);
 }

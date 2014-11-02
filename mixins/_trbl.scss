@@ -1,19 +1,19 @@
-//*
-// Prints top, right, bottom, left values for a given property.
-//
-// As with other CSS properties, if there is only one component value, it applies
-// to all sides. If there are two values, the top and bottom paddings are set to
-// the first value and the right and left paddings are set to the second. If there
-// are three values, the top is set to the first value, the left and right are set
-// to the second, and the bottom is set to the third. If there are four values,
-// they apply to the top, right, bottom, and left, respectively.
-//
-// NOTE: Passing `null` for a value will disable rule creation for the 
-// corresponding side(s)
-//
-// @param list $trbl A list of TRBL (top, right, bottom, left) values.
-// @param string $property [default: `''`]The property.
-//
+///
+/// Prints top, right, bottom, left values for a given property.
+///
+/// As with other CSS properties, if there is only one component value, it applies
+/// to all sides. If there are two values, the top and bottom paddings are set to
+/// the first value and the right and left paddings are set to the second. If there
+/// are three values, the top is set to the first value, the left and right are set
+/// to the second, and the bottom is set to the third. If there are four values,
+/// they apply to the top, right, bottom, and left, respectively.
+///
+/// NOTE: Passing `null` for a value will disable rule creation for the 
+/// corresponding side(s)
+///
+/// @param {list} $trbl - A list of TRBL (top, right, bottom, left) values.
+/// @param {string} $property ('') - The property.
+///
 @mixin _trbl (
     $trbl,
     $property: ''

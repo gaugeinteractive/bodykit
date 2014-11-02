@@ -1,12 +1,19 @@
-//*
-//
-//
+///
+/// Create icons
+///
+/// @param {map} $icons - A map of icons identifiers where the map keys are the
+/// name of the icon/basename of the generated class name and the value is the
+/// content of the icon
+/// @param {string} $prefix ('icon-') - The icon prefix. If a divider is desired,
+/// it should be included at the end of the string. 
+/// @param {string} $suffix (null) - The icon suffix. If a divider is desired,
+/// it should be included at the beginning of the string.
+///
 @mixin icons(
     $icons,
     $prefix: 'icon-',
     $suffix: null
 ){
-
     @each $icon in map-keys($icons) {
         .#{$prefix}#{$icon}#{$suffix}:before {
             content: map-get($icons, $icon);

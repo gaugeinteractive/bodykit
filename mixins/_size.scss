@@ -1,12 +1,12 @@
-//*
-// Sets an elements `width` and `height`
-// 
-// @param number $size A single value will make a square; a list of two 
-//   (width then height) will make a rectangle.
-//
+///
+/// Sets an elements `width` and `height`
+/// 
+/// @param {number} $size - A single value will make a square; a list of two 
+///   (width then height) will make a rectangle.
+///
 @mixin size (
     $size
-) {
+){
 
     @if length($size) == 1 and $size != n {
         width:  $size;

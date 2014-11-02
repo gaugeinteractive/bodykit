@@ -1,10 +1,10 @@
-//*
-// Get a list of input type selectors
-// Will return all input type selectors by default
-//
-// @param list $exclude [default: ()] The types to exclude
-// @return list A list of input type selectors
-//
+///
+/// Get a list of input type selectors
+/// Will return all input type selectors by default
+///
+/// @param {list} $exclude (()) - The types to exclude
+/// @return {list} - A list of input type selectors
+///
 @function attribute-selectors(
     $elements,
     $attributes,
@@ -26,13 +26,13 @@
 
 }
 
-//*
-// Get a list of text-based input selectors
-// Will return all text-based input selectors by default
-//
-// @param list $exclude [default: ()] The types to exclude
-// @return list A list of text-based input selectors
-//
+///
+/// Get a list of text-based input selectors
+/// Will return all text-based input selectors by default
+///
+/// @param {list} $exclude (()) - The types to exclude
+/// @return {list} - A list of text-based input selectors
+///
 @function text-inputs(
     $exclude: null
 ){
@@ -67,13 +67,13 @@
     @return attribute-selectors(input, type, $types);
 }
 
-//*
-// Get a list of button-based input selectors
-// Will return all button-based input selectors by default
-//
-// @param list $exclude [default: ()] The types to exclude
-// @return list A list of button-based input selectors
-//
+///
+/// Get a list of button-based input selectors
+/// Will return all button-based input selectors by default
+///
+/// @param {list} $exclude (()) - The types to exclude
+/// @return {list} - A list of button-based input selectors
+///
 @function button-inputs(
     $exclude: null
 ){

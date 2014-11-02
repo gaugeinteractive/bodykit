@@ -1,11 +1,12 @@
-//*
-// Apply rules to `:hover` and `:focus` (and, optionally, `:active`) states.
-// More friendly for touchscreens, keyboard navigators, etc.; account for the
-// various means of targeting elements.
-//
-// @param bool $active [default: `false`] Declare whether or not to target the
-//    `:active` state
-//
+///
+/// Apply rules to `:hover` and `:focus` (and, optionally, `:active`) states.
+/// More friendly for touchscreens, keyboard navigators, etc.; account for the
+/// various means of targeting elements.
+///
+/// @param {bool} $active (false) - Declare whether or not to target the
+///    `:active` state
+/// @return {list} - A list of "selected" psuedo classes
+///
 @function selected(
   $active: false
 ) {

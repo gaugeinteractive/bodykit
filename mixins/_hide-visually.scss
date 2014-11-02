@@ -1,12 +1,12 @@
-//*
-// Hide only visually, but have it available for screenreaders
-//
-// @param bool $focusable [optional] Allow the element to be focusable
-//   when navigated to via the keyboard. Default is false.
-//
-// @link h5bp.com/v
-// @link h5bp.com/p
-//
+///
+/// Hide only visually, but have it available for screenreaders
+///
+/// @param {bool} $focusable (false) - Allow the element to be focusable
+///   when navigated to via the keyboard. Default is false.
+///
+/// @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+/// @link https://www.drupal.org/node/897638
+///
 @mixin hide-visually (
     $focusable: false
 ){
@@ -32,18 +32,18 @@
     }
 }
 
-//*
-// Hide visually and from screenreaders, but maintain layout
-//
+///
+/// Hide visually and from screenreaders, but maintain layout
+///
 @mixin invisible {
     visibility: hidden;
 }
 
-//*
-// Hide from both screenreaders and browsers
-//
-// @link h5bp.com/u
-//
+///
+/// Hide from both screenreaders and browsers
+///
+/// @link http://juicystudio.com/article/screen-readers-display-none.php
+///
 @mixin hidden {
     display: none !important;
     visibility: hidden;

@@ -1,11 +1,11 @@
-//*
-// Get a list of header selectors
-// Will return all header selectors by default
-//
-// @param number $from [default: 1] The header index to start with
-// @param number $through [default: 6] The header index to end with
-// @return list A list of header selectors
-//
+///
+/// Get a list of header selectors
+/// Will return all header selectors by default
+///
+/// @param {number} $from (1) - The header index to start with
+/// @param {number} $through (6) - The header index to end with
+/// @return {list} - A list of header selectors
+///
 @function headers(
     $from: 1, 
     $through: 6

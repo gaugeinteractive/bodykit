@@ -1,11 +1,11 @@
-//*
-// Draw a customizable underline
-//
-// @param number $height The height of the underline
-// @param color $color The color of the underline
-// @param number $location [default: 0.12em] The location on the vertical axis
-//  where the line should be drawn (offset from the bottom)
-//
+///
+/// Draw a customizable underline
+///
+/// @param {number} $height - The height of the underline
+/// @param {color} $color - The color of the underline
+/// @param {number} $location (0.12em) - The location on the vertical axis
+///  where the line should be drawn (offset from the bottom)
+///
 @mixin underline(
   $height,
   $color : currentColor,

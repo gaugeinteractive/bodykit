@@ -1,20 +1,21 @@
-//*
-// Give an element a fixed aspect ratio.
-// NOTE: Direct descendans will overflow the container and, thus, be hidden.
-// It is recomended the there only be one direct descendant which is "stretched" 
-// over the container, allowing grandchildren to be positioned as normal. This
-// is the default behavior.
-//
-// @param number $ratio The ratio of width to height.
-//    Photos and videos usually come in 4/3 or 16/9 ratios.
-// @param string $element [Default: `:after`] The element to use to create
-//    the aspect ratio.
-// @param bool $stretch [Default: `true`] If `true`, direct descendants will be
-//    stretched over the container
-// @param bool $overwrite [Default: `false`] If `true`, only the bottom padding
-//    of the element will be printed. Used to overwrite an existing aspect ratio
-//    in responsive layouts 
-//
+///
+/// Give an element a fixed aspect ratio.
+///
+/// NOTE: Direct descendans will overflow the container and, thus, be hidden.
+/// It is recomended the there only be one direct descendant which is "stretched" 
+/// over the container, allowing grandchildren to be positioned as normal. This
+/// is the default behavior.
+///
+/// @param {number} $ratio - The ratio of width to height.
+///    Photos and videos usually come in 4/3 or 16/9 ratios.
+/// @param {string} $element (:after) - The element to use to create
+///    the aspect ratio.
+/// @param {bool} $stretch (true) - If `true`, direct descendants will be
+///    stretched over the container
+/// @param {bool} $overwrite (false) - If `true`, only the bottom padding
+///    of the element will be printed. Used to overwrite an existing aspect ratio
+///    in responsive layouts 
+///
 @mixin aspect-ratio (
     $ratio,
     $element: ":after",

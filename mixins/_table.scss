@@ -1,13 +1,13 @@
-//*
-// Quickly create CSS table layouts
-//
-// @param string|list $td Selector(s) of table cells
-// @param string|list $tr Selector(s) of table rows
-// @param string|list $thead Selector(s) of table header groups
-// @param string|list $tfoot Selector(s) of table footer groups
-// @param string|list $tbody Selector(s) of table row groups
-// @param string|list $layout 
-//
+///
+/// Quickly create CSS table layouts
+///
+/// @param {string|list} $td (null) - Selector(s) of table cells
+/// @param {string|list} $tr (null) - Selector(s) of table rows
+/// @param {string|list} $thead (null) - Selector(s) of table header groups
+/// @param {string|list} $tfoot (null) - Selector(s) of table footer groups
+/// @param {string|list} $tbody (null) - Selector(s) of table row groups
+/// @param {string|list} $layout (auto) - The value of the table's layout property
+///
 @mixin table (
     $td: null,
     $tr: null,

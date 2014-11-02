@@ -1,12 +1,13 @@
 $em-base: 16 !default;
 $rem-base: 16 !default;
 
-//*
-// Convert pixels to `em`s
-//
-// @param number|list The pixel value(s) to be converted to `em`s
-// @return number|list The `em` value(s)
-//
+///
+/// Convert pixels to `em`s
+///
+/// @param {number|list} $pixels - The pixel value(s) to be converted to `em`s
+/// @param {number} $base ($em-base) - The base value
+/// @return {number|list} The `em` value(s)
+///
 @function em (
     $pixels,
     $base: $em-base
@@ -32,12 +33,12 @@ $rem-base: 16 !default;
 
 }
 
-//*
-// Convert pixels to `rem`s
-//
-// @param number|list The pixel value(s) to be converted to `rem`s
-// @return number|list The `rem` value(s)
-//
+///
+/// Convert pixels to `rem`s
+///
+/// @param {number|list} $pixels - The pixel value(s) to be converted to `rem`s
+/// @return {number|list} - The `rem` value(s)
+///
 @function rem (
     $pixels
 ) {

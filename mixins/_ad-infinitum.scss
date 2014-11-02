@@ -1,23 +1,25 @@
-//*
-// Create a visual row that spans the full width of the viewport, while
-// maintaining relative content width
-// NOTE: This mixin will overflow the parent container in the given direction.
-// To prevent overflow scrolling, and other issues, a containing element must have 
-// `overflow-*: hidden;` set on the matching axis. In some cases, this may be done
-// gloabally via the `html, body` elements, although that is generally not recomended;
-// it is better to use a wrapper.
-// ```
-// .wrapper {
-//    overflow-x: hidden;
-// }
-// ```
-//
-// @param string $push [default: padding] The method to be used to push the content
-// @param string $pull [default: margin] The method to be used to pull the content
-// @param string $direction [default: horizontal] The direction in which to span ad inifinitum
-// @param bool $content-box [default: true] Set `box-sizing: content-box` when
-//   set to `true`, only applicable when using `$pull: position`.
-//
+///
+/// Create a visual row that spans the full width of the viewport, while
+/// maintaining relative content width
+///
+/// NOTE: This mixin will overflow the parent container in the given direction.
+/// To prevent overflow scrolling, and other issues, a containing element must have 
+/// `overflow-*: hidden;` set on the matching axis. In some cases, this may be done
+/// gloabally via the `html, body` elements, although that is generally not recomended;
+/// it is better to use a wrapper.
+/// ```
+/// .wrapper {
+///    overflow-x: hidden;
+/// }
+/// ```
+///
+/// @param {string} $push (padding) - The method to be used to push the content
+/// @param {string} $pull (margin) - The method to be used to pull the content
+/// @param {string} $direction (horizontal) - The direction in which to span ad
+///   inifinitum
+/// @param {bool} $content-box (true) - Set `box-sizing: content-box` when
+///   set to `true`, only applicable when using `$pull: position`.
+///
 @mixin ad-infinitum (
     $push: padding,
     $pull: margin,
@@ -52,7 +54,7 @@
         $direction: join($direction, top bottom);
     }
     
-    // TODO: Consider that some accounts of degraded perfomance
+    // @todo Consider that some accounts of degraded perfomance
     // have been noted when elements with extremely large boxes are drawn.
     // It may be better to use viewport units, vw/vh depending upon 
     // which sides are being set, or possibly, vmin if all sides are
@@ -119,10 +121,10 @@
 
 }
 
-//*
-// Create a visual row that spans the full width of the viewport, while
-// maintaining relative content width using pseduo elements
-//
+///
+/// Create a visual row that spans the full width of the viewport, while
+/// maintaining relative content width using pseduo elements
+///
 @mixin ad-infinitum-pseudo (
 ){
 

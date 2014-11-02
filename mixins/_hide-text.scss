@@ -1,9 +1,9 @@
-//*
-// Hide text using one of a number of methods
-//
-// @param string $method [default: pseudo] The method to use to hhide the text.
-//   Possible values include `pseudo`, `indent`, and `font`.
-//
+///
+/// Hide text using one of a number of methods
+///
+/// @param {string} $method (pseudo) - The method to use to hhide the text.
+/// Possible values include `pseudo`, `indent`, and `font`.
+///
 @mixin hide-text (
     $method: pseudo
 ){

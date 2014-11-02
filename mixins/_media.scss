@@ -2,16 +2,15 @@
 $media-to-method: calc;
 $media-value: 0;
 
-//*
-//
-//
-//
-// The keyword `from` is an alias for the default media feature
-// The keywords `to` and `through` are aliased to the opposite
-// of the default media feature
-// The keyword `to` is one less than the passed value, while depending upon wether it is greater
-// than or less than the preceding
-//
+///
+/// The keyword `from` is an alias for the default media feature
+/// The keywords `to` and `through` are aliased to the opposite
+/// of the default media feature
+/// The keyword `to` is one less than the passed value, while depending upon wether it is greater
+/// than or less than the preceding
+///
+/// @param {list} $query - The media query
+///
 @mixin media(
     $query
 ){
@@ -99,10 +98,12 @@ $media-value: 0;
 }
 
 
-//*
-//
-//
-//
+///
+/// Media query for high resoultion displays
+///
+/// @param {number} $ratio (1.3) - The device pixel ratio for which the media query
+/// should target
+///
 @mixin hd(
     $ratio: 1.3
 ){

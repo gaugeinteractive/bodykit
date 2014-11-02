@@ -1,14 +1,14 @@
-//*
-// Adjust HSL(a) values
-// This is a shorthand version of the `adjust-color` function
-//
-// @param color $color The color to adjust
-// @param number $h [optional] The amount with which to adjust the hue
-// @param number $s [optional] The amount with which to adjust the saturation
-// @param number $l [optional] The amount with which to adjust the lightness
-// @param number $a [optional] The amount with which to adjust the alpha value
-// @return color The adjusted color
-//
+///
+/// Adjust HSL(a) values
+/// This is a shorthand version of the `adjust-color` function
+///
+/// @param {color} $color - The color to adjust
+/// @param {number} $h (0) - The amount with which to adjust the hue
+/// @param {number} $s (0) - The amount with which to adjust the saturation
+/// @param {number} $l (0) - The amount with which to adjust the lightness
+/// @param {number} $a (0) - The amount with which to adjust the alpha value
+/// @return {color} - The adjusted color
+///
 @function adjust-hsl (
     $color,
     $h: 0,
@@ -27,24 +27,24 @@
 
 }
 
-//*
-// Add percentage of white to a color
-//
-// @param color $color The color to tint
-// @param number $percent The amount at which to tint the color
-// @return color The tinted color
-//
+///
+/// Add percentage of white to a color
+///
+/// @param {color} $color - The color to tint
+/// @param {number} $percent - The amount at which to tint the color
+/// @return {color} - The tinted color
+///
 @function tint($color, $percent){
     @return mix(white, $color, $percent);
 }
 
-//*
-// Add percentage of black to a color
-//
-// @param color $color The color to shade
-// @param number $percent The amount at which to shade the color
-// @return color The shaded color
-//
+///
+/// Add percentage of black to a color
+///
+/// @param {color} $color - The color to shade
+/// @param {number} $percent - The amount at which to shade the color
+/// @return {color} - The shaded color
+///
 @function shade($color, $percent){
     @return mix(black, $color, $percent);
 }

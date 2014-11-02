@@ -1,55 +1,57 @@
-//*
-// Set coordinate system offsets
-//
-// @param number|list $coords
-// @param string $position The position
-//
+///
+/// Set coordinate system offsets
+///
+/// @param {number|list} $coords - The coordinates, in top, right, bottom, left
+/// format. Parsed as other box model shorthand properties.
+/// @param {string} $position - The position
+///
 @mixin coords (
     $coords,
     $position: ''
 ){
-    @if in-list($position, (absolute, fixed, relative)) {
+    @if in-list($position, (absolute, fixed, relative, sticky)) {
         position: $position;
     }
     @include _trbl($coords);
 }
 
-//*
-// Absolutely position an element and assign its coordinates
-//
-// @param number|list $coords
-//
+///
+/// Absolutely position an element and assign its coordinates
+///
+/// @param {number|list} $coords - The coordinates, in top, right, bottom, left
+/// format. Parsed as other box model shorthand properties.
+///
 @mixin absolute (
     $coords: null
 ){
     @include coords($coords, absolute);
 }
 
-//*
-// Fixed position an element and assign its coordinates
-//
-// @param number|list $coords
-//
+///
+/// Fixed position an element and assign its coordinates
+///
+/// @param number|list $coords
+///
 @mixin fixed (
     $coords: null
 ){
     @include coords($coords, fixed);
 }
 
-//*
-// Relatively position an element and assign its coordinates
-// The coordinates for a relatively positioned element should only contain one
-// non-auto value on each axis to prevent over-constraining the position, which
-// may produce unexpected results.
-// Passing a single value will define both `top` and `left` values.`
-// Passing two values will define the `top` and `left` values respectively.
-// Passing more than two values will rely on the default coordinate system.
-//
-// @link http://www.w3.org/TR/CSS21/visuren.html#relative-positioning
-//
-// @param number|list $coords A list (top, left) or a number whiche defines
-//   both values
-//
+///
+/// Relatively position an element and assign its coordinates
+/// The coordinates for a relatively positioned element should only contain one
+/// non-auto value on each axis to prevent over-constraining the position, which
+/// may produce unexpected results.
+/// Passing a single value will define both `top` and `left` values.`
+/// Passing two values will define the `top` and `left` values respectively.
+/// Passing more than two values will rely on the default coordinate system.
+///
+/// @link http://www.w3.org/TR/CSS21/visuren.html#relative-positioning
+///
+/// @param {number|list} $coords - A list (top, left) or a number which defines
+///   both values
+///
 @mixin relative (
     $coords: null
 ){
@@ -66,11 +68,12 @@
     @include coords($coords, relative);
 }
 
-//*
-// Stretch an element over its positioning parent
-//
-// @param number|list $coords
-//
+///
+/// Stretch an element over its positioning parent
+///
+/// @param {number|list} $coords - The coordinates, in top, right, bottom, left
+/// format. Parsed as other box model shorthand properties.
+///
 @mixin stretch (
     $coords: 0
 ){

@@ -1,19 +1,19 @@
-//*
-// Center elements in container horizontally. Useful for centering floated elements.
-// NOTE: This must be applied to a wrapper of the floated elements' parent.
-//   For example:
-//   ```
-//   <div class="center"> <!-- Apply mixin to `.center` -->
-//     <ul>               <!-- This is `$inner` argument (e.g. `ul`) -->
-//       <li>One</li>     <!-- These elements are floated -->
-//       <li>Two</li>     <!-- These elements are floated -->
-//       <li>Three</li>   <!-- These elements are floated -->
-//     </ul>
-//    </div>
-//    ```
-//
-// @param string $inner The selector
-//
+///
+/// Center elements in container horizontally. Useful for centering floated elements.
+/// NOTE: This must be applied to a wrapper of the floated elements' parent.
+///   For example:
+///   ```
+///   <div class="center"> <!-- Apply mixin to `.center` -->
+///     <ul>               <!-- This is `$inner` argument (e.g. `ul`) -->
+///       <li>One</li>     <!-- These elements are floated -->
+///       <li>Two</li>     <!-- These elements are floated -->
+///       <li>Three</li>   <!-- These elements are floated -->
+///     </ul>
+///    </div>
+///    ```
+///
+/// @param {string} $inner - The selector
+///
 @mixin center-float (
     $inner
 ){
@@ -25,11 +25,11 @@
     }        
 }
 
-//*
-// Center an element using with `auto` margins.
-//
-// $max-width number [Default: null] A `max-width` value of the to-be-centered block.
-//
+///
+/// Center an element using with `auto` margins.
+///
+/// @param {number} $max-width (null) - A `max-width` value of the to-be-centered block.
+///
 @mixin center-block (
     $max-width: null
 ){
@@ -41,14 +41,14 @@
 
 }
 
-//*
-// Center an element without fixed dimensions, vertically, horizontally, or both ways.
-// NOTE: This method uses `position: absolute`, so the element will be centered 
-//   inside its positioning parent.
-//
-// @param string $axis [Default: both] Omit, or pass 'both' to center on both axes.
-//    Set to 'x' or 'y' to center on one axis only.
-//
+///
+/// Center an element without fixed dimensions, vertically, horizontally, or both ways.
+/// NOTE: This method uses `position: absolute`, so the element will be centered 
+///   inside its positioning parent.
+///
+/// @param {string} $axis (both) - Omit, or pass 'both' to center on both axes.
+///    Set to 'x' or 'y' to center on one axis only.
+///
 @mixin center-transform (
   $axis: both // or x or y
 ){
@@ -76,15 +76,15 @@
     transform: $translate;
 }
 
-//*
-// Center an absolutely positioned element: horizontally, vertically, or both ways.
-// NOTE: This method only works if the element-to-be-centered has a fixed
-//   dimension on the relevant axis
-//
-// @param list $dimensions A two-value list: the `width` and `height` of the
-//   element-to-be-centered (both optional). To bypass either and avoid
-//   centering in that dimension, pass n.
-//
+///
+/// Center an absolutely positioned element: horizontally, vertically, or both ways.
+/// NOTE: This method only works if the element-to-be-centered has a fixed
+///   dimension on the relevant axis
+///
+/// @param {list} $dimensions - A two-value list: the `width` and `height` of the
+///   element-to-be-centered (both optional). To bypass either and avoid
+///   centering in that dimension, pass n.
+///
 @mixin center-absolute (
     $dimensions
 ){
@@ -114,15 +114,15 @@
 }
 
 
-//*
-// Vertically center the content of an inner element with the `table` method.
-// NOTE: This method requires a container and an inner element. The mixin applies
-//   to the container; the to-be-centered inner element is passed (by its selector)
-//   as an argument.
-//   Any to-be-centered element should be a direct descendant of the container.
-//
-// @param string $inner A CSS selector for the inner element. Wrap your selector in quotes.
-//
+///
+/// Vertically center the content of an inner element with the `table` method.
+/// NOTE: This method requires a container and an inner element. The mixin applies
+///   to the container; the to-be-centered inner element is passed (by its selector)
+///   as an argument.
+///   Any to-be-centered element should be a direct descendant of the container.
+///
+/// @param {string} $inner - A CSS selector for the inner element. Wrap the selector in quotes.
+///
 @mixin center-table (
     $inner: ".inner"
 ) {
@@ -135,15 +135,15 @@
     }
 }
 
-//*
-// Vertically center an inner element with the `inline-block` method.
-// NOTE: This method requires a container and an inner element. The mixin applies
-//   to the container; the to-be-centered inner element is passed (by its selector)
-//   as an argument.
-//   Any to-be-centered element should be a direct descendant of the container.
-//
-// @param string $inner A CSS selector for the inner element. Wrap your selector in quotes.
-//
+///
+/// Vertically center an inner element with the `inline-block` method.
+/// NOTE: This method requires a container and an inner element. The mixin applies
+///   to the container; the to-be-centered inner element is passed (by its selector)
+///   as an argument.
+///   Any to-be-centered element should be a direct descendant of the container.
+///
+/// @param {string} $inner - A CSS selector for the inner element. Wrap the selector in quotes.
+///
 @mixin center-inline-block (
     $inner: ".inner",
     $space: -0.25em
