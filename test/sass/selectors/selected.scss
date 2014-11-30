@@ -1,5 +1,5 @@
 @import '../../../bodykit';
 
 a {
-    #{selected(active)} { color:red }
+    #{selected(active)} { /* Selected */ }
 }

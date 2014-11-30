@@ -64,7 +64,3 @@ border-style: solid dashed;
 .width-style-color--width-style-color--style-color--width-color {
     @include border(2px dashed red, 5px double blue, inset green, 10px yellow);
 }
-
-.style {
-    @include border(red);
-}

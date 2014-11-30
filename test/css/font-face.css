@@ -1,0 +1,9 @@
+@font-face {
+  font-family: Test;
+  src: url("test/test.eot");
+  src: url("test/test.eot?#iefix") format("embedded-opentype"), url("test/test.woff") format("woff"), url("test/test.ttf") format("truetype"), url("test/test.svg#Test") format("svg"); }
+@font-face {
+  font-family: TestBold;
+  font-weight: 700;
+  src: url("test/testbold.eot");
+  src: url("test/testbold.eot?#iefix") format("embedded-opentype"), url("test/testbold.woff") format("woff"), url("test/testbold.ttf") format("truetype"), url("test/testbold.svg#TestBold") format("svg"); }

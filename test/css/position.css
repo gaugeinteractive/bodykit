@@ -1,3 +1,21 @@
+.relative-1 {
+  position: relative;
+  top: 5px;
+  left: 5px; }
+
+.relative-2 {
+  position: relative;
+  top: 5px;
+  left: 10px; }
+
+.relative-Xn {
+  position: relative;
+  top: 5px; }
+
+.relative-nX {
+  position: relative;
+  left: 5px; }
+
 .absolute-number-null {
   position: absolute;
   top: 5px;

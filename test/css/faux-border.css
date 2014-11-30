@@ -1,0 +1,8 @@
+.faux-inset-1px {
+  box-shadow: inset 0 0 0 1px; }
+
+.faux-1em {
+  box-shadow: 0 0 0 1em #000; }
+
+.faux-multiple {
+  box-shadow: 0 0 0 1em #000, 0 0 0 2em red; }

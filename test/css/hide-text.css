@@ -1,0 +1,17 @@
+.hide-text {
+  overflow: hidden; }
+  .hide-text:before {
+    content: '';
+    display: block;
+    width: 0 150%;
+    height: 0 150%; }
+
+.hide-text-indent {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap; }
+
+.hide-text-font {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent; }

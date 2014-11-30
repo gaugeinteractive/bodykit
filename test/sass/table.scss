@@ -1,7 +1,0 @@
-@import '../../bodykit';
-
-.table {
-    @include table(
-        $td: ".td, .th"
-    );
-}

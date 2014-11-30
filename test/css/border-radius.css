@@ -1,0 +1,25 @@
+.all {
+  border-radius: 4px; }
+
+.top {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px; }
+
+.right {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px; }
+
+.bottom {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px; }
+
+.left {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px; }
+
+.opposites {
+  border-radius: 4px 10px; }
+
+.x-null {
+  border-top-left-radius: 2px;
+  border-bottom-right-radius: 2px; }
