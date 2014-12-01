@@ -128,11 +128,11 @@
 ///
 /// @param {list} $list - A list to run through the callback function.
 /// @param {string} $callback - Callback function to run for each element in each list.
-/// @param {argList} $args - Variable list of arguments to run through 
+/// @param {argList} $args - Variable list of arguments to run through
 ///    the callback function.
 ///
 /// @return {list} - A list containing all the elements of `$list` after applying the
-///    callback function to each one. 
+///    callback function to each one.
 ///
 @function list-walk (
     $list,
@@ -143,11 +143,11 @@
         @warn "There is no `#{$callback}` function.";
         @return false;
     }
-    
+
     @for $i from 1 through length($list) {
         $list: set-nth($list, $i, call($callback, nth($list, $i), $args...));
     }
-  
+
     @return $list;
 }
 
@@ -160,4 +160,31 @@
 ///
 @function single-out($list){
   @return if(length($list) == 1, nth($list, 1), $list);
+}
+
+///
+/// Tests whether a list is empty.
+///
+/// @param {List} $list - The list to run the test against
+///
+/// @example
+/// is-empty(())
+/// // true
+///
+/// @example
+/// is-empty(a)
+/// // false
+///
+/// @return {Bool}
+///
+@function is-empty($list) {
+    @return length($list) == 0;
+}
+
+///
+/// @requires is-empty
+/// @alias is-empty
+///
+@function empty($list) {
+    @return is-empty($list);
 }

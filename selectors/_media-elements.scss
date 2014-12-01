@@ -5,7 +5,7 @@
 /// @return {list} - A list of media element selectors
 ///
 @function media-elements(
-    $exclude: null
+    $exclude...
 ) {
 
     $elements: (
@@ -20,8 +20,6 @@
         $elements: remove($elements, $element);
     }
 
-    $elements: purge($elements);
-
-    @return $elements;
+    @return purge($elements);
 
 }

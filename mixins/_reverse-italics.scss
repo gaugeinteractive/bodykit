@@ -6,12 +6,12 @@
 /// not be italicized
 ///
 @mixin reverse-italics (
-    $selectors: null
+    $selectors...
 ){
 
     $selector-list: em, cite, i;
     @each $selector in $selectors {
-        $selector: append($selector-list, unquote($selector), comma)
+        $selector-list: append($selector-list, unquote($selector), comma)
     }
 
     font-style: italic;

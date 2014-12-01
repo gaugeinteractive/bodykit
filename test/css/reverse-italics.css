@@ -1,0 +1,14 @@
+.reverse-italics {
+  font-style: italic; }
+  .reverse-italics em, .reverse-italics cite, .reverse-italics i {
+    font-style: normal; }
+
+.reverse-italics-single {
+  font-style: italic; }
+  .reverse-italics-single em, .reverse-italics-single cite, .reverse-italics-single i, .reverse-italics-single .italic {
+    font-style: normal; }
+
+.reverse-italics-multiple {
+  font-style: italic; }
+  .reverse-italics-multiple em, .reverse-italics-multiple cite, .reverse-italics-multiple i, .reverse-italics-multiple .italic, .reverse-italics-multiple .em {
+    font-style: normal; }

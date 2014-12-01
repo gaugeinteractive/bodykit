@@ -1,0 +1,5 @@
+@import '../../../bodykit';
+
+#{media-elements()} { /* All media elements */ }
+#{media-elements(audio)} { /* Media elements, excluding audio */ }
+#{media-elements(svg, img)} { /* Media elements, excluding svg and img */ }

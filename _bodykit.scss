@@ -1,6 +1,6 @@
 @import
     'settings'
-    
+
   , 'helpers/bool'
   , 'helpers/list'
   , 'helpers/number'
@@ -13,7 +13,7 @@
   , 'selectors/media-elements'
   , 'selectors/class-prefix'
   , 'selectors/selected'
-    
+
   , 'mixins/trbl'
 
   , 'mixins/size'
@@ -42,5 +42,7 @@
   , 'mixins/faux-border'
   , 'mixins/responsive-tables'
   , 'mixins/underline'
-  
+  , 'mixins/truncate'
+  , 'mixins/reverse-italics'
+
   , 'grid/grid-float';

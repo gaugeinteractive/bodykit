@@ -1,0 +1,8 @@
+audio, canvas, img, svg, video {
+  /* All media elements */ }
+
+canvas, img, svg, video {
+  /* Media elements, excluding audio */ }
+
+audio, canvas, video {
+  /* Media elements, excluding svg and img */ }

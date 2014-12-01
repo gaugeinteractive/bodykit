@@ -1,0 +1,5 @@
+@import '../../../bodykit';
+
+#{headers()} { /* All Headers */ }
+#{headers(2)} { /* h1-2 */ }
+#{headers(2,4)} { /* h2-4 */ }

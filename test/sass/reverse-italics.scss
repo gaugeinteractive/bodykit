@@ -1,0 +1,5 @@
+@import '../../bodykit';
+
+.reverse-italics { @include reverse-italics; }
+.reverse-italics-single { @include reverse-italics('.italic'); }
+.reverse-italics-multiple { @include reverse-italics('.italic', '.em'); }

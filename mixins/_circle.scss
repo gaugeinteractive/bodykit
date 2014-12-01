@@ -7,9 +7,8 @@
 @mixin ellipse (
     $size...
 ) {
-    $size: if(length($size) == 0, null, $size);
     border-radius: 50%;
-    @include size($size...);
+    @if not empty($size) { @include size($size...); }
 }
 
 ///
@@ -33,7 +32,6 @@
 @mixin obround (
     $size...
 ) {
-    $size: if(length($size) == 0, null, $size);
     border-radius: $RLN;
-    @include size($size...);
+    @if not empty($size) { @include size($size...); }
 }
