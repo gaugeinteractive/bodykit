@@ -1,0 +1,13 @@
+@import '../../bodykit';
+
+.circle { @include circle(); }
+.circle { @include circle(10px); }
+
+.ellipse { @include ellipse(); }
+.ellipse { @include ellipse(10px); }
+.ellipse { @include ellipse(10px, 20px); }
+
+.obround { @include obround(); }
+.obround { @include obround(10px); }
+.obround { @include obround(10px, 20px); }
+

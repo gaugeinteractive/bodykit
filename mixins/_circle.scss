@@ -5,12 +5,11 @@
 ///    A single value will make a circle.
 ///
 @mixin ellipse (
-    $size: null
+    $size...
 ) {
-
+    $size: if(length($size) == 0, null, $size);
     border-radius: 50%;
-    @include size($size);
-
+    @include size($size...);
 }
 
 ///
@@ -22,9 +21,7 @@
 @mixin circle (
     $diameter: null
 ) {
-
     @include ellipse($diameter);
-
 }
 
 ///
@@ -34,10 +31,9 @@
 ///    A single, non-null value will make a circle.
 ///
 @mixin obround (
-    $size: null
+    $size...
 ) {
-
+    $size: if(length($size) == 0, null, $size);
     border-radius: $RLN;
-    @include size($size);
-
+    @include size($size...);
 }

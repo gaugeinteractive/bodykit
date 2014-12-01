@@ -1,0 +1,33 @@
+.circle {
+  border-radius: 50%; }
+
+.circle {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px; }
+
+.ellipse {
+  border-radius: 50%; }
+
+.ellipse {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px; }
+
+.ellipse {
+  border-radius: 50%;
+  width: 10px;
+  height: 20px; }
+
+.obround {
+  border-radius: 99in; }
+
+.obround {
+  border-radius: 99in;
+  width: 10px;
+  height: 10px; }
+
+.obround {
+  border-radius: 99in;
+  width: 10px;
+  height: 20px; }

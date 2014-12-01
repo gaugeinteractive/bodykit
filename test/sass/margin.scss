@@ -1,0 +1,4 @@
+@import '../../bodykit';
+
+.equal-3x { @include margin(10px 10px 10px); }
+.null-x-bottom { @include margin(n 5px 10px); }

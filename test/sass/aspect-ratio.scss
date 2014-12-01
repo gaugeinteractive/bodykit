@@ -1,0 +1,3 @@
+@import '../../bodykit';
+
+.aspect-ratio-3-4 { @include aspect-ratio(3/4); }

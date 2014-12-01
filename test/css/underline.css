@@ -1,0 +1,6 @@
+.underline-1px {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 1px 1px;
+  background-repeat: repeat-x;
+  background-position: bottom 0.12em left; }

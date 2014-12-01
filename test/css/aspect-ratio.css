@@ -1,0 +1,14 @@
+.aspect-ratio-3-4 {
+  position: relative;
+  overflow: hidden; }
+  .aspect-ratio-3-4:after {
+    content: '';
+    display: block;
+    height: 0;
+    padding-bottom: 133.33333%; }
+  .aspect-ratio-3-4 > * {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }

@@ -1,4 +1,4 @@
 @import '../../bodykit';
 
-.equal-x3 { @include padding(10px 10px 10px); }
-.null-x-b { @include padding(n 5px 10px); }
+.equal-3x { @include padding(10px 10px 10px); }
+.null-x-bottom { @include padding(n 5px 10px); }
