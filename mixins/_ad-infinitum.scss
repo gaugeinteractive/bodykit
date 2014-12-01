@@ -3,7 +3,7 @@
 /// maintaining relative content width
 ///
 /// NOTE: This mixin will overflow the parent container in the given direction.
-/// To prevent overflow scrolling, and other issues, a containing element must have 
+/// To prevent overflow scrolling, and other issues, a containing element must have
 /// `overflow-*: hidden;` set on the matching axis. In some cases, this may be done
 /// gloabally via the `html, body` elements, although that is generally not recomended;
 /// it is better to use a wrapper.
@@ -53,10 +53,10 @@
     @if in-list(vertical, $direction) {
         $direction: join($direction, top bottom);
     }
-    
+
     // @todo Consider that some accounts of degraded perfomance
     // have been noted when elements with extremely large boxes are drawn.
-    // It may be better to use viewport units, vw/vh depending upon 
+    // It may be better to use viewport units, vw/vh depending upon
     // which sides are being set, or possibly, vmin if all sides are
     // set. 50vw should always be sufficent to cover width
 
@@ -99,7 +99,7 @@
         @if $l or $r {
             width: 100%;
         }
-        
+
         @if $t or $l {
             // When using relative positioning, only one value is ever needed
             // per axis. Because `left == -1 * right`, we can add a positive value
@@ -138,7 +138,7 @@
     }
 
     &:before {
-        right: 100%; 
+        right: 100%;
     }
 
     &:after {
