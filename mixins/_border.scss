@@ -17,7 +17,7 @@
 
     @if $defaults { $defaults: _parse-wcs($defaults); }
     @else         { $defaults: null null null;  }
-    
+
     // Parse defaults
     $w: nth($defaults, 1);
     $c: nth($defaults, 2);
@@ -25,16 +25,16 @@
     $s: if($s, $s, solid);
 
     @each $prop in $wcs {
-        
+
         $prop-type: type-of($prop);
 
         @if $prop-type == number
             or in-list($prop, (thin, medium, thick)) {
-            
+
             $w: $prop;
 
-            @if $prop-type != string 
-                and $w == 0 {
+            @if $prop-type != string
+                and strip-unit($w) == 0 {
                 // Strip unit off  zero value
                 $w: 0;
             }
@@ -50,7 +50,7 @@
             // none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset
             $s: $prop;
         }
-        
+
     }
 
     @return $w $c $s;
@@ -116,7 +116,7 @@
         $shorthand: ();
 
         @for $i from 1 through 3 {
-            
+
             $shorthand-values: nth($border-wcs, $i);
 
             // If there is only one unique value, it can be added to the
@@ -134,10 +134,10 @@
 
             // If `border: 0`, omit `style`
             border: replace-nth($shorthand, 3, null);
-        
+
         }
         @else {
-            
+
             // Print `border(-*)` shorthand properties as necessary
             border: $shorthand;
             $shorthand-properties: width color style;
