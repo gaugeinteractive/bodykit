@@ -1,7 +1,30 @@
-.equal-3x {
-  margin: 10px; }
+.equal-2x {
+  margin: 1px; }
 
-.null-x-bottom {
-  margin-bottom: 10px;
-  margin-left: 5px;
-  margin-right: 5px; }
+.equal-3x {
+  margin: 1px; }
+
+.equal-4x {
+  margin: 1px; }
+
+.y-n {
+  margin-left: 1px;
+  margin-right: 1px; }
+
+.n-x {
+  margin-top: 1px;
+  margin-bottom: 1px; }
+
+.n-x-b {
+  margin-bottom: 1px;
+  margin-left: 1px;
+  margin-right: 1px; }
+
+.t-n-b {
+  margin-top: 1px;
+  margin-bottom: 1px; }
+
+.t-x-n {
+  margin-top: 1px;
+  margin-left: 1px;
+  margin-right: 1px; }

@@ -1,0 +1,6 @@
+@import '../../bodykit';
+
+.triangle-up { @include triangle(up, 1em); }
+.triangle-down { @include triangle(down, 1em); }
+.triangle-left { @include triangle(left, 1em); }
+.triangle-right { @include triangle(right, 1em); }

@@ -1,0 +1,39 @@
+.triangle-up {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border: 0.5em solid transparent;
+  border-bottom-width: 0.86603em;
+  border-bottom-color: currentColor;
+  border-top: 0; }
+
+.triangle-down {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border: 0.5em solid transparent;
+  border-top-width: 0.86603em;
+  border-top-color: currentColor;
+  border-bottom: 0; }
+
+.triangle-left {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border: 0.5em solid transparent;
+  border-right-width: 0.86603em;
+  border-right-color: currentColor;
+  border-left: 0; }
+
+.triangle-right {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border: 0.5em solid transparent;
+  border-left-width: 0.86603em;
+  border-left-color: currentColor;
+  border-right: 0; }

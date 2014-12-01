@@ -1,4 +1,12 @@
 @import '../../bodykit';
 
-.equal-3x { @include padding(10px 10px 10px); }
-.null-x-bottom { @include padding(n 5px 10px); }
+.equal-2x { @include padding(1px 1px); }
+.equal-3x { @include padding(1px 1px 1px); }
+.equal-4x { @include padding(1px 1px 1px 1px); }
+
+.y-n { @include padding(n 1px); }
+.n-x { @include padding(1px n); }
+
+.n-x-b { @include padding(n 1px 1px); }
+.t-n-b { @include padding(1px n 1px); }
+.t-x-n { @include padding(1px 1px n); }

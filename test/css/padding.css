@@ -1,7 +1,30 @@
-.equal-3x {
-  padding: 10px; }
+.equal-2x {
+  padding: 1px; }
 
-.null-x-bottom {
-  padding-bottom: 10px;
-  padding-left: 5px;
-  padding-right: 5px; }
+.equal-3x {
+  padding: 1px; }
+
+.equal-4x {
+  padding: 1px; }
+
+.y-n {
+  padding-left: 1px;
+  padding-right: 1px; }
+
+.n-x {
+  padding-top: 1px;
+  padding-bottom: 1px; }
+
+.n-x-b {
+  padding-bottom: 1px;
+  padding-left: 1px;
+  padding-right: 1px; }
+
+.t-n-b {
+  padding-top: 1px;
+  padding-bottom: 1px; }
+
+.t-x-n {
+  padding-top: 1px;
+  padding-left: 1px;
+  padding-right: 1px; }

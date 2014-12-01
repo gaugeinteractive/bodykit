@@ -8,25 +8,32 @@
   , 'helpers/colors'
   // , 'helpers/em'
 
+  // Selectors
   , 'selectors/headers'
   , 'selectors/input-types'
   , 'selectors/media-elements'
   , 'selectors/class-prefix'
   , 'selectors/selected'
 
+  // Box model
   , 'mixins/trbl'
-
   , 'mixins/size'
-  , 'mixins/box-model'
+  , 'mixins/margin'
+  , 'mixins/padding'
   , 'mixins/border'
   , 'mixins/border-radius'
   , 'mixins/position'
-  , 'mixins/table'
   , 'mixins/aspect-ratio'
+
+  , 'mixins/table'
   , 'mixins/clearfix'
+  , 'mixins/center'
+
+  // Shapes
   , 'mixins/circle'
   , 'mixins/triangle'
-  , 'mixins/center'
+
+  , 'mixins/justify'
 
   , 'mixins/font-face'
   // , 'mixins/media'
@@ -38,11 +45,13 @@
   , 'mixins/lists'
   , 'mixins/reset'
   , 'mixins/icons'
-  , 'mixins/triangle'
   , 'mixins/faux-border'
   , 'mixins/responsive-tables'
+
+  // Font syles and text decorations
   , 'mixins/underline'
   , 'mixins/truncate'
   , 'mixins/reverse-italics'
+  , 'mixins/line-on-sides'
 
   , 'grid/grid-float';

@@ -28,7 +28,6 @@
     display: table;
     text-align: center;
     white-space: nowrap;
-  
 
     &:before,
     &:after {
@@ -43,7 +42,7 @@
     &:before {
         border-right-width: $padding;
     }
-  
+
     &:after {
         border-left-width: $padding;
     }

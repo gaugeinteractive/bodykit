@@ -4,7 +4,7 @@
 /// a transition.
 /// The "on" state subsumes `:hover` and `:focus`.
 ///
-/// @param {color|list} $off - Color(s) for the "off" state. A list of two values 
+/// @param {color|list} $off - Color(s) for the "off" state. A list of two values
 ///    will designate `color` and `background-color`. One value will be interpreted
 ///    as `color` — unless the `$bg` argument, below, is set to `true`, in which case
 ///    it will be `background-color`.
@@ -12,11 +12,11 @@
 ///    One or two values, interpreted the same as `$off`, above.
 /// @param {number} $duration (0) - The `transition-duration` between `$off`
 ///    and `$on` states.
-/// @param {bool} $bg - (false) Set to `true` if you want to pass a single color 
+/// @param {bool} $bg - (false) Set to `true` if you want to pass a single color
 ///    value for the `$off` and `$on` arguments, and you want that value interpreted
-///    as `background-color`. (By default, a single value will be intepreted as 
+///    as `background-color`. (By default, a single value will be intepreted as
 ///    `color`.)
-/// 
+///
 @mixin color-swap (
     $off,
     $on,
@@ -48,7 +48,7 @@
     }
 
     // Only set-up transition if $duration != 0.
-    @if $duration != 0 {
+    @if $duration and strip-unit($duration) != 0 {
         transition-property: $transition-properties;
         transition-duration: $duration;
     }

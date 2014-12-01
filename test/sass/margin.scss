@@ -1,4 +1,12 @@
 @import '../../bodykit';
 
-.equal-3x { @include margin(10px 10px 10px); }
-.null-x-bottom { @include margin(n 5px 10px); }
+.equal-2x { @include margin(1px 1px); }
+.equal-3x { @include margin(1px 1px 1px); }
+.equal-4x { @include margin(1px 1px 1px 1px); }
+
+.y-n { @include margin(n 1px); }
+.n-x { @include margin(1px n); }
+
+.n-x-b { @include margin(n 1px 1px); }
+.t-n-b { @include margin(1px n 1px); }
+.t-x-n { @include margin(1px 1px n); }

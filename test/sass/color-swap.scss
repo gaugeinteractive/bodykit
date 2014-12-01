@@ -1,0 +1,9 @@
+@import '../../bodykit';
+
+.color-swap { @include color-swap(#fff, #000); }
+.color-swap-1s-transition { @include color-swap(#fff, #000, 1s); }
+.color-swap-bg { @include color-swap(#fff, #000, null, true); }
+
+.color-swap-both { @include color-swap(#fff #000, #000 #fff); }
+.color-swap-both-1s-transition { @include color-swap(#fff #000, #000 #fff, 1s); }
+.color-swap-both-bg { @include color-swap(#fff #000, #000 #fff, 0s, true); }

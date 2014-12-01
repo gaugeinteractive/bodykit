@@ -1,0 +1,29 @@
+@import '../../bodykit';
+
+.line-on-sides { @include line-on-sides(1em); }
+
+.line-on-sides-content {
+  @include line-on-sides(1em) {
+    background-image: linear-gradient(#000, #000);
+    background-position: 50%;
+    background-repeat: repeat-x;
+    background-size: 1px 1px;
+  };
+}
+
+.line-on-sides-content {
+  @include line-on-sides(1em, false) {
+    &:before,
+    &:after {
+      background-position: 50%;
+      background-repeat: repeat-x;
+      background-size: 1px 1px;
+    }
+    &:before{
+      background-image: linear-gradient(90deg, #000, #fff);
+    }
+    &:after{
+      background-image: linear-gradient(-90deg, #000, #fff);
+    }
+  };
+}
