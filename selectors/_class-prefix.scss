@@ -7,3 +7,13 @@
     //unquote('&[class^="#{$prefix}"], &[class*=" #{$prefix}"]');
     @return unquote('[class^="#{$prefix}"], [class*=" #{$prefix}"]');
 }
+
+///
+/// Generate class suffix selector
+///
+/// @param {string} $suffix - The class suffix
+///
+@function class-suffix($suffix){
+    //unquote('&[class$="#{$suffix}"], &[class*="#{$suffix} "]');
+    @return unquote('[class$="#{$suffix}"], [class*="#{$suffix} "]');
+}

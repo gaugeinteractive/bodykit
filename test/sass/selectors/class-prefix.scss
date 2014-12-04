@@ -1,5 +1,4 @@
 @import '../../../bodykit';
 
-#{class-prefix(test-)} {
-    /* `test-` prefix */
-}
+#{class-prefix('test-')} { /* `test-` prefix */ }
+#{class-suffix('-test')} { /* `-test` suffix */ }
