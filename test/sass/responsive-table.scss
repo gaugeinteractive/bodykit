@@ -1,0 +1,5 @@
+@import '../../bodykit';
+
+.responsive-table {
+  @include responsive-table('Header 1' 'Header2' 'Header 3');
+}

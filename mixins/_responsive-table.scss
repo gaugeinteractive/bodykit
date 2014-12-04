@@ -7,16 +7,16 @@
 ///   border-right: 10px solid transparent; /* The "padding" */
 ///   box-shadow: inset -1px 0 #ddd; /* The "border" */
 /// ```
-/// 
 ///
-/// @param {list} $labels - A list of labels, equivalent to the table headers (in order)
+///
+/// @param {list} $headers - A list of headers, equivalent to the table headers (in order)
 /// @content `td:before`
 ///
 @mixin responsive-table(
-  $labels
+  $headers
 ){
-  
-    /* Tables display block */
+
+    // Change table display
     &,
     caption,
     thead,
@@ -24,13 +24,13 @@
     tbody,
     th,
     td,
-    tr { 
-        display: block; 
+    tr {
+        display: block;
     }
 
-    /* Hide table headers and footers */
+    // Hide table headers and footers
     thead,
-    tfoot { 
+    tfoot {
         @include hide-visually;
     }
 
@@ -44,10 +44,10 @@
         display: table-cell;
         @content;
     }
-  
-    /* Label Data */
-    @for $i from 1 through length($labels) {
-        td:nth-of-type(#{$i}):before { content: "#{nth($labels, $i)}" }
+
+    // Assign headers
+    @for $i from 1 through length($headers) {
+        td:nth-of-type(#{$i}):before { content: "#{nth($headers, $i)}" }
     }
 
 }
