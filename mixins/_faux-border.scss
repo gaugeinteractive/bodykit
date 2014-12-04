@@ -1,3 +1,8 @@
+////
+/// @group Mixins
+/// @author Joey Hoer
+////
+
 ///
 /// Draw a faux border, using `box-shadow`, that does not affect the deminsions
 /// of the element
@@ -22,7 +27,7 @@
     // }
 
     $box-shadow: join((),(),comma);
-    
+
     @each $swc in $values {
         $color: null;
         $width: null;

@@ -1,3 +1,8 @@
+////
+/// @group Mixins
+/// @author Joey Hoer
+////
+
 ///
 /// Get the opposing side
 ///
@@ -36,7 +41,7 @@
     @if not(in-list($direction, ("up", "down", "left", "right"))){
         @warn 'triangle(): $direction only accepts "up", "down", "left", or "right".';
     }
-    
+
     @if length($size) > 2 {
         @warn 'triangle(): $size only accepts ($base, $height).';
     }
@@ -78,7 +83,7 @@
         $direction: "bottom";
     }
 
-    
+
     $oppositeSide: _sideOppositeTo($direction);
 
     @if ($base/2) != $height {

@@ -1,3 +1,8 @@
+////
+/// @group Mixins
+/// @author Joey Hoer
+////
+
 // 'calc' or 'convert'
 $media-to-method: calc;
 $media-value: 0;
@@ -53,7 +58,7 @@ $media-value: 0;
 
                 @debug $media-value $value;
                 $prefix: if($media-value >= $value, 'min-', 'max-');
-                
+
                 @if $feature == to  {
 
                     @if $media-to-method == calc {

@@ -1,3 +1,8 @@
+////
+/// @group Mixins
+/// @author Joey Hoer
+////
+
 ///
 /// Center elements in container horizontally. Useful for centering floated elements.
 /// NOTE: This must be applied to a wrapper of the floated elements' parent.
@@ -22,7 +27,7 @@
 
     & > #{$inner} {
         @include relative(null 50%);
-    }        
+    }
 }
 
 ///
@@ -43,7 +48,7 @@
 
 ///
 /// Center an element without fixed dimensions, vertically, horizontally, or both ways.
-/// NOTE: This method uses `position: absolute`, so the element will be centered 
+/// NOTE: This method uses `position: absolute`, so the element will be centered
 ///   inside its positioning parent.
 ///
 /// @param {string} $axis (both) - Omit, or pass 'both' to center on both axes.
@@ -88,7 +93,7 @@
 @mixin center-absolute (
     $dimensions
 ){
-  
+
     $width:  nth($dimensions, 1);
     $height: nth($dimensions, 2);
     $coords: 50% n n 50%;
@@ -96,7 +101,7 @@
 
     @if in-list(n, $dimensions) {
         @if $width == n {
-            // Remove horizontal offsets 
+            // Remove horizontal offsets
             $coords: replace-nth($coords, 4, n);
             $margin: replace-nth($margin, 4, n);
         }

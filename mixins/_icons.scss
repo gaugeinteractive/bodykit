@@ -1,3 +1,8 @@
+////
+/// @group Mixins
+/// @author Joey Hoer
+////
+
 ///
 /// Create icons
 ///
@@ -5,7 +10,7 @@
 /// name of the icon/basename of the generated class name and the value is the
 /// content of the icon
 /// @param {string} $prefix ('icon-') - The icon prefix. If a divider is desired,
-/// it should be included at the end of the string. 
+/// it should be included at the end of the string.
 /// @param {string} $suffix (null) - The icon suffix. If a divider is desired,
 /// it should be included at the beginning of the string.
 ///

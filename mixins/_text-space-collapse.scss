@@ -1,3 +1,8 @@
+////
+/// @group Mixins
+/// @author Joey Hoer
+////
+
 ///
 /// Collapse whitespace between inline block elements
 ///
@@ -9,7 +14,7 @@
 ///     This allows the current `font-size` to cascade, however the `font-family`
 ///     must be reset on all direct descendants.
 ///   - The "font-size" method sets the `font-size` to zero. This prevents `font-size`
-///     from cascading, and it affects the value of an `em` for the element. The 
+///     from cascading, and it affects the value of an `em` for the element. The
 ///     `font-size` must be reset on all direct descendants. This should generally
 ///     be set to a `rem` value.
 /// @content `& > *` Intended to be used to reset the `font-family`, or `font-size`,
@@ -27,7 +32,7 @@
         @warn "text-space-collapse(): $method must be 'font-family' or 'font-size'.";
     }
 
-    > * {
+    & > * {
         @content;
     }
 }

@@ -1,5 +1,10 @@
+////
+/// @group Grid
+/// @author Joey Hoer
+////
+
 ///
-/// Remove last element gutter
+/// Remove last column's gutter
 ///
 ///
 @mixin omega(
@@ -39,6 +44,10 @@
     }
 }
 
+///
+/// Remove nth-child's gutter
+///
+///
 @mixin nth-child(
     $nth,
     $direction

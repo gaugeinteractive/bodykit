@@ -1,3 +1,8 @@
+////
+/// @group Mixins
+/// @author Joey Hoer
+////
+
 ///
 /// Clearfix: contain floats
 ///
@@ -15,7 +20,7 @@
         content: " "; // 1 //
         display: table; // 2 //
     }
-    
+
     &:after {
         clear: both;
     }

@@ -1,3 +1,8 @@
+////
+/// @group Mixins
+/// @author Joey Hoer
+////
+
 ///
 /// Quickly create CSS table layouts
 ///
@@ -16,7 +21,7 @@
     $tbody: null,
     $layout: auto
 ) {
-    
+
     display: table;
     @if   $layout != null
       and $layout != auto {

@@ -1,3 +1,8 @@
+////
+/// @group Mixins
+/// @author Joey Hoer
+////
+
 ///
 /// Remove default styling from a list
 ///
@@ -169,12 +174,12 @@
 ///  NOTE: This should only be used on ordered lists
 ///
 ///  @param {number} $depth - How deep the nesting should go
-///  @param {number} $counter-start (1) - The number at which the nesting 
+///  @param {number} $counter-start (1) - The number at which the nesting
 ///    should start
-///  @param {string} $counter-style (decimal) - The number at which the nesting 
+///  @param {string} $counter-style (decimal) - The number at which the nesting
 ///    should start. Must be a valid `list-style-type` as defined by the W3C.
 ///  @param {string} $counter-seperator ('.') - The content that will sperate
-///    the sections of the counter 
+///    the sections of the counter
 ///  @param {string} $counter-after ($counter-seperator) - The content to
 ///    appear after the counter (e.g. the ')' in '1.1)')
 ///
@@ -192,7 +197,7 @@
 
     $content: counter(l0, $counter-style);
     $selector: '';
-    
+
     @for $i from 0 to $depth {
 
         & #{$selector} {

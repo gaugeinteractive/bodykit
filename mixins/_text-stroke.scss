@@ -1,3 +1,8 @@
+////
+/// @group Mixins
+/// @author Joey Hoer
+////
+
 ///
 /// Draw outer stroke around text
 ///
@@ -52,18 +57,18 @@
         $y         : 0;
         $draw      : false;
         $draw-blur : false;
-          
+
         // Calculate step width
         $offset: $ifw * $step;
-          
+
         // Only on final step
         @if ( $step == $steps ) {
             // Final offset is precise
             $offset    : $width-num;
             // Final offset recieves blur
-            $draw-blur : true;    
+            $draw-blur : true;
         }
-         
+
         // Number of instances around the circle
         // Multiply by two for additional precision
         // Add $step/$steps for increased precision at larger steps
@@ -72,7 +77,7 @@
 
         // Offset each
         @for $spoke from 1 through $spokes {
-          
+
             // Create temporary variables for offsets
             $angle: $spoke * $spoke-diff * 1deg;
             $tx: cos( $angle ) * $offset;

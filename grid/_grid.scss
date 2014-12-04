@@ -1,3 +1,8 @@
+////
+/// @group Grid
+/// @author Joey Hoer
+////
+
 $gutter: 0;
 
 @function is-percentage($num){
@@ -24,7 +29,7 @@ $gutter: 0;
 @mixin grid-container(
     $gutter-width: $gutter
 ){
-  
+
     // @include clearfix;
 
     @if not is-percentage($gutter-width) and $gutter-width != 0 {
@@ -98,7 +103,7 @@ $gutter: 0;
     &:nth-child(#{$nth}){
         // Hide rounding errors in the "middle" (optional?)
         float: right;
-        margin-right: 0;   
+        margin-right: 0;
     }
 
     //&:nth-child(#{$nth}+1){

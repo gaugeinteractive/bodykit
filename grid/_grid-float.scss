@@ -1,3 +1,8 @@
+////
+/// @group Grid
+/// @author Joey Hoer
+////
+
 ///
 ///
 ///
@@ -15,15 +20,15 @@
 
     width: percentage($column-ratio);
     float: left;
-    
+
     @if $gutter-ratio > 0 {
         margin-right: percentage($gutter-ratio);
         &:last-child,
         &:nth-child(#{$nth}) {
             // We may want to float the last colum in each row right to prevent
-            // rounding errors from manifesting as extra pixels at the ends of rows 
+            // rounding errors from manifesting as extra pixels at the ends of rows
             //float: right;
-            
+
             margin-right: 0;
         }
     }
@@ -32,7 +37,7 @@
     &:nth-child(#{$nth}) {
         float: right;
     }
-    
+
     // Ensure each row is aligned properly
     &:nth-child(#{$nth}+1) {
         clear: right;

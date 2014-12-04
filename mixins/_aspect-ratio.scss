@@ -1,8 +1,13 @@
+////
+/// @group Mixins
+/// @author Joey Hoer
+////
+
 ///
 /// Give an element a fixed aspect ratio.
 ///
 /// NOTE: Direct descendans will overflow the container and, thus, be hidden.
-/// It is recomended the there only be one direct descendant which is "stretched" 
+/// It is recomended the there only be one direct descendant which is "stretched"
 /// over the container, allowing grandchildren to be positioned as normal. This
 /// is the default behavior.
 ///
@@ -14,7 +19,7 @@
 ///    stretched over the container
 /// @param {bool} $overwrite (false) - If `true`, only the bottom padding
 ///    of the element will be printed. Used to overwrite an existing aspect ratio
-///    in responsive layouts 
+///    in responsive layouts
 ///
 @mixin aspect-ratio (
     $ratio,

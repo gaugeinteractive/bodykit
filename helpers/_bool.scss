@@ -1,8 +1,13 @@
+////
+/// @group Helpers
+/// @author Joey Hoer
+////
+
 ///
 /// Returns truthiness of a value
 ///
-/// @param {mixed} $value - The value to check the truthiness of 
-/// @return {bool} - The boonlean equivalent of the value 
+/// @param {mixed} $value - The value to check the truthiness of
+/// @return {bool} - The boonlean equivalent of the value
 ///
 @function is-true(
     $value

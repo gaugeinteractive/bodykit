@@ -1,3 +1,8 @@
+////
+/// @group Mixins
+/// @author Joey Hoer
+////
+
 ///
 /// Prints top, right, bottom, left values for a given property.
 ///
@@ -8,7 +13,7 @@
 /// to the second, and the bottom is set to the third. If there are four values,
 /// they apply to the top, right, bottom, and left, respectively.
 ///
-/// NOTE: Passing `null` for a value will disable rule creation for the 
+/// NOTE: Passing `null` for a value will disable rule creation for the
 /// corresponding side(s)
 ///
 /// @param {list} $trbl - A list of TRBL (top, right, bottom, left) values.
@@ -21,15 +26,15 @@
 
     // Store length for performance
     $len: length($trbl);
-    
+
     // If a list is passed in
     // @if $len == 1 {
     //     $trbl: nth($trbl, 1);
     //     // Reset length to new list
     //     $len: length($trbl);
     // }
-    
-    
+
+
     // Expand shorthand arguments
     $defs: append((),(
         n null
@@ -59,7 +64,7 @@
         $prefix: str-slice($property, 1, str-index($property, '-'));
         $suffix: str-slice($property, str-index($property, '-'), str-length($property));
     }
-    
+
     // Initialize top, right, bottom, left
     $t: nth($trbl, 1);
     $r: $t;
@@ -79,7 +84,7 @@
     }
 
     // Print rule(s)
-    @if not(in-list(null, $trbl)) 
+    @if not(in-list(null, $trbl))
         and $prefix != ''
         and $property != border {
 
@@ -94,7 +99,7 @@
         @elseif $len >= 2 and $t != $r {
             $value: join($value, $r);
         }
-        
+
         // Use shorthand
         #{$property}: $value;
     }
