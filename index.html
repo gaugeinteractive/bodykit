@@ -306,6 +306,15 @@
             
           
             
+            <li class="sidebar__item  sassdoc__item" data-name="class-suffix" data-type="function">
+              <a href="#function-class-suffix">class-suffix
+              
+              
+              </a>
+            </li>
+            
+          
+            
             <li class="sidebar__item  sassdoc__item" data-name="headers" data-type="function">
               <a href="#function-headers">headers
               
@@ -1584,6 +1593,15 @@
       <ul class="list-unstyled  list-inline">
     
 
+    <li><a href="#function-attribute-selectors"><code>attribute-selectors</code></a></li>
+  
+
+
+
+  
+
+    
+
     <li><a href="#function-purge"><code>purge</code></a></li>
   
 
@@ -1603,15 +1621,6 @@
     
 
     <li><a href="#function-replace-nth"><code>replace-nth</code></a></li>
-  
-
-
-
-  
-
-    
-
-    <li><a href="#function-attribute-selectors"><code>attribute-selectors</code></a></li>
   
 
 
@@ -3042,15 +3051,6 @@ This is a shorthand version of the <code>adjust-color</code> function</p>
 
     
 
-    <li><a href="#mixin-media"><code>media</code></a></li>
-  
-
-
-
-  
-
-    
-
     <li><a href="#mixin-coords"><code>coords</code></a></li>
   
 
@@ -3097,6 +3097,15 @@ This is a shorthand version of the <code>adjust-color</code> function</p>
     
 
     <li><a href="#mixin-triangle"><code>triangle</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#mixin-media"><code>media</code></a></li>
   
 
 
@@ -3269,24 +3278,6 @@ This is a shorthand version of the <code>adjust-color</code> function</p>
       <ul class="list-unstyled  list-inline">
     
 
-    <li><a href="#function-replace"><code>replace</code></a></li>
-  
-
-
-
-  
-
-    
-
-    <li><a href="#function-replace-nth"><code>replace-nth</code></a></li>
-  
-
-
-
-  
-
-    
-
     <li><a href="#function-text-inputs"><code>text-inputs</code></a></li>
   
 
@@ -3306,6 +3297,24 @@ This is a shorthand version of the <code>adjust-color</code> function</p>
     
 
     <li><a href="#function-media-elements"><code>media-elements</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-replace"><code>replace</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-replace-nth"><code>replace-nth</code></a></li>
   
 
 
@@ -7465,6 +7474,158 @@ the stroke color with match the current font color.</p>
 
 </section>
               
+                <section class="main__item  item" id="function-class-suffix">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-class-suffix">class-suffix</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function class-suffix($suffix) { 
+    //unquote(&#39;&amp;[class$=&quot;#{$suffix}&quot;], &amp;[class*=&quot;#{$suffix} &quot;]&#39;);
+    @return unquote(&#39;[class$=&quot;#{$suffix}&quot;], [class*=&quot;#{$suffix} &quot;]&#39;);
+ }"
+    data-collapsed="@function class-suffix($suffix) { ... }"><code>@function class-suffix($suffix) { ... }</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Generate class suffix selector</p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$suffix</code></th>
+          <td data-label="desc"><p>The class suffix</p>
+</td>
+          <td data-label="type">
+          
+            String
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
                 <section class="main__item  item" id="function-headers">
 
 <h3 class="item__heading">
@@ -7742,7 +7903,7 @@ Will return all header selectors by default</p>
   <pre class="item__code  item__code--togglable  language-scss"
     data-current-state="collapsed"
     data-expanded="@function attribute-selectors($exclude: ()) { 
-    
+
     $selectors: ();
 
     @each $element in $elements {
@@ -7988,7 +8149,7 @@ Will return all input type selectors by default</p>
     }
 
     $types: purge($types);
-    
+
     @return attribute-selectors(input, type, $types);
  }"
     data-collapsed="@function text-inputs($exclude: ()) { ... }"><code>@function text-inputs($exclude: ()) { ... }</code></pre>
@@ -8217,13 +8378,13 @@ Will return all text-based input selectors by default</p>
         reset,
         submit
     );
-    
+
     @each $type in $exclude {
         $types: remove($types, $type);
     }
 
     $types: purge($types);
-    
+
     @return attribute-selectors(input, type, $types);
  }"
     data-collapsed="@function button-inputs($exclude: ()) { ... }"><code>@function button-inputs($exclude: ()) { ... }</code></pre>
@@ -8556,6 +8717,15 @@ Will return all media element selectors by default</p>
     
 
     <li><a href="#mixin-reset-vertical-alignment"><code>reset-vertical-alignment</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#mixin-reset-fluid"><code>reset-fluid</code></a></li>
   
 
 
@@ -9329,16 +9499,38 @@ Grids with fluid (percentage based) gutters need not
   <pre class="item__code  item__code--togglable  language-scss"
     data-current-state="collapsed"
     data-expanded="@mixin omega() { 
-    //:last-child?
-    &amp;:nth-child(#{$nth}){
-        // Hide rounding errors in the &quot;middle&quot; (optional?)
-        float: right;
-        margin-right: 0;   
+
+    @if length($nth) == 1 {
+        @if $auto {
+            &amp;:last-child {
+                margin-#{$direction}: 0;
+            }
+        }
+
+        @else if contains-display-value($nth) and $table == false {
+            margin-#{$direction}: 0;
+        }
+
+        @else {
+            @include nth-child($nth, $direction);
+        }
     }
 
-    //&amp;:nth-child(#{$nth}+1){
-    // clear: both;
-    //}
+    @else if length($nth) == 2 {
+        @if $auto {
+            &amp;:last-child {
+                margin-#{$direction}: 0;
+            }
+        }
+
+        @else {
+            @include nth-child(nth($nth, 1), $direction);
+        }
+    }
+
+    @else {
+        @warn &quot;Too many arguments passed to the omega() mixin.&quot;;
+    }
  }"
     data-collapsed="@mixin omega() { ... }"><code>@mixin omega() { ... }</code></pre>
 
@@ -9355,7 +9547,7 @@ Grids with fluid (percentage based) gutters need not
     
   <h3 class="item__sub-heading">Description</h3>
 
-  <div class="item__description"><p>Clears the last column in a row</p>
+  <div class="item__description"><p>Remove last element gutter</p>
 </div>
 
 
@@ -18697,7 +18889,7 @@ format. Parsed as other box model shorthand properties.</p>
       <ul class="list-unstyled  list-inline">
     
 
-    <li><a href="#mixin-ad-infinitum-pseudo"><code>ad-infinitum-pseudo</code></a></li>
+    <li><a href="#mixin-aspect-ratio"><code>aspect-ratio</code></a></li>
   
 
 
@@ -18706,7 +18898,7 @@ format. Parsed as other box model shorthand properties.</p>
 
     
 
-    <li><a href="#mixin-aspect-ratio"><code>aspect-ratio</code></a></li>
+    <li><a href="#mixin-ad-infinitum-pseudo"><code>ad-infinitum-pseudo</code></a></li>
   
 
 
@@ -19638,7 +19830,7 @@ links using the <code>javascript:</code> pseudo protocol)</p>
   <pre class="item__code  item__code--togglable  language-scss"
     data-current-state="collapsed"
     data-expanded="@mixin print-abbrs() { 
-    
+
     /* Show abbr titles */
     abbr[title]:after {
         content: &quot; (&quot; attr(title) &quot;)&quot;;
@@ -19924,7 +20116,7 @@ links using the <code>javascript:</code> pseudo protocol)</p>
     data-expanded="@mixin print-tables() { 
 
     thead {
-        display: table-header-group; 
+        display: table-header-group;
     }
 
  }"
@@ -19944,7 +20136,7 @@ links using the <code>javascript:</code> pseudo protocol)</p>
   <h3 class="item__sub-heading">Description</h3>
 
   <div class="item__description"><p>Attempt to ensure that table headers are displayed on every page,
-if a table span more the one page </p>
+if a table span more the one page</p>
 </div>
 
 
@@ -20183,7 +20375,7 @@ if a table span more the one page </p>
   <pre class="item__code  item__code--togglable  language-scss"
     data-current-state="collapsed"
     data-expanded="@mixin print-reset($exclude: false) { 
-    
+
     @if not index($exclude, print-reset-color) {
         @include print-reset-color;
     }
@@ -20343,10 +20535,11 @@ if a table span more the one page </p>
   <pre class="item__code  item__code--togglable  language-scss"
     data-current-state="collapsed"
     data-expanded="@mixin reset-border-box() { 
-    *,
-    *:before,
-    *:after {
+    :root {
         box-sizing: border-box;
+    }
+    *, *:before, *:after {
+        box-sizing: inherit;
     }
  }"
     data-collapsed="@mixin reset-border-box() { ... }"><code>@mixin reset-border-box() { ... }</code></pre>
@@ -20364,7 +20557,7 @@ if a table span more the one page </p>
     
   <h3 class="item__sub-heading">Description</h3>
 
-  <div class="item__description"><p>Make everything a border-box</p>
+  <div class="item__description"><p>Set <code>border-box</code> on everything, allowing for module inheritance</p>
 </div>
 
 
@@ -20484,7 +20677,7 @@ if a table span more the one page </p>
     
   <h3 class="item__sub-heading">Description</h3>
 
-  <div class="item__description"><p>Make headers and <b> semantic, not presentational</p>
+  <div class="item__description"><p>Make headers and <code>&lt;b&gt;</code> semantic, not presentational</p>
 </div>
 
 
@@ -21377,14 +21570,10 @@ their containers: h5bp.com/i/440</p>
   <pre class="item__code  item__code--togglable  language-scss"
     data-current-state="collapsed"
     data-expanded="@mixin reset-fluid() { 
-    audio,
-    canvas,
-    iframe,
-    img,
+    #{media-elements()},
+    input,
     select,
-    svg,
-    textarea,
-    video {
+    textarea {
         max-width: 100%;
         height: auto;
     }
@@ -21435,6 +21624,25 @@ their containers: h5bp.com/i/440</p>
     
 
 
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-media-elements"><code>media-elements</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
 
 
   
@@ -21922,9 +22130,9 @@ their containers: h5bp.com/i/440</p>
 <div class="relative  clear  code--collapsed">
   <pre class="item__code  item__code--togglable  language-scss"
     data-current-state="collapsed"
-    data-expanded="@mixin responsive-table($labels) { 
-  
-    /* Tables display block */
+    data-expanded="@mixin responsive-table($headers) { 
+
+    // Change table display
     &amp;,
     caption,
     thead,
@@ -21932,13 +22140,13 @@ their containers: h5bp.com/i/440</p>
     tbody,
     th,
     td,
-    tr { 
-        display: block; 
+    tr {
+        display: block;
     }
 
-    /* Hide table headers and footers */
+    // Hide table headers and footers
     thead,
-    tfoot { 
+    tfoot {
         @include hide-visually;
     }
 
@@ -21952,14 +22160,14 @@ their containers: h5bp.com/i/440</p>
         display: table-cell;
         @content;
     }
-  
-    /* Label Data */
-    @for $i from 1 through length($labels) {
-        td:nth-of-type(#{$i}):before { content: &quot;#{nth($labels, $i)}&quot; }
+
+    // Assign headers
+    @for $i from 1 through length($headers) {
+        td:nth-of-type(#{$i}):before { content: &quot;#{nth($headers, $i)}&quot; }
     }
 
  }"
-    data-collapsed="@mixin responsive-table($labels) { ... }"><code>@mixin responsive-table($labels) { ... }</code></pre>
+    data-collapsed="@mixin responsive-table($headers) { ... }"><code>@mixin responsive-table($headers) { ... }</code></pre>
 
   
 </div>
@@ -21998,8 +22206,8 @@ add left padding and/or a left border to the data. Add the following to the</p>
     <tbody>
       
         <tr class="item__parameter">
-          <th scope="row" data-label="name"><code>$labels</code></th>
-          <td data-label="desc"><p>A list of labels, equivalent to the table headers (in order)</p>
+          <th scope="row" data-label="name"><code>$headers</code></th>
+          <td data-label="desc"><p>A list of headers, equivalent to the table headers (in order)</p>
 </td>
           <td data-label="type">
           
@@ -23070,7 +23278,7 @@ not be italicized</p>
         @warn &quot;text-space-collapse(): $method must be &#39;font-family&#39; or &#39;font-size&#39;.&quot;;
     }
 
-    &gt; * {
+    &amp; &gt; * {
         @content;
     }
  }"
@@ -23121,7 +23329,7 @@ that replaces the default space character with a zero width character.
 This allows the current <code>font-size</code> to cascade, however the <code>font-family</code>
 must be reset on all direct descendants.</li>
 <li>The &quot;font-size&quot; method sets the <code>font-size</code> to zero. This prevents <code>font-size</code>
-from cascading, and it affects the value of an <code>em</code> for the element. The 
+from cascading, and it affects the value of an <code>em</code> for the element. The
 <code>font-size</code> must be reset on all direct descendants. This should generally
 be set to a <code>rem</code> value.</li>
 </ul>
