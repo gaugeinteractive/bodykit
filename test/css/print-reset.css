@@ -1,0 +1,143 @@
+* {
+  background: transparent !important;
+  color: #000 !important;
+  box-shadow: none !important;
+  text-shadow: none !important; }
+
+/* Underline links */
+a,
+a:visited {
+  text-decoration: underline; }
+
+/* Print link URLs */
+a[href]:after {
+  content: " (" attr(href) ")"; }
+
+/*
+ * Don't show links that are fragment identifiers,
+ * or use the `javascript:` pseudo protocol
+ */
+a[href^="#"]:after,
+a[href^="javascript:"]:after {
+  content: ""; }
+
+/* Show abbr titles */
+abbr[title]:after {
+  content: " (" attr(title) ")"; }
+
+pre,
+blockquote {
+  border: 1px solid #999999;
+  page-break-inside: avoid; }
+
+h1, h2, h3, h4, h5, h6,
+p {
+  orphans: 3;
+  widows: 3; }
+
+h1, h2, h3, h4, h5, h6 {
+  page-break-after: avoid; }
+
+tr,
+img {
+  page-break-inside: avoid; }
+
+thead {
+  display: table-header-group; }
+
+img {
+  max-width: 100% !important; }
+
+* {
+  background: transparent !important;
+  color: #000 !important;
+  box-shadow: none !important;
+  text-shadow: none !important; }
+
+/* Underline links */
+a,
+a:visited {
+  text-decoration: underline; }
+
+/* Print link URLs */
+a[href]:after {
+  content: " (" attr(href) ")"; }
+
+/*
+ * Don't show links that are fragment identifiers,
+ * or use the `javascript:` pseudo protocol
+ */
+a[href^="#"]:after,
+a[href^="javascript:"]:after {
+  content: ""; }
+
+/* Show abbr titles */
+abbr[title]:after {
+  content: " (" attr(title) ")"; }
+
+pre,
+blockquote {
+  border: 1px solid #999999;
+  page-break-inside: avoid; }
+
+h1, h2, h3, h4, h5, h6,
+p {
+  orphans: 3;
+  widows: 3; }
+
+h1, h2, h3, h4, h5, h6 {
+  page-break-after: avoid; }
+
+tr,
+img {
+  page-break-inside: avoid; }
+
+thead {
+  display: table-header-group; }
+
+img {
+  max-width: 100% !important; }
+
+/* Underline links */
+a,
+a:visited {
+  text-decoration: underline; }
+
+/* Print link URLs */
+a[href]:after {
+  content: " (" attr(href) ")"; }
+
+/*
+ * Don't show links that are fragment identifiers,
+ * or use the `javascript:` pseudo protocol
+ */
+a[href^="#"]:after,
+a[href^="javascript:"]:after {
+  content: ""; }
+
+/* Show abbr titles */
+abbr[title]:after {
+  content: " (" attr(title) ")"; }
+
+pre,
+blockquote {
+  border: 1px solid #999999;
+  page-break-inside: avoid; }
+
+h1, h2, h3, h4, h5, h6,
+p {
+  orphans: 3;
+  widows: 3; }
+
+h1, h2, h3, h4, h5, h6 {
+  page-break-after: avoid; }
+
+tr,
+img {
+  page-break-inside: avoid; }
+
+thead {
+  display: table-header-group; }
+
+img {
+  max-width: 100% !important; }

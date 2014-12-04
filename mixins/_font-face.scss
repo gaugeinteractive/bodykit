@@ -41,7 +41,7 @@
 
 ///
 /// Create a bulletproof `@font-face` rule
-/// The order of `@font-face` rules matter. To ensure fontsload correctly, they must
+/// The order of `@font-face` rules matter. To ensure fonts load correctly, they must
 /// be declared in the following order: normal, bold, italic, bold+italic.
 ///
 /// @param {string} $font-family - The name of the font family
@@ -78,7 +78,7 @@
             font-style: $style;
         }
 
-        // Old IE, which supports EOT dosen't support multiple formats `src`
+        // Old IE, which supports EOT doesn't support multiple formats `src`
         @if index($formats, eot) {
             src: url('#{$file-path}.eot');
         }

@@ -1,0 +1,212 @@
+:root {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0; }
+
+b {
+  font-weight: normal; }
+
+audio, canvas, img, svg, video {
+  vertical-align: middle; }
+
+label,
+select,
+option,
+button {
+  cursor: pointer; }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+textarea {
+  resize: vertical; }
+
+input[type="button"], input[type="reset"], input[type="submit"],
+button {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  width: auto;
+  user-select: none; }
+  input[type="button"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner,
+  button::-moz-focus-inner {
+    padding: 0;
+    border: 0; }
+
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
+textarea {
+  border-style: solid; }
+  input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
+  textarea:focus {
+    outline: 0; }
+
+p:first-of-type {
+  margin-top: 0; }
+
+p:last-of-type {
+  margin-bottom: 0; }
+
+audio, canvas, img, svg, video,
+input,
+select,
+textarea {
+  max-width: 100%;
+  height: auto; }
+
+figure {
+  margin: 0; }
+
+address {
+  font-style: normal; }
+
+:root {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0; }
+
+b {
+  font-weight: normal; }
+
+audio, canvas, img, svg, video {
+  vertical-align: middle; }
+
+label,
+select,
+option,
+button {
+  cursor: pointer; }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+textarea {
+  resize: vertical; }
+
+input[type="button"], input[type="reset"], input[type="submit"],
+button {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  width: auto;
+  user-select: none; }
+  input[type="button"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner,
+  button::-moz-focus-inner {
+    padding: 0;
+    border: 0; }
+
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
+textarea {
+  border-style: solid; }
+  input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
+  textarea:focus {
+    outline: 0; }
+
+p:first-of-type {
+  margin-top: 0; }
+
+p:last-of-type {
+  margin-bottom: 0; }
+
+audio, canvas, img, svg, video,
+input,
+select,
+textarea {
+  max-width: 100%;
+  height: auto; }
+
+figure {
+  margin: 0; }
+
+address {
+  font-style: normal; }
+
+:root {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0; }
+
+b {
+  font-weight: normal; }
+
+audio, canvas, img, svg, video {
+  vertical-align: middle; }
+
+label,
+select,
+option,
+button {
+  cursor: pointer; }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+textarea {
+  resize: vertical; }
+
+input[type="button"], input[type="reset"], input[type="submit"],
+button {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  width: auto;
+  user-select: none; }
+  input[type="button"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner,
+  button::-moz-focus-inner {
+    padding: 0;
+    border: 0; }
+
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
+textarea {
+  border-style: solid; }
+  input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
+  textarea:focus {
+    outline: 0; }
+
+audio, canvas, img, svg, video,
+input,
+select,
+textarea {
+  max-width: 100%;
+  height: auto; }
+
+figure {
+  margin: 0; }
+
+address {
+  font-style: normal; }

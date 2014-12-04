@@ -10,7 +10,7 @@
     $attributes,
     $values: null
 ){
-    
+
     $selectors: ();
 
     @each $element in $elements {
@@ -63,7 +63,7 @@
     }
 
     $types: purge($types);
-    
+
     @return attribute-selectors(input, type, $types);
 }
 
@@ -82,12 +82,12 @@
         reset,
         submit
     );
-    
+
     @each $type in $exclude {
         $types: remove($types, $type);
     }
 
     $types: purge($types);
-    
+
     @return attribute-selectors(input, type, $types);
 }

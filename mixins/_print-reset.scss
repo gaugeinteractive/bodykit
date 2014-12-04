@@ -46,7 +46,7 @@
 /// Print titles for abbreviations
 ///
 @mixin print-abbrs {
-    
+
     /* Show abbr titles */
     abbr[title]:after {
         content: " (" attr(title) ")";
@@ -84,14 +84,14 @@
 
 ///
 /// Attempt to ensure that table headers are displayed on every page,
-/// if a table span more the one page 
+/// if a table span more the one page
 ///
 /// @link http://css-discuss.incutio.com/wiki/Printing_Tables
 ///
 @mixin print-tables {
 
     thead {
-        display: table-header-group; 
+        display: table-header-group;
     }
 
 }
@@ -115,7 +115,7 @@
 @mixin print-reset (
     $exclude: false
 ){
-    
+
     @if not index($exclude, print-reset-color) {
         @include print-reset-color;
     }

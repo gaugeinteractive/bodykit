@@ -1,17 +1,18 @@
 ///
-/// Make everything a border-box
+/// Set `border-box` on everything, allowing for module inheritance
 ///
 @mixin reset-border-box {
-    *,
-    *:before,
-    *:after {
+    :root {
         box-sizing: border-box;
+    }
+    *, *:before, *:after {
+        box-sizing: inherit;
     }
 }
 
 
 ///
-/// Make headers and <b> semantic, not presentational
+/// Make headers and `<b>` semantic, not presentational
 ///
 @mixin reset-semanticize {
     #{headers()} {
@@ -113,14 +114,10 @@
 /// Make content fluid by default
 ///
 @mixin reset-fluid {
-    audio,
-    canvas,
-    iframe,
-    img,
+    #{media-elements()},
+    input,
     select,
-    svg,
-    textarea,
-    video {
+    textarea {
         max-width: 100%;
         height: auto;
     }
