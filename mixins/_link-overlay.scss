@@ -1,0 +1,43 @@
+////
+/// @group Mixins
+/// @author Joey Hoer
+////
+
+///
+/// Simulate nested links
+/// The link overlay must be the first element in the container
+///
+/// @link http://codepen.io/scottkellum/pen/mktBg/
+///
+/// @example html
+/// <div>
+///   <a href="#a" class="link-overlay" aria-hidden></a>
+///   <h2><a href="#b">Header</a></h2>
+///   <p>This contwent contains a <a href="#c">link</a></p>
+/// </div>
+///
+@mixin link-overlay {
+    // Force link to fill box
+    // Container must have positioning other than static.
+    @include absolute(0);
+    z-index: 0;
+
+    // Raise all other links above overlay link
+    & ~ a,
+    & ~ * a {
+        position: relative;
+        z-index: 1;
+    }
+
+    // Alternate method allowing for placement anywhere within the container
+    // All links in container should be set to
+    // // position: relative;
+    // // z-index: 1;
+    //
+    // position: static;
+    //
+    // &:before {
+    //   content: '';
+    //   @include absolute(0);
+    // }
+}
