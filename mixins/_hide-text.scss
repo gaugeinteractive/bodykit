@@ -20,7 +20,7 @@
         &:before {
             content: '';
             display: block;
-            @include size(0 150%);
+            @include size(0, 150%);
         }
     }
     @elseif $method == indent {

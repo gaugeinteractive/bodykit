@@ -1,10 +1,18 @@
-.hide-text {
+.hide-text-default {
   overflow: hidden; }
-  .hide-text:before {
+  .hide-text-default:before {
     content: '';
     display: block;
-    width: 0 150%;
-    height: 0 150%; }
+    width: 0;
+    height: 150%; }
+
+.hide-text-pseudo {
+  overflow: hidden; }
+  .hide-text-pseudo:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 150%; }
 
 .hide-text-indent {
   overflow: hidden;

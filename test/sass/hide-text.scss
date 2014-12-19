@@ -1,5 +1,6 @@
 @import '../../bodykit';
 
-.hide-text { @include hide-text; }
+.hide-text-default { @include hide-text; }
+.hide-text-pseudo { @include hide-text(pseudo); }
 .hide-text-indent { @include hide-text(indent); }
 .hide-text-font { @include hide-text(font); }
