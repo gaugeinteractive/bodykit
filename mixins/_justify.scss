@@ -1,35 +1,25 @@
-////
-/// @group Mixins
-/// @author Joey Hoer
-////
-
 ///
-/// Ensure all rows are justified.
+/// Jusstifies every line, including the last
 ///
-///  @param {string} $space-collaspe - Accepts either "extreme" or "none". Using
-///   "extreme" will set both the `font-size` and `line-height` to 0. Should
-///   *not* be used if element contains text nodes.
+/// @param {snumber} $line-height (null) - This may be set to the line-height of
+///   the element, and will remove extra vertical space by applying a
+///   negative bottom margin. *NOTE:* This has issues when bottom border is applied
 /// @param {string} $selector (':after') - The selector which specifies the element or
 ///   psuedo-element to be used to force justification. This *must* be `(:):after`,
 ///   `:last-child`, or an equivilent, as the last element in the conatiner is
 ///   the only element able to force justification.
-/// @content `> *` Only applies when using `$space-collapse: extreme`. Intended
-///    to be used to reset the `font-size`, `line-heigh`, and any other properties
-///    which rely on these values for all direct descendants.
 ///
-@mixin force-justify (
-    $space-collase: none,
+@mixin justify-all (
+    $line-height: null,
     $selector: ':after'
 ){
     text-align: justify;
+    // When WebKit support this, we can remove legacy pseudo element hack
+    // text-align-last: justify;
 
-    @if $space-collase == 'extreme' {
-        line-height: 0;
-        font-size: 0;
-
-        & > * {
-            @content;
-        }
+    @if $line-height {
+        @if unitless($line-height) { $line-height: $line-height * 1em; }
+        margin-bottom: -$line-height;
     }
 
     &#{$selector} {
