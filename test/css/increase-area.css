@@ -1,0 +1,14 @@
+.padding-em {
+  position: relative;
+  padding: 0.5em;
+  margin: -0.5em; }
+
+.pseudo-em {
+  position: relative; }
+  .pseudo-em:after {
+    content: '';
+    position: absolute;
+    top: -0.5em;
+    bottom: -0.5em;
+    left: -0.5em;
+    right: -0.5em; }

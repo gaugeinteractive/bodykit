@@ -1,0 +1,33 @@
+////
+/// @group Mixins
+/// @author Joey Hoer
+////
+
+///
+/// Increases the area of an element, preserving it's placement. Useful for
+/// increasing the hitbox for links
+///
+/// @param {number} $offset - The amount to increase the area by
+/// @param {string} $method (padding) - The method to use
+///
+@mixin increase-area (
+  $offset,
+  $method: 'padding'
+){
+
+  position: relative;
+
+  @if $method == 'padding' {
+    // @link http://joshnh.com/2012/09/06/increasing-the-clickable-area-of-inline-links/
+    @include padding($offset);
+    @include margin(-1 * $offset);
+  }
+  @else if $method == 'pseudo' {
+    // @link http://front-back.com/expand-clickable-areas-for-a-better-touch-experience
+    &:after {
+        content: '';
+        @include absolute(-1 * $offset);
+    }
+  }
+
+}
