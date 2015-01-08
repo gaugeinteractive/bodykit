@@ -5,13 +5,17 @@
 
 ///
 /// Create a visual row that spans the full width of the viewport, while
-/// maintaining relative content width
+/// maintaining relative content width.
 ///
-/// NOTE: This mixin will overflow the parent container in the given direction.
-/// To prevent overflow scrolling, and other issues, a containing element must have
-/// `overflow-*: hidden;` set on the matching axis. In some cases, this may be done
-/// gloabally via the `html, body` elements, although that is generally not recomended;
-/// it is better to use a wrapper.
+/// NOTE: Ad-infinitumed elements will overflow their parent container.
+/// To prevent overflow scrolling, and other issues, the containing element
+/// should hide overflow, at least, on the axis matching the overflow. In some
+/// cases, overflows hidden with `overflow-x` and `overflow-y` may still be
+/// scrolled, so the use of `overflow` is recommended. This may be applied
+/// gloabally via the `html` or `body` elements, although that is generally not
+/// recomended, as it may cause isses with other page content; it is best to use
+/// a wrapper.
+///
 /// ```
 /// .wrapper {
 ///    overflow-x: hidden;
@@ -19,6 +23,7 @@
 /// ```
 ///
 /// @param {string} $push (padding) - The method to be used to push the content
+/// NOTE: `border` can be useful when absolutely positioning children
 /// @param {string} $pull (margin) - The method to be used to pull the content
 /// @param {string} $direction (horizontal) - The direction in which to span ad
 ///   inifinitum
