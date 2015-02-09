@@ -1,0 +1,8 @@
+@import '../../bodykit';
+
+.drop-cap {
+  @include drop-cap(4, 1.3) {
+    font-family: serif;
+    color: red;
+  }
+}

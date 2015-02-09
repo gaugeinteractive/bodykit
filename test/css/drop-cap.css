@@ -1,0 +1,6 @@
+.drop-cap:first-letter {
+  float: left;
+  font-size: 5.2em;
+  line-height: 1;
+  font-family: serif;
+  color: red; }

@@ -1,0 +1,36 @@
+////
+/// @group Mixins
+/// @author Joey Hoer
+////
+
+///
+/// Create a drop cap
+///
+/// @param {number} $lines - The number of lines the drop cap should span
+/// @param {number} $line-height - The unitless `line-height` of the current context
+/// @param {number} $cap-height [1] - The height of a typical capital letter of the
+/// drop cap's desired `font-face` as a ratio to `1em`
+/// (a number less than 1 will make the drop cap larger, a number greater
+/// than 1 will make the the drop cap smaller)
+/// @content - Used to style the drop cap
+///
+@mixin drop-cap(
+  $lines,
+  $line-height,
+  $cap-height: 1,
+  $over: false
+){
+  &:first-letter {
+    float: left;
+    font-size: $lines * $line-height * 1em/$cap-height;
+    line-height: $cap-height;
+
+    // Letter above context
+    @if $over {
+      position: relative;
+      z-index: 1;
+    }
+
+    @content;
+  }
+}
