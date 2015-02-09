@@ -1,0 +1,15 @@
+////
+/// @group Functions
+/// @author Joey Hoer
+////
+
+///
+/// Create a single color "image" with linear gradient
+///
+/// @param {color} $color - The color
+///
+@function image-color (
+  $color
+){
+  @return linear-gradient($color 100%, #000)
+}

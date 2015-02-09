@@ -1,12 +1,17 @@
 @import
     'settings'
 
+  // Helpers
+
   , 'helpers/bool'
   , 'helpers/list'
   , 'helpers/number'
   , 'helpers/string'
   , 'helpers/colors'
   // , 'helpers/em'
+
+  // Functions
+  , 'functions/image-color'
 
   // Selectors
   , 'selectors/headers'
