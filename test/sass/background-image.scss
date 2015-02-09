@@ -1,0 +1,4 @@
+@import '../../bodykit';
+
+.background-image { @include background-image(url(../image.png)) }
+.background-image-cover { @include background-image(url(../image.png), cover) }

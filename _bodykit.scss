@@ -38,12 +38,10 @@
   , 'mixins/circle'
   , 'mixins/triangle'
 
-  , 'mixins/justify'
-  , 'mixins/text-space-collapse'
-
-  , 'mixins/font-face'
+  // Responsive Elements
   // , 'mixins/media'
 
+  // Miscellaneous
   , 'mixins/ad-infinitum'
   , 'mixins/color-swap'
   , 'mixins/hide-visually'
@@ -56,11 +54,15 @@
   , 'mixins/responsive-table'
   , 'mixins/link-overlay'
   , 'mixins/increase-area'
+  , 'mixins/background-image'
 
   // Font syles and text decorations
+  , 'mixins/font-face'
   , 'mixins/underline'
   , 'mixins/truncate'
   , 'mixins/reverse-italics'
   , 'mixins/line-on-sides'
+  , 'mixins/justify'
+  , 'mixins/text-space-collapse'
 
   , 'grid/grid-float';

@@ -1,0 +1,24 @@
+////
+/// @group Mixins
+/// @author Joey Hoer
+////
+
+///
+/// Sets defaults for single, responsive image
+///
+/// @param {string} $image - The background image
+/// @param {number|list} $size (null) - The background size
+/// @param {number|list} $position (50%) - The background position
+/// @param {string} $repeat (no-repeat) - The background repeat
+///
+@mixin background-image (
+  $image,
+  $size: null,
+  $position: 50%,
+  $repeat: no-repeat
+){
+  background-image: $image;
+  background-size: $size;
+  background-position: $position;
+  background-repeat: $repeat;
+}
