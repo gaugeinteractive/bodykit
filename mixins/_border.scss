@@ -7,6 +7,8 @@
 /// Parse and order width, color, and style values
 /// NOTE: Sets default style to `solid`, if necessary.
 ///
+/// @access private
+///
 /// @param {list} $wcs - The width, color, and style (in any order)
 /// @param {list} $defaults (null) - A list of default width, color,
 ///    and style values to inherit
