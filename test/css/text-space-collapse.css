@@ -1,0 +1,6 @@
+.text-space-collapse {
+  font-family: monospace;
+  word-spacing: -1ch; }
+  .text-space-collapse > * {
+    font-family: sans-serif;
+    word-spacing: normal; }

@@ -1,0 +1,3 @@
+@import '../../bodykit';
+
+.text-space-collapse { @include text-space-collapse(sans-serif); }
