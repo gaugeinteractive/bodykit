@@ -23,7 +23,8 @@
 /// ```
 ///
 /// @param {string} $push (padding) - The method to be used to push the content
-/// NOTE: `border` can be useful when absolutely positioning children
+/// NOTE: `border` can be useful when absolutely positioning children.
+/// `null` can be useful when content is not constrained to the parent width.
 /// @param {string} $pull (margin) - The method to be used to pull the content
 /// @param {string} $direction (horizontal) - The direction in which to span ad
 ///   inifinitum
@@ -77,20 +78,22 @@
     @if in-list(left,   $direction) { $l: $RLN; }
 
     // Push methods
-    @if $push == padding {
+    @if $push {
+        @if $push == padding {
 
-        @include padding($t $r $b $l);
+            @include padding($t $r $b $l);
 
-    }
-    @else if $push == border {
+        }
+        @else if $push == border {
 
-        @include border(
-            if($t, $t transparent, null),
-            if($r, $r transparent, null),
-            if($b, $b transparent, null),
-            if($l, $l transparent, null)
-        );
+            @include border(
+                if($t, $t transparent, null),
+                if($r, $r transparent, null),
+                if($b, $b transparent, null),
+                if($l, $l transparent, null)
+            );
 
+        }
     }
 
     // Pull methods
@@ -135,8 +138,8 @@
 /// Create a visual row that spans the full width of the viewport, while
 /// maintaining relative content width using pseduo elements
 ///
-@mixin ad-infinitum-pseudo (
-){
+@mixin ad-infinitum-pseudo
+{
 
     position: relative;
 

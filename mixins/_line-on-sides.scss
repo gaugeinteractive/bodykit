@@ -34,23 +34,20 @@
     text-align: center;
     white-space: nowrap;
 
+    @if not $both { @content; }
+
     &:before,
     &:after {
         content: '';
         width: 50%;
         display: table-cell;
-        background-clip: padding-box;
         border: 0 solid transparent;
         @if $both { @content; }
+        // Background-clip is placed after @content to prevent issues using
+        // the background shorthand property
+        background-clip: padding-box;
     }
 
-    &:before {
-        border-right-width: $padding;
-    }
-
-    &:after {
-        border-left-width: $padding;
-    }
-
-    @if not $both { @content; }
+    &:before { border-right-width: $padding; }
+    &:after  { border-left-width:  $padding; }
 }
