@@ -4,7 +4,8 @@
   margin-top: 0;
   margin-bottom: 0; }
   .list-divided {
-    display: table; }
+    display: table;
+    border-collapse: collapse; }
     .list-divided > li {
       display: table-cell; }
     .list-divided > li {

@@ -23,6 +23,8 @@
 ) {
 
     display: table;
+    border-collapse: collapse;
+
     @if   $layout != null
       and $layout != auto {
         table-layout: $layout;
