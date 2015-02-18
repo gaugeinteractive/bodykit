@@ -1,0 +1,47 @@
+////
+/// @group Mixins
+/// @author Joey Hoer
+////
+
+///
+/// Creates an input group
+/// Note that padding and border must be matched on the input and
+/// the input control
+///
+/// @example
+/// input,
+/// button {
+///   padding: 0.5em 1em;
+///   border: 2px #ccc solid;
+/// }
+///
+/// button {
+///   border-color: transparent;
+/// }
+///
+@mixin input-group
+{
+  @include table;
+
+  * {
+    line-height: inherit;
+    height: inherit;
+  }
+
+  input {
+    display: table-cell;
+    width: 100%;
+  }
+}
+
+///
+/// Creates an input group control
+///
+@mixin input-group-control
+{
+  display: table-cell;
+  width: 1%;
+  height: inherit;
+  white-space: nowrap;
+  vertical-align: middle;
+}

@@ -1,0 +1,4 @@
+@import '../../bodykit';
+
+.input-group { @include input-group; }
+.input-group-control { @include input-group-control; }

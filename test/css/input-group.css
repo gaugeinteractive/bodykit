@@ -1,0 +1,16 @@
+.input-group {
+  display: table;
+  border-collapse: collapse; }
+  .input-group * {
+    line-height: inherit;
+    height: inherit; }
+  .input-group input {
+    display: table-cell;
+    width: 100%; }
+
+.input-group-control {
+  display: table-cell;
+  width: 1%;
+  height: inherit;
+  white-space: nowrap;
+  vertical-align: middle; }
