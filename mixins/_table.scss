@@ -19,14 +19,13 @@
     $thead: null,
     $tfoot: null,
     $tbody: null,
-    $layout: auto
+    $layout: null
 ) {
 
     display: table;
     border-collapse: collapse;
 
-    @if   $layout != null
-      and $layout != auto {
+    @if $layout != null {
         table-layout: $layout;
     }
 
