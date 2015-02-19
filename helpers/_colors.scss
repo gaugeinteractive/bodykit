@@ -9,13 +9,13 @@
 /// increases or decreases one or more properties of a color.
 ///
 /// @param {color} $color - The color to adjust
-/// @param {number} $h (0) - The adjustment to make on the hue component,
+/// @param {number} $h [0] - The adjustment to make on the hue component,
 /// in degrees
-/// @param {number} $s (0) - The adjustment to make on the saturation component,
+/// @param {number} $s [0] - The adjustment to make on the saturation component,
 /// between -100% and 100% inclusive
-/// @param {number} $l (0) - The adjustment to make on the lightness component,
+/// @param {number} $l [0] - The adjustment to make on the lightness component,
 /// between -100% and 100% inclusive
-/// @param {number} $a (0) - The adjustment to make on the alpha component,
+/// @param {number} $a [0] - The adjustment to make on the alpha component,
 /// between -1 and 1 inclusive
 /// @return {color} - The adjusted color
 ///
@@ -43,13 +43,13 @@
 /// fluidly scales one or more properties of a color.
 ///
 /// @param {color} $color - The color to scale
-/// @param {number} $s (0) - The amount adjust the hue component, in degrees
+/// @param {number} $s [0] - The amount adjust the hue component, in degrees
 /// Note that this value is not scaled, as `scale-color` does not support hue
-/// @param {number} $s (0) - The amount to scale the saturation component,
+/// @param {number} $s [0] - The amount to scale the saturation component,
 /// between -100% and 100% inclusive
-/// @param {number} $l (0) - The amount to scale the lightness component,
+/// @param {number} $l [0] - The amount to scale the lightness component,
 /// between -100% and 100% inclusive
-/// @param {number} $a (0) - The amount to scale the alpha component,
+/// @param {number} $a [0] - The amount to scale the alpha component,
 /// between -1 and 1 inclusive
 /// @return {color} - The scaled color
 ///
@@ -76,13 +76,13 @@
 /// changes one or more properties of a color.
 ///
 /// @param {color} $color - The color to change
-/// @param {number} $h (0) - The new hue component for the color, in degrees
+/// @param {number} $h [0] - The new hue component for the color, in degrees
 /// Note that this value is not scaled, as `scale-color` does not support hue
-/// @param {number} $s (0) - The new saturation component for the color,
+/// @param {number} $s [0] - The new saturation component for the color,
 /// between 0% and 100% inclusive
-/// @param {number} $l (0) - The new lightness component for the color,
+/// @param {number} $l [0] - The new lightness component for the color,
 /// within 0% and 100% inclusive
-/// @param {number} $a (0) - The new alpha component for the color,
+/// @param {number} $a [0] - The new alpha component for the color,
 /// within 0 and 1 inclusive
 /// @return {color} - The changed color
 ///

@@ -33,7 +33,7 @@
 ///
 /// Center an element using with `auto` margins.
 ///
-/// @param {number} $max-width (null) - A `max-width` value of the to-be-centered block.
+/// @param {number} $max-width [null] - A `max-width` value of the to-be-centered block.
 ///
 @mixin center-block (
     $max-width: null
@@ -51,7 +51,7 @@
 /// NOTE: This method uses `position: absolute`, so the element will be centered
 ///   inside its positioning parent.
 ///
-/// @param {string} $axis (both) - Omit, or pass 'both' to center on both axes.
+/// @param {string} $axis [both] - Omit, or pass 'both' to center on both axes.
 ///    Set to 'x' or 'y' to center on one axis only.
 ///
 @mixin center-transform (

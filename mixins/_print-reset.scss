@@ -115,7 +115,7 @@
 ///
 /// Wrapper mixin for all print resets
 ///
-/// @param {list} $exclude (false) - The resets to exclude
+/// @param {list} $exclude [false] - The resets to exclude
 ///
 @mixin print-reset (
     $exclude: false

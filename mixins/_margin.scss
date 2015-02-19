@@ -7,7 +7,7 @@
 /// Set `margin`(s)
 /// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
 ///
-/// @param {number|list} $margin - The `margin`(s) to be set
+/// @param {number|list} $margin - The margin(s) to be set
 ///
 @mixin margin (
     $margin

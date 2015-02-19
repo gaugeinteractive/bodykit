@@ -149,7 +149,7 @@
 ///
 /// Print all the resets
 ///
-/// @param list $exclude (false) - A list of resets to be excluded
+/// @param list $exclude [false] - A list of resets to be excluded
 ///
 @mixin reset (
     $exclude: false

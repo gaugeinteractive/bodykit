@@ -7,7 +7,7 @@
 /// Set `padding`(s)
 /// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
 ///
-/// @param {number|list} $padding - The `padding`(s) to be set
+/// @param {number|list} $padding - The padding(s) to be set
 ///
 @mixin padding (
     $padding

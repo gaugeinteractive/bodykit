@@ -8,7 +8,7 @@
 /// More friendly for touchscreens, keyboard navigators, etc.; account for the
 /// various means of targeting elements.
 ///
-/// @param {bool} $active (false) - Declare whether or not to target the
+/// @param {bool} $active [false] - Declare whether or not to target the
 ///    `:active` state
 /// @return {list} - A list of "selected" psuedo classes
 ///

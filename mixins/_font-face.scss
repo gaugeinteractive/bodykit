@@ -50,11 +50,11 @@
 /// be declared in the following order: normal, bold, italic, bold+italic.
 ///
 /// @param {string} $font-family - The name of the font family
-/// @param {string} $file-path - The path to the font file(s), including the basename
+/// @param {string} $file-path - The path to the font file[s], including the basename
 ///   of the file(s)
-/// @param {string} $weight (normal) - The font weight of the font face rule
-/// @param {string} $style (normal) - The font style of the font face rule
-/// @param {list} $formats (eot woff ttf svg) The font formats to be included in the
+/// @param {string} $weight [normal] - The font weight of the font face rule
+/// @param {string} $style [normal] - The font style of the font face rule
+/// @param {list} $formats [eot woff ttf svg] The font formats to be included in the
 ///   font face rule
 ///
 @mixin font-face (

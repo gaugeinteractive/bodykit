@@ -6,7 +6,7 @@
 ///
 /// Remove default styling from a list
 ///
-/// @param {bool} $no-margin (true) - If `true`, top and bottom margins will be
+/// @param {bool} $no-margin [true] - If `true`, top and bottom margins will be
 ///    removed from the list.
 ///
 @mixin list-unstyled (
@@ -25,7 +25,7 @@
 ///
 /// Inline list items
 ///
-/// @param {bool} $no-margin (true) - If `true`, top and bottom margins will be
+/// @param {bool} $no-margin [true] - If `true`, top and bottom margins will be
 ///    removed from the list.
 ///
 @mixin list-inline (
@@ -43,8 +43,8 @@
 ///
 /// Float list items
 ///
-/// @param {string} $dir (left) - The direction to float the list items
-/// @param {bool} $no-margin (true) - If `true`, top and bottom margins will be
+/// @param {string} $dir [left] - The direction to float the list items
+/// @param {bool} $no-margin [true] - If `true`, top and bottom margins will be
 ///    removed from the list.
 ///
 @mixin list-float (
@@ -64,9 +64,9 @@
 ///
 /// Punctuate list items
 ///
-/// @param {string} $divider (', ') - The divider to punctuate the list with
-/// @param {string} $display (inline) - The display value to apply to the list items
-/// @param {bool} $no-margin (true) - If `true`, top and bottom margins will be
+/// @param {string} $divider [', '] - The divider to punctuate the list with
+/// @param {string} $display [inline] - The display value to apply to the list items
+/// @param {bool} $no-margin [true] - If `true`, top and bottom margins will be
 ///    removed from the list.
 ///
 @mixin list-punctuated (
@@ -90,7 +90,7 @@
 ///
 /// Divide list items with border
 ///
-/// @param {bool} $no-margin (true) - If `true`, top and bottom margins will be
+/// @param {bool} $no-margin [true] - If `true`, top and bottom margins will be
 ///    removed from the list.
 ///
 @mixin list-divided (
@@ -174,13 +174,13 @@
 ///  NOTE: This should only be used on ordered lists
 ///
 ///  @param {number} $depth - How deep the nesting should go
-///  @param {number} $counter-start (1) - The number at which the nesting
+///  @param {number} $counter-start [1] - The number at which the nesting
 ///    should start
-///  @param {string} $counter-style (decimal) - The number at which the nesting
+///  @param {string} $counter-style [decimal] - The number at which the nesting
 ///    should start. Must be a valid `list-style-type` as defined by the W3C.
-///  @param {string} $counter-seperator ('.') - The content that will sperate
+///  @param {string} $counter-seperator ['.'] - The content that will sperate
 ///    the sections of the counter
-///  @param {string} $counter-after ($counter-seperator) - The content to
+///  @param {string} $counter-after [$counter-seperator] - The content to
 ///    appear after the counter (e.g. the ')' in '1.1)')
 ///
 ///  @link http://www.w3.org/TR/CSS21/generate.html#propdef-list-style-type

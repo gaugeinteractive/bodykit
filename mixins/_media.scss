@@ -106,7 +106,7 @@ $media-value: 0;
 ///
 /// Media query for high resoultion displays
 ///
-/// @param {number} $ratio (1.3) - The device pixel ratio for which the media query
+/// @param {number} $ratio [1.3] - The device pixel ratio for which the media query
 /// should target
 ///
 @mixin hd(

@@ -6,8 +6,8 @@
 ///
 /// Create a fluid sticky footer
 ///
-/// @param {selector} $wrapper (body) - The wrapper in which the footer is contained
-/// @param {selector} $footer (footer) - The footer element
+/// @param {selector} $wrapper [body] - The wrapper in which the footer is contained
+/// @param {selector} $footer [footer] - The footer element
 /// @link http://pixelsvsbytes.com/blog/2011/09/sticky-css-footers-the-flexible-way/
 ///
 @mixin sticky-footer (

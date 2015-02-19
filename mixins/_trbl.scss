@@ -19,7 +19,7 @@
 /// @access private
 ///
 /// @param {list} $trbl - A list of TRBL (top, right, bottom, left) values.
-/// @param {string} $property ('') - The property.
+/// @param {string} $property [''] - The property.
 ///
 @mixin _trbl (
     $trbl,

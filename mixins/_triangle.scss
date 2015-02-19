@@ -31,7 +31,7 @@
 ///    If only one value is passed an equilateral triangle will be drawn. If two
 ///    values are passed, the first value defines the base and the second
 ///    value defines the height of the triangle.
-/// @param {color} $color (currentColor) - The color of the triangle. Defaults to `currentColor`
+/// @param {color} $color [currentColor] - The color of the triangle. Defaults to `currentColor`
 ///
 @mixin triangle (
     $direction,

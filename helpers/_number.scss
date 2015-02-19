@@ -25,7 +25,7 @@
 /// Round a number, keeping a specified number of decimals.
 ///
 /// @param {number} $num - The number to be rounded.
-/// @param {number} $digits (0) - The number of digits to appear after the decimal point.
+/// @param {number} $digits [0] - The number of digits to appear after the decimal point.
 ///
 /// @return {number} - The rounded number, containing the set number of digits.
 ///

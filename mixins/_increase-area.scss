@@ -8,7 +8,7 @@
 /// increasing the hitbox for links
 ///
 /// @param {number} $offset - The amount to increase the area by
-/// @param {string} $method (padding) - The method to use
+/// @param {string} $method [padding] - The method to use
 ///
 @mixin increase-area (
   $offset,

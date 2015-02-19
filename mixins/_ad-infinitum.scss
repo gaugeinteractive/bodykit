@@ -22,13 +22,13 @@
 /// }
 /// ```
 ///
-/// @param {string} $push (padding) - The method to be used to push the content
+/// @param {string} $push [padding] - The method to be used to push the content
 /// NOTE: `border` can be useful when absolutely positioning children.
 /// `null` can be useful when content is not constrained to the parent width.
-/// @param {string} $pull (margin) - The method to be used to pull the content
-/// @param {string} $direction (horizontal) - The direction in which to span ad
+/// @param {string} $pull [margin] - The method to be used to pull the content
+/// @param {string} $direction [horizontal] - The direction in which to span ad
 ///   inifinitum
-/// @param {bool} $content-box (true) - Set `box-sizing: content-box` when
+/// @param {bool} $content-box [true] - Set `box-sizing: content-box` when
 ///   set to `true`, only applicable when using `$pull: position`.
 ///
 @mixin ad-infinitum (

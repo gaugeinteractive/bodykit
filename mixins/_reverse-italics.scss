@@ -7,7 +7,7 @@
 /// Italicize a section of text while de-italicizing those elements that would
 /// normally be italicized — such as `<em>`, `<cite>`, and `<i>`.
 ///
-/// @param {string|list} $selectors (null) - A list of CSS selectors that will
+/// @param {string|list} $selectors [null] - A list of CSS selectors that will
 /// not be italicized
 ///
 @mixin reverse-italics (

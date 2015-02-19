@@ -15,9 +15,9 @@
 ///    it will be `background-color`.
 /// @param {color|list} $on - Color(s) for the "on" state (`:hover` and `:focus`).
 ///    One or two values, interpreted the same as `$off`, above.
-/// @param {number} $duration (0) - The `transition-duration` between `$off`
+/// @param {number} $duration [0] - The `transition-duration` between `$off`
 ///    and `$on` states.
-/// @param {bool} $bg (false) - Set to `true` if you want to pass a single color
+/// @param {bool} $bg [false] - Set to `true` if you want to pass a single color
 ///    value for the `$off` and `$on` arguments, and you want that value interpreted
 ///    as `background-color`. (By default, a single value will be intepreted as
 ///    `color`.)

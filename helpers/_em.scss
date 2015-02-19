@@ -10,7 +10,7 @@ $rem-base: 16 !default;
 /// Convert pixels to `em`s
 ///
 /// @param {number|list} $pixels - The pixel value(s) to be converted to `em`s
-/// @param {number} $base ($em-base) - The base value
+/// @param {number} $base [$em-base] - The base value
 /// @return {number|list} - The `em` value(s)
 ///
 @function em (

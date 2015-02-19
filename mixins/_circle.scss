@@ -6,7 +6,7 @@
 ///
 /// Draw a CSS ellipse
 ///
-/// @param {list|number} $size (null) - The size (width, height) of the ellipse.
+/// @param {list|number} $size [null] - The size (width, height) of the ellipse.
 ///    A single value will make a circle.
 ///
 @mixin ellipse (
@@ -19,7 +19,7 @@
 ///
 /// Draw a CSS circle
 ///
-/// @param {list|number} $size (null) - The size (width, height) of the ellipse.
+/// @param {list|number} $size [null] - The size (width, height) of the ellipse.
 ///    A single, non-null value will make a circle.
 ///
 @mixin circle (
@@ -31,7 +31,7 @@
 ///
 /// Draw a CSS obround
 ///
-/// @param {list|number} $size (null) - The size (width, height) of the obround.
+/// @param {list|number} $size [null] - The size (width, height) of the obround.
 ///    A single, non-null value will make a circle.
 ///
 @mixin obround (
