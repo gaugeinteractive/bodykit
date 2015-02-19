@@ -7,7 +7,7 @@
 /// Create responsive tables where table headers label each "row" of table data
 /// Unless the content of each `td` is wrapped in a styling hook, a hack is needed to
 /// add left padding and/or a left border to the data. Add the following to the
-/// @content block:
+/// `@content` block:
 /// ```
 ///   border-right: 10px solid transparent; /* The "padding" */
 ///   box-shadow: inset -1px 0 #ddd; /* The "border" */

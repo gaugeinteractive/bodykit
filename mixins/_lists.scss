@@ -91,6 +91,7 @@
 ///
 /// @param {Bool} $no-margin [true] - If `true`, top and bottom margins will be
 ///    removed from the list.
+/// @content Used to style the divider
 ///
 @mixin list-divided(
     $no-margin: true
