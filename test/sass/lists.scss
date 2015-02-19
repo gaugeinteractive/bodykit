@@ -1,5 +1,6 @@
 @import '../../bodykit';
 
-.list-divided {
-    @include list-divided;
-}
+.list-unstyled { @include list-unstyled; }
+.list-inline { @include list-inline; }
+.list-float { @include list-float; }
+.list-divided { @include list-divided; }

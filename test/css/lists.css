@@ -1,16 +1,42 @@
-.list-divided {
+.list-unstyled {
   list-style-type: none;
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0; }
-  .list-divided {
-    display: table;
-    border-collapse: collapse; }
-    .list-divided > li {
-      display: table-cell; }
-    .list-divided > li {
-      vertical-align: middle; }
-      .list-divided > li:first-child {
-        border-left: 0; }
-      .list-divided > li:last-child {
-        border-right: 0; }
+
+.list-inline {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0; }
+  .list-inline > li {
+    display: inline-block; }
+
+.list-float {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0; }
+  .list-float:before, .list-float:after {
+    content: '';
+    display: table; }
+  .list-float:after {
+    clear: both; }
+  .list-float > li {
+    float: left; }
+
+.list-divided {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: table;
+  border-collapse: collapse; }
+  .list-divided > li {
+    display: table-cell; }
+  .list-divided > li {
+    vertical-align: middle; }
+    .list-divided > li:first-child {
+      border-left: 0; }
+    .list-divided > li:last-child {
+      border-right: 0; }
