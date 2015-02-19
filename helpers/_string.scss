@@ -3,14 +3,15 @@
 /// @author Joey Hoer
 ////
 
-//*
-// Expand an abbreviation
-//
-// @param {string} $abbr - The abbreviation to be expanded
-// @param {list} $defs [()] - A dictionary of definitions to search for the expansion
-// @return {string} - The expanded abbreviation, or the original string, if the string
-//   could not be expanded
-//
+///
+/// Expand an abbreviation
+///
+/// @param {String} $abbr - The abbreviation to be expanded
+/// @param {List} $defs [()] - A dictionary of definitions to search for the expansion
+///
+/// @return {String} - The expanded abbreviation, or the original string, if the
+/// string could not be expanded
+///
 @function expand-abbr(
     $abbr,
     $defs: ()

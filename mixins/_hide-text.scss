@@ -6,10 +6,10 @@
 ///
 /// Hide text using one of a number of methods
 ///
-/// @param {string} $method [pseudo] - The method to use to hhide the text.
+/// @param {String} $method [pseudo] - The method to use to hhide the text.
 /// Possible values include `pseudo`, `indent`, and `font`.
 ///
-@mixin hide-text (
+@mixin hide-text(
     $method: pseudo
 ){
     @if in-list($method, (pseudo, indent)){

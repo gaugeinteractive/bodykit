@@ -11,17 +11,17 @@
 /// over the container, allowing grandchildren to be positioned as normal. This
 /// is the default behavior.
 ///
-/// @param {number} $ratio - The ratio of width to height.
+/// @param {Number} $ratio - The ratio of width to height.
 ///    Photos and videos usually come in 4/3 or 16/9 ratios.
-/// @param {string} $element [:after] - The element to use to create
+/// @param {String} $element [:after] - The element to use to create
 ///    the aspect ratio.
-/// @param {bool} $stretch [true] - If `true`, direct descendants will be
+/// @param {Bool} $stretch [true] - If `true`, direct descendants will be
 ///    stretched over the container
-/// @param {bool} $overwrite [false] - If `true`, only the bottom padding
+/// @param {Bool} $overwrite [false] - If `true`, only the bottom padding
 ///    of the element will be printed. Used to overwrite an existing aspect ratio
 ///    in responsive layouts
 ///
-@mixin aspect-ratio (
+@mixin aspect-ratio(
     $ratio,
     $element: ":after",
     $stretch: true,

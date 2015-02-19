@@ -7,10 +7,10 @@
 /// Increases the area of an element, preserving it's placement. Useful for
 /// increasing the hitbox for links
 ///
-/// @param {number} $offset - The amount to increase the area by
-/// @param {string} $method [padding] - The method to use
+/// @param {Number} $offset - The amount to increase the area by
+/// @param {String} $method [padding] - The method to use
 ///
-@mixin increase-area (
+@mixin increase-area(
   $offset,
   $method: 'padding'
 ){

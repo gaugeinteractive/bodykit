@@ -6,14 +6,15 @@
 ///
 /// Get a list of `src` values appropriate for use with `@font-face`
 ///
-/// @param {list} $formats - A list of formats to include (by file extension)
-/// @param {string} $file-path - The path to the font file(s), including the basename
+/// @param {List} $formats - A list of formats to include (by file extension)
+/// @param {String} $file-path - The path to the font file(s), including the basename
 ///   of the file(s)
-/// @param {string} $font-family - The name of the font family (fragment identifier),
+/// @param {String} $font-family - The name of the font family (fragment identifier),
 ///   required only if SVG font's are being used
-/// @return {list} - A comma separated list of font sources
 ///
-@function _font-src (
+/// @return {List} - A comma separated list of font sources
+///
+@function _font-src(
     $formats,
     $file-path,
     $font-family: null
@@ -49,15 +50,15 @@
 /// The order of `@font-face` rules matter. To ensure fonts load correctly, they must
 /// be declared in the following order: normal, bold, italic, bold+italic.
 ///
-/// @param {string} $font-family - The name of the font family
-/// @param {string} $file-path - The path to the font file[s], including the basename
+/// @param {String} $font-family - The name of the font family
+/// @param {String} $file-path - The path to the font file[s], including the basename
 ///   of the file(s)
-/// @param {string} $weight [normal] - The font weight of the font face rule
-/// @param {string} $style [normal] - The font style of the font face rule
-/// @param {list} $formats [eot woff ttf svg] The font formats to be included in the
+/// @param {String} $weight [normal] - The font weight of the font face rule
+/// @param {String} $style [normal] - The font style of the font face rule
+/// @param {List} $formats [eot woff ttf svg] The font formats to be included in the
 ///   font face rule
 ///
-@mixin font-face (
+@mixin font-face(
   $font-family,
   $file-path,
   $weight: normal,

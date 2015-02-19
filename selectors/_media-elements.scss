@@ -7,11 +7,11 @@
 /// Get a list of media elements
 /// Will return all media element selectors by default
 ///
-/// @return {list} - A list of media element selectors
+/// @return {List} - A list of media element selectors
 ///
 @function media-elements(
     $exclude...
-) {
+){
 
     $elements: (
         audio,

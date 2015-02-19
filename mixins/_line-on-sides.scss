@@ -7,9 +7,9 @@
 /// Draws decorative lines on sides of the element.
 /// The element will be centered.
 ///
-/// @param {number} $padding - The padding to be applied to the left and right of
+/// @param {Number} $padding - The padding to be applied to the left and right of
 ///    the element.
-/// @param {bool} $both [true] - Defines how `@content` should be used. The
+/// @param {Bool} $both [true] - Defines how `@content` should be used. The
 ///    default value, "true", will apply the content to both the `:before` and
 ///    `:after` psuedo elements. If "false", the content will be applied to the
 ///    element itself, allowing different values to be applied to `:before` and
@@ -22,10 +22,10 @@
 ///    background-size: $w $h;
 ///    ```
 ///
-@mixin line-on-sides (
+@mixin line-on-sides(
     $padding,
     $both: true
-) {
+){
     @if unit($padding) == '%' {
         @warn "border-width may not be defined as a percentage";
     }

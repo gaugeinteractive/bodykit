@@ -17,9 +17,9 @@
 ///    </div>
 ///    ```
 ///
-/// @param {string} $inner - The selector
+/// @param {String} $inner - The selector
 ///
-@mixin center-float (
+@mixin center-float(
     $inner
 ){
     float: right;
@@ -33,7 +33,7 @@
 ///
 /// Center an element using with `auto` margins.
 ///
-/// @param {number} $max-width [null] - A `max-width` value of the to-be-centered block.
+/// @param {Number} $max-width [null] - A `max-width` value of the to-be-centered block.
 ///
 @mixin center-block (
     $max-width: null
@@ -51,10 +51,10 @@
 /// NOTE: This method uses `position: absolute`, so the element will be centered
 ///   inside its positioning parent.
 ///
-/// @param {string} $axis [both] - Omit, or pass 'both' to center on both axes.
+/// @param {String} $axis [both] - Omit, or pass 'both' to center on both axes.
 ///    Set to 'x' or 'y' to center on one axis only.
 ///
-@mixin center-transform (
+@mixin center-transform(
   $axis: both // or x or y
 ){
 
@@ -86,11 +86,11 @@
 /// NOTE: This method only works if the element-to-be-centered has a fixed
 ///   dimension on the relevant axis
 ///
-/// @param {list} $dimensions - A two-value list: the `width` and `height` of the
+/// @param {List} $dimensions - A two-value list: the `width` and `height` of the
 ///   element-to-be-centered (both optional). To bypass either and avoid
 ///   centering in that dimension, pass n.
 ///
-@mixin center-absolute (
+@mixin center-absolute(
     $dimensions
 ){
 
@@ -126,11 +126,11 @@
 ///   as an argument.
 ///   Any to-be-centered element should be a direct descendant of the container.
 ///
-/// @param {string} $inner - A CSS selector for the inner element. Wrap the selector in quotes.
+/// @param {String} $inner - A CSS selector for the inner element. Wrap the selector in quotes.
 ///
-@mixin center-table (
+@mixin center-table(
     $inner: ".inner"
-) {
+){
     display: table;
     table-layout: fixed;
 
@@ -147,9 +147,9 @@
 ///   as an argument.
 ///   Any to-be-centered element should be a direct descendant of the container.
 ///
-/// @param {string} $inner - A CSS selector for the inner element. Wrap the selector in quotes.
+/// @param {String} $inner - A CSS selector for the inner element. Wrap the selector in quotes.
 ///
-@mixin center-inline-block (
+@mixin center-inline-block(
     $inner: ".inner",
     $space: -0.25em
 ){

@@ -6,15 +6,15 @@
 ///
 /// Justifies every line, including the last
 ///
-/// @param {snumber} $line-height [null] - This may be set to the line-height of
+/// @param {Number} $line-height [null] - This may be set to the line-height of
 ///   the element, and will remove extra vertical space by applying a
 ///   negative bottom margin. *NOTE:* This has issues when bottom border is applied
-/// @param {string} $selector [':after'] - The selector which specifies the element or
+/// @param {String} $selector [':after'] - The selector which specifies the element or
 ///   psuedo-element to be used to force justification. This *must* be `(:):after`,
 ///   `:last-child`, or an equivilent, as the last element in the conatiner is
 ///   the only element able to force justification.
 ///
-@mixin justify-all (
+@mixin justify-all(
     $line-height: null,
     $selector: ':after'
 ){

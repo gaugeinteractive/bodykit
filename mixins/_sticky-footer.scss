@@ -6,14 +6,14 @@
 ///
 /// Create a fluid sticky footer
 ///
-/// @param {selector} $wrapper [body] - The wrapper in which the footer is contained
-/// @param {selector} $footer [footer] - The footer element
+/// @param {Selector} $wrapper [body] - The wrapper in which the footer is contained
+/// @param {Selector} $footer [footer] - The footer element
 /// @link http://pixelsvsbytes.com/blog/2011/09/sticky-css-footers-the-flexible-way/
 ///
-@mixin sticky-footer (
+@mixin sticky-footer(
   $wrapper: "body",
   $footer: "footer"
-) {
+){
 
     // The `html` and `body` elements must be 100% height to allow the container
     // to fill the full vertical width of the viewport

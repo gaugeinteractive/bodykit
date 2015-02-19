@@ -6,13 +6,13 @@
 ///
 /// Hide only visually, but have it available for screenreaders
 ///
-/// @param {bool} $focusable [false] - Allow the element to be focusable
+/// @param {Bool} $focusable [false] - Allow the element to be focusable
 ///   when navigated to via the keyboard. Default is false.
 ///
 /// @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 /// @link https://www.drupal.org/node/897638
 ///
-@mixin hide-visually (
+@mixin hide-visually(
     $focusable: false
 ){
     border: 0;

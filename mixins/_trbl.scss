@@ -18,10 +18,10 @@
 ///
 /// @access private
 ///
-/// @param {list} $trbl - A list of TRBL (top, right, bottom, left) values.
-/// @param {string} $property [''] - The property.
+/// @param {List} $trbl - A list of TRBL (top, right, bottom, left) values.
+/// @param {String} $property [''] - The property.
 ///
-@mixin _trbl (
+@mixin _trbl(
     $trbl,
     $property: ''
 ){

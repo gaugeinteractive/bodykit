@@ -10,13 +10,14 @@
 /// @link http://codepen.io/scottkellum/pen/mktBg/
 ///
 /// @example html
-/// <div>
-///   <a href="#a" class="link-overlay" aria-hidden></a>
-///   <h2><a href="#b">Header</a></h2>
-///   <p>This contwent contains a <a href="#c">link</a></p>
-/// </div>
+///   <div>
+///     <a href="#a" class="link-overlay" aria-hidden></a>
+///     <h2><a href="#b">Header</a></h2>
+///     <p>This contwent contains a <a href="#c">link</a></p>
+///   </div>
 ///
-@mixin link-overlay {
+@mixin link-overlay
+{
     // Force link to fill box
     // Container must have positioning other than static.
     @include absolute(0);

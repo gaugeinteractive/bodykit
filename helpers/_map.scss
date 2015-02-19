@@ -6,11 +6,12 @@
 ///
 /// Search a map
 ///
-/// @param {map} $map - The map to search
-/// @param {mixed} $value - The value to search for
-/// @return {mixed} - The value which is found
+/// @param {Map} $map - The map to search
+/// @param {Mixed} $value - The value to search for
 ///
-@function map-search($map, $value) {
+/// @return {Mixed} - The value which is found
+///
+@function map-search($map, $value){
     $values: map-values($map);
     $keys: map-keys($map);
     $index: index(map-values($map), $value);

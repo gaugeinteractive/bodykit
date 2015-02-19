@@ -8,7 +8,7 @@
 ///
 /// Passing `null` will prevent a rule from a being applied to the corresponding corner(s)
 ///
-/// @param {number|list} $radius - The radius/radii to be set
+/// @param {Number|List} $radius - The radius/radii to be set
 ///
 @mixin border-radius(
     $radius
@@ -19,7 +19,7 @@
 ///
 /// Set the border top radii
 ///
-/// @param {number} $radius - The radius to set for the top borders
+/// @param {Number} $radius - The radius to set for the top borders
 ///
 @mixin border-top-radius(
     $radius
@@ -31,7 +31,7 @@
 ///
 /// Set the border right radii
 ///
-/// @param {number} $radius - The radius to set for the right borders
+/// @param {Number} $radius - The radius to set for the right borders
 ///
 @mixin border-right-radius(
     $radius
@@ -42,7 +42,7 @@
 ///
 /// Set the border bottom radii
 ///
-/// @param {number} $radius - The radius to set for the bottom borders
+/// @param {Number} $radius - The radius to set for the bottom borders
 ///
 @mixin border-bottom-radius(
     $radius
@@ -53,7 +53,7 @@
 ///
 /// Set the border left radii
 ///
-/// @param {number} $radius - The radius to set for the left borders
+/// @param {Number} $radius - The radius to set for the left borders
 ///
 @mixin border-left-radius(
     $radius

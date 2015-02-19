@@ -7,12 +7,12 @@
 /// Takes base to the exponent power, that is, base^exponent.
 /// NOTE: This function is defined in Compass, this is a fallback.
 ///
-/// @param {number} $base - The base number.
-/// @param {number} $exponent - The exponent.
+/// @param {Number} $base - The base number.
+/// @param {Number} $exponent - The exponent.
 ///
-/// @return {number} - The resulting number.
+/// @return {Number} - The resulting number.
 ///
-@function pow($base, $exponent) {
+@function pow($base, $exponent){
     $res: 1;
     @while($exponent > 0) {
         $res: $res * $base;
@@ -24,15 +24,15 @@
 ///
 /// Round a number, keeping a specified number of decimals.
 ///
-/// @param {number} $num - The number to be rounded.
-/// @param {number} $digits [0] - The number of digits to appear after the decimal point.
+/// @param {Number} $num - The number to be rounded.
+/// @param {Number} $digits [0] - The number of digits to appear after the decimal point.
 ///
-/// @return {number} - The rounded number, containing the set number of digits.
+/// @return {Number} - The rounded number, containing the set number of digits.
 ///
-@function to-fixed (
+@function to-fixed(
     $num,
     $digits: 0
-) {
+){
     $temp: pow(10, $digits);
     @return round($num*$temp)/$temp;
 }
@@ -40,12 +40,12 @@
 ///
 /// Strip the unit off a number.
 ///
-/// @param {number} $num - The number to remove units from.
+/// @param {Number} $num - The number to remove units from.
 ///
-/// @return {number} - The number with unit stripped off.
+/// @return {Number} - The number with unit stripped off.
 ///
-@function strip-unit (
+@function strip-unit(
     $num
-) {
+){
     @return ($num / ($num * 0 + 1));
 }

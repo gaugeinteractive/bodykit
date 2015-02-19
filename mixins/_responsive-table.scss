@@ -13,8 +13,7 @@
 ///   box-shadow: inset -1px 0 #ddd; /* The "border" */
 /// ```
 ///
-///
-/// @param {list} $headers - A list of headers, equivalent to the table headers (in order)
+/// @param {List} $headers - A list of headers, equivalent to the table headers (in order)
 /// @content `td:before`
 ///
 @mixin responsive-table(

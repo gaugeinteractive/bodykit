@@ -7,9 +7,9 @@
 /// Set `padding`(s)
 /// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
 ///
-/// @param {number|list} $padding - The padding(s) to be set
+/// @param {Number|List} $padding - The padding(s) to be set
 ///
-@mixin padding (
+@mixin padding(
     $padding
 ){
     @include _trbl($padding, padding);

@@ -6,8 +6,9 @@
 ///
 /// Get the opposing side
 ///
-/// @param {string} $side - The side.
-/// @return {string|null} - The opposing side, or null if there is no opposing side
+/// @param {String} $side - The side.
+///
+/// @return {String} - The opposing side, or null if there is no opposing side
 ///
 @function _sideOppositeTo(
     $side
@@ -19,21 +20,22 @@
     @if $side == "bottom" { @return "top"; }
     @if $side == "right" { @return "left"; }
     @if $side == "left" { @return "right"; }
+
     @return null;
 }
 
 ///
 /// Draw a CSS trangle
 ///
-/// @param {string} $direction - The direction which the triangle should point.
+/// @param {String} $direction - The direction which the triangle should point.
 ///    Accepts "up", "down", "left", "right".
-/// @param {number|list} $size - The size of the triangle. Accepts up to two values.
+/// @param {Number|List} $size - The size of the triangle. Accepts up to two values.
 ///    If only one value is passed an equilateral triangle will be drawn. If two
 ///    values are passed, the first value defines the base and the second
 ///    value defines the height of the triangle.
-/// @param {color} $color [currentColor] - The color of the triangle. Defaults to `currentColor`
+/// @param {Color} $color [currentColor] - The color of the triangle. Defaults to `currentColor`
 ///
-@mixin triangle (
+@mixin triangle(
     $direction,
     $size,
     $color: currentColor

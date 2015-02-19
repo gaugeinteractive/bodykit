@@ -6,19 +6,20 @@
 ///
 /// Draw outer stroke around text
 ///
-/// @param {number} $width - The width of the outer stroke
-/// @param {color} $color [currentColor] - The color of the outer stroke. If not defined,
+/// @param {Number} $width - The width of the outer stroke
+/// @param {Color} $color [currentColor] - The color of the outer stroke. If not defined,
 /// the stroke color with match the current font color.
-/// @param {number} $softness [0] - The softness of the stroke's edges
-/// @param {number} $step-width [normal] - The distance between each step
-/// @return {list} - A list of text-shadow properties that will generate the outer stroke
+/// @param {Number} $softness [0] - The softness of the stroke's edges
+/// @param {Number} $step-width [normal] - The distance between each step
+///
+/// @return {List} - A list of text-shadow properties that will generate the outer stroke
 ///
 @function outer-stroke(
     $width,
     $color: currentColor,
     $blur: 0,
     $font-weight: normal
-) {
+){
 
     // Validate font-weight value
     @if ( type-of($font-weight) == string ) {

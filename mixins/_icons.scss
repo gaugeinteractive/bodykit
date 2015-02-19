@@ -6,12 +6,12 @@
 ///
 /// Create icons
 ///
-/// @param {map} $icons - A map of icons identifiers where the map keys are the
+/// @param {Map} $icons - A map of icons identifiers where the map keys are the
 /// name of the icon/basename of the generated class name and the value is the
 /// content of the icon
-/// @param {string} $prefix ['icon-'] - The icon prefix. If a divider is desired,
+/// @param {String} $prefix ['icon-'] - The icon prefix. If a divider is desired,
 /// it should be included at the end of the string.
-/// @param {string} $suffix [null] - The icon suffix. If a divider is desired,
+/// @param {String} $suffix [null] - The icon suffix. If a divider is desired,
 /// it should be included at the beginning of the string.
 ///
 @mixin icons(

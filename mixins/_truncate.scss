@@ -6,7 +6,8 @@
 ///
 /// Truncate text to a single line, clipped with an ellipsis.
 ///
-@mixin truncate {
+@mixin truncate
+{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

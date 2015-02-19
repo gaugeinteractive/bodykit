@@ -6,19 +6,17 @@
 ///
 /// Generate class prefix selector
 ///
-/// @param {string} $prefix - The class prefix
+/// @param {String} $prefix - The class prefix
 ///
 @function class-prefix($prefix){
-    //unquote('&[class^="#{$prefix}"], &[class*=" #{$prefix}"]');
     @return unquote('[class^="#{$prefix}"], [class*=" #{$prefix}"]');
 }
 
 ///
 /// Generate class suffix selector
 ///
-/// @param {string} $suffix - The class suffix
+/// @param {String} $suffix - The class suffix
 ///
 @function class-suffix($suffix){
-    //unquote('&[class$="#{$suffix}"], &[class*="#{$suffix} "]');
     @return unquote('[class$="#{$suffix}"], [class*="#{$suffix} "]');
 }

@@ -6,12 +6,12 @@
 ///
 /// Sets defaults for single, responsive image
 ///
-/// @param {string} $image - The background image
-/// @param {number|list} $size [null] - The background size
-/// @param {number|list} $position [50%] - The background position
-/// @param {string} $repeat [no-repeat] - The background repeat
+/// @param {String} $image - The background image
+/// @param {Number|List} $size [null] - The background size
+/// @param {Number|List} $position [50%] - The background position
+/// @param {String} $repeat [no-repeat] - The background repeat
 ///
-@mixin background-image (
+@mixin background-image(
   $image,
   $size: null,
   $position: 50%,

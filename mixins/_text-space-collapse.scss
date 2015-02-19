@@ -6,10 +6,10 @@
 ///
 /// Collapse whitespace between adjacent `inline-block` elements
 ///
-/// @param {list} $font-family - The current `font-family`
-/// @param {list} $word-spacing - The current `word-spacing`
+/// @param {List} $font-family - The current `font-family`
+/// @param {List} $word-spacing - The current `word-spacing`
 ///
-@mixin text-space-collapse (
+@mixin text-space-collapse(
   $font-family,
   $word-spacing: normal
 ){

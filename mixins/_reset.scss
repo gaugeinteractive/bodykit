@@ -6,7 +6,8 @@
 ///
 /// Set `border-box` on everything, allowing for module inheritance
 ///
-@mixin reset-border-box {
+@mixin reset-border-box
+{
     :root {
         box-sizing: border-box;
     }
@@ -19,7 +20,8 @@
 ///
 /// Make headers and `<b>` semantic, not presentational
 ///
-@mixin reset-semanticize {
+@mixin reset-semanticize
+{
     #{headers()} {
         font-size: 1em;
         font-weight: normal;
@@ -34,7 +36,8 @@
 /// Remove the gap between images, videos, audio and canvas and the bottom of
 /// their containers: h5bp.com/i/440
 ///
-@mixin reset-vertical-alignment {
+@mixin reset-vertical-alignment
+{
     #{media-elements()} {
         vertical-align: middle;
     }
@@ -43,7 +46,8 @@
 ///
 /// Make clickable form elements have a pointer
 ///
-@mixin reset-pointer {
+@mixin reset-pointer
+{
     label,
     select,
     option,
@@ -55,12 +59,14 @@
 ///
 /// Reset form styling and constrain `textarea` resize
 ///
-@mixin reset-form {
+@mixin reset-form
+{
     fieldset {
         border: 0;
         margin: 0;
         padding: 0;
     }
+
     textarea {
         resize: vertical;
     }
@@ -69,7 +75,8 @@
 ///
 /// Reset default button styles
 ///
-@mixin reset-button {
+@mixin reset-button
+{
     #{button-inputs()},
     button {
         background: transparent;
@@ -93,7 +100,8 @@
 ///
 /// Reset default text fields
 ///
-@mixin reset-textfield {
+@mixin reset-textfield
+{
     #{text-inputs()},
     textarea {
         border-style: solid;
@@ -106,7 +114,8 @@
 ///
 /// Some paragraph margins just get in the way
 ///
-@mixin reset-paragraph {
+@mixin reset-paragraph
+{
     p:first-of-type {
         margin-top: 0;
     }
@@ -118,7 +127,8 @@
 ///
 /// Make content fluid by default
 ///
-@mixin reset-fluid {
+@mixin reset-fluid
+{
     #{media-elements()},
     input,
     select,
@@ -131,7 +141,8 @@
 ///
 /// Remove margins from figures
 ///
-@mixin reset-figure {
+@mixin reset-figure
+{
     figure {
         margin: 0;
     }
@@ -140,7 +151,8 @@
 ///
 /// Reset `address` `font-style`
 ///
-@mixin reset-address {
+@mixin reset-address
+{
     address {
         font-style: normal;
     }
@@ -151,7 +163,7 @@
 ///
 /// @param list $exclude [false] - A list of resets to be excluded
 ///
-@mixin reset (
+@mixin reset(
     $exclude: false
 ){
     @if not index($exclude, border-box) {

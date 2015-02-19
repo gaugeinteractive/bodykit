@@ -6,9 +6,9 @@
 ///
 /// Create a drop cap
 ///
-/// @param {number} $lines - The number of lines the drop cap should span
-/// @param {number} $line-height - The unitless `line-height` of the current context
-/// @param {number} $cap-height [1] - The height of a typical capital letter of the
+/// @param {Number} $lines - The number of lines the drop cap should span
+/// @param {Number} $line-height - The unitless `line-height` of the current context
+/// @param {Number} $cap-height [1] - The height of a typical capital letter of the
 /// drop cap's desired `font-face` as a ratio to `1em`
 /// (a number less than 1 will make the drop cap larger, a number greater
 /// than 1 will make the the drop cap smaller)

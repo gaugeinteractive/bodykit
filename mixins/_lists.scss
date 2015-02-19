@@ -6,10 +6,10 @@
 ///
 /// Remove default styling from a list
 ///
-/// @param {bool} $no-margin [true] - If `true`, top and bottom margins will be
+/// @param {Bool} $no-margin [true] - If `true`, top and bottom margins will be
 ///    removed from the list.
 ///
-@mixin list-unstyled (
+@mixin list-unstyled(
     $no-margin: true
 ){
 
@@ -25,12 +25,12 @@
 ///
 /// Inline list items
 ///
-/// @param {bool} $no-margin [true] - If `true`, top and bottom margins will be
+/// @param {Bool} $no-margin [true] - If `true`, top and bottom margins will be
 ///    removed from the list.
 ///
-@mixin list-inline (
+@mixin list-inline(
     $no-margin: true
-) {
+){
 
     @include list-unstyled($no-margin);
 
@@ -43,11 +43,11 @@
 ///
 /// Float list items
 ///
-/// @param {string} $dir [left] - The direction to float the list items
-/// @param {bool} $no-margin [true] - If `true`, top and bottom margins will be
+/// @param {String} $dir [left] - The direction to float the list items
+/// @param {Bool} $no-margin [true] - If `true`, top and bottom margins will be
 ///    removed from the list.
 ///
-@mixin list-float (
+@mixin list-float(
     $dir: left,
     $no-margin: true
 ){
@@ -64,16 +64,16 @@
 ///
 /// Punctuate list items
 ///
-/// @param {string} $divider [', '] - The divider to punctuate the list with
-/// @param {string} $display [inline] - The display value to apply to the list items
-/// @param {bool} $no-margin [true] - If `true`, top and bottom margins will be
+/// @param {String} $divider [', '] - The divider to punctuate the list with
+/// @param {String} $display [inline] - The display value to apply to the list items
+/// @param {Bool} $no-margin [true] - If `true`, top and bottom margins will be
 ///    removed from the list.
 ///
-@mixin list-punctuated (
+@mixin list-punctuated(
   $divider: ', ',
   $display: inline,
   $no-margin: true
-) {
+){
 
     @include list-unstyled($no-margin);
 
@@ -84,85 +84,36 @@
             content: $divider;
         }
     }
-
 }
 
 ///
 /// Divide list items with border
 ///
-/// @param {bool} $no-margin [true] - If `true`, top and bottom margins will be
+/// @param {Bool} $no-margin [true] - If `true`, top and bottom margins will be
 ///    removed from the list.
 ///
-@mixin list-divided (
+@mixin list-divided(
     $no-margin: true
 ){
+
     @include list-unstyled($no-margin);
-    & {
-        @include table($td: "& > li");
 
-        & > li {
-            vertical-align: middle;
-            @content;
+    @include table($td: "& > li");
 
-            &:first-child {
-                border-left: 0;
-            }
+    & > li {
+        vertical-align: middle;
+        @content;
 
-            &:last-child {
-                border-right: 0;
-            }
+        &:first-child {
+            border-left: 0;
+        }
+
+        &:last-child {
+            border-right: 0;
         }
     }
+
 }
-
-///
-///
-///
-// @mixin list-divided (
-//   $divider: "|",
-//   $space: 0.5em,
-//   $dir: left,
-//   $height: false,
-//   $no-margin: true
-// ) {
-
-//   @include list-floated($dir: $dir, $no-margin: $no-margin);
-
-//   $pseudo: if($dir == left, 'before', 'after');
-
-//   // If an explicit height is passed,
-//   // things are different: All <li>s
-//   // need the pseudo-element (to force height),
-//   // but the first's must be hidden.
-
-//   @if $height {
-//     & > li {
-//       height: $height;
-//     }
-//     & > li:#{$pseudo} {
-//       height: $height;
-//       content: $divider;
-//       display: inline-block;
-//       vertical-align: middle;
-//       @content;
-//     }
-//     & > li:first-child:#{$pseudo} {
-//       width: 0;
-//       visibility: hidden;
-//     }
-//   }
-
-//   & > li + li:#{$pseudo} {
-//     @if not $height {
-//       content: $divider;
-//       display: inline-block;
-//       @content;
-//     }
-//     margin-left: $space;
-//     margin-right: $space;
-//   }
-
-// }
 
 ///
 /// Create a numbered nested ordered list. For example:
@@ -173,14 +124,14 @@
 ///     2.1. Point Two
 ///  NOTE: This should only be used on ordered lists
 ///
-///  @param {number} $depth - How deep the nesting should go
-///  @param {number} $counter-start [1] - The number at which the nesting
+///  @param {Number} $depth - How deep the nesting should go
+///  @param {Number} $counter-start [1] - The number at which the nesting
 ///    should start
-///  @param {string} $counter-style [decimal] - The number at which the nesting
+///  @param {String} $counter-style [decimal] - The number at which the nesting
 ///    should start. Must be a valid `list-style-type` as defined by the W3C.
-///  @param {string} $counter-seperator ['.'] - The content that will sperate
+///  @param {String} $counter-seperator ['.'] - The content that will sperate
 ///    the sections of the counter
-///  @param {string} $counter-after [$counter-seperator] - The content to
+///  @param {String} $counter-after [$counter-seperator] - The content to
 ///    appear after the counter (e.g. the ')' in '1.1)')
 ///
 ///  @link http://www.w3.org/TR/CSS21/generate.html#propdef-list-style-type

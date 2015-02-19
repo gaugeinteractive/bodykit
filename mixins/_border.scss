@@ -9,12 +9,13 @@
 ///
 /// @access private
 ///
-/// @param {list} $wcs - The width, color, and style (in any order)
-/// @param {list} $defaults [null] - A list of default width, color,
+/// @param {List} $wcs - The width, color, and style (in any order)
+/// @param {List} $defaults [null] - A list of default width, color,
 ///    and style values to inherit
-/// @return {list} - The width, color, style
 ///
-@function _parse-wcs (
+/// @return {List} - The width, color, style
+///
+@function _parse-wcs(
     $wcs,
     $defaults: null
 ){
@@ -67,11 +68,11 @@
 /// Set `border`(s)
 /// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
 ///
-/// @param {list} $borders - The border(s) to be set
+/// @param {ArgList} $borders - The border(s) to be set
 ///
-@mixin border (
+@mixin border(
     $borders...
-) {
+){
 
     // Store length for performance
     $len: length($borders);
@@ -169,7 +170,7 @@
 /// Set `border-color`(s)
 /// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
 ///
-/// @param {number|list} $color - The border color(s) to be set
+/// @param {Number|List} $color - The border color(s) to be set
 ///
 @mixin border-color (
     $color
@@ -181,9 +182,9 @@
 /// Set `border-style`(s)
 /// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
 ///
-/// @param {number|list} $style - The border style(s) to be set
+/// @param {Number|List} $style - The border style(s) to be set
 ///
-@mixin border-style (
+@mixin border-style(
     $style
 ){
     @include _trbl($style, border-style);
@@ -193,7 +194,7 @@
 /// Set `border-width`(s)
 /// Passing `null` will prevent a rule from a being applied to the corresponding side(s)
 ///
-/// @param {number|list} $width - The border width(s) to be set
+/// @param {Number|List} $width - The border width(s) to be set
 ///
 @mixin border-width (
     $width

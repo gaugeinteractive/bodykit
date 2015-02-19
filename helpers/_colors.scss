@@ -8,24 +8,25 @@
 /// This is a shorthand version of the `adjust-color` function, which
 /// increases or decreases one or more properties of a color.
 ///
-/// @param {color} $color - The color to adjust
-/// @param {number} $h [0] - The adjustment to make on the hue component,
+/// @param {Color} $color - The color to adjust
+/// @param {Number} $h [0] - The adjustment to make on the hue component,
 /// in degrees
-/// @param {number} $s [0] - The adjustment to make on the saturation component,
+/// @param {Number} $s [0] - The adjustment to make on the saturation component,
 /// between -100% and 100% inclusive
-/// @param {number} $l [0] - The adjustment to make on the lightness component,
+/// @param {Number} $l [0] - The adjustment to make on the lightness component,
 /// between -100% and 100% inclusive
-/// @param {number} $a [0] - The adjustment to make on the alpha component,
+/// @param {Number} $a [0] - The adjustment to make on the alpha component,
 /// between -1 and 1 inclusive
-/// @return {color} - The adjusted color
 ///
-@function adjust-hsl (
+/// @return {Color} - The adjusted color
+///
+@function adjust-hsl(
     $color,
     $h: 0,
     $s: 0,
     $l: 0,
     $a: 0
-) {
+){
 
     @return adjust-color(
         $color,
@@ -42,24 +43,25 @@
 /// This is a shorthand version of the `scale-color` function, which
 /// fluidly scales one or more properties of a color.
 ///
-/// @param {color} $color - The color to scale
-/// @param {number} $s [0] - The amount adjust the hue component, in degrees
+/// @param {Color} $color - The color to scale
+/// @param {Number} $s [0] - The amount adjust the hue component, in degrees
 /// Note that this value is not scaled, as `scale-color` does not support hue
-/// @param {number} $s [0] - The amount to scale the saturation component,
+/// @param {Number} $s [0] - The amount to scale the saturation component,
 /// between -100% and 100% inclusive
-/// @param {number} $l [0] - The amount to scale the lightness component,
+/// @param {Number} $l [0] - The amount to scale the lightness component,
 /// between -100% and 100% inclusive
-/// @param {number} $a [0] - The amount to scale the alpha component,
+/// @param {Number} $a [0] - The amount to scale the alpha component,
 /// between -1 and 1 inclusive
-/// @return {color} - The scaled color
 ///
-@function scale-hsl (
+/// @return {Color} - The scaled color
+///
+@function scale-hsl(
     $color,
     $h: 0,
     $s: 0%,
     $l: 0%,
     $a: 0%
-) {
+){
 
     @return scale-color(
         adjust-hue($color, $h),
@@ -75,24 +77,25 @@
 /// This is a shorthand version of the `change-color` function, which
 /// changes one or more properties of a color.
 ///
-/// @param {color} $color - The color to change
-/// @param {number} $h [0] - The new hue component for the color, in degrees
+/// @param {Color} $color - The color to change
+/// @param {Number} $h [0] - The new hue component for the color, in degrees
 /// Note that this value is not scaled, as `scale-color` does not support hue
-/// @param {number} $s [0] - The new saturation component for the color,
+/// @param {Number} $s [0] - The new saturation component for the color,
 /// between 0% and 100% inclusive
-/// @param {number} $l [0] - The new lightness component for the color,
+/// @param {Number} $l [0] - The new lightness component for the color,
 /// within 0% and 100% inclusive
-/// @param {number} $a [0] - The new alpha component for the color,
+/// @param {Number} $a [0] - The new alpha component for the color,
 /// within 0 and 1 inclusive
-/// @return {color} - The changed color
 ///
-@function change-hsl (
+/// @return {Color} - The changed color
+///
+@function change-hsl(
     $color,
     $h: 0,
     $s: 0,
     $l: 0,
     $a: 0
-) {
+){
 
     @return change-color(
         $color,
@@ -107,9 +110,10 @@
 ///
 /// Add percentage of white to a color
 ///
-/// @param {color} $color - The color to tint
-/// @param {number} $percent - The amount at which to tint the color
-/// @return {color} - The tinted color
+/// @param {Color} $color - The color to tint
+/// @param {Number} $percent - The amount at which to tint the color
+///
+/// @return {Color} - The tinted color
 ///
 @function tint($color, $percent){
     @return mix(white, $color, $percent);
@@ -118,9 +122,10 @@
 ///
 /// Add percentage of black to a color
 ///
-/// @param {color} $color - The color to shade
-/// @param {number} $percent - The amount at which to shade the color
-/// @return {color} - The shaded color
+/// @param {Color} $color - The color to shade
+/// @param {Number} $percent - The amount at which to shade the color
+///
+/// @return {Color} - The shaded color
 ///
 @function shade($color, $percent){
     @return mix(black, $color, $percent);

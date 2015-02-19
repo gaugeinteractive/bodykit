@@ -6,11 +6,11 @@
 ///
 /// Set coordinate system offsets
 ///
-/// @param {number|list} $coords - The coordinates, in top, right, bottom, left
+/// @param {Number|List} $coords - The coordinates, in top, right, bottom, left
 /// format. Parsed as other box model shorthand properties.
-/// @param {string} $position - The position
+/// @param {String} $position - The position
 ///
-@mixin coords (
+@mixin coords(
     $coords,
     $position: ''
 ){
@@ -23,10 +23,10 @@
 ///
 /// Absolutely position an element and assign its coordinates
 ///
-/// @param {number|list} $coords - The coordinates, in top, right, bottom, left
+/// @param {Number|List} $coords - The coordinates, in top, right, bottom, left
 /// format. Parsed as other box model shorthand properties.
 ///
-@mixin absolute (
+@mixin absolute(
     $coords: null
 ){
     @include coords($coords, absolute);
@@ -35,9 +35,10 @@
 ///
 /// Fixed position an element and assign its coordinates
 ///
-/// @param number|list $coords
+/// @param {Number|List} $coords - The coordinates, in top, right, bottom, left
+/// format. Parsed as other box model shorthand properties.
 ///
-@mixin fixed (
+@mixin fixed(
     $coords: null
 ){
     @include coords($coords, fixed);
@@ -54,10 +55,10 @@
 ///
 /// @link http://www.w3.org/TR/CSS21/visuren.html#relative-positioning
 ///
-/// @param {number|list} $coords - A list (top, left) or a number which defines
+/// @param {Number|List} $coords - A list (top, left) or a number which defines
 /// both values
 ///
-@mixin relative (
+@mixin relative(
     $coords: null
 ){
     $len: length($coords);
@@ -76,10 +77,10 @@
 ///
 /// Stretch an element over its positioning parent
 ///
-/// @param {number|list} $coords - The coordinates, in top, right, bottom, left
+/// @param {Number|List} $coords [0] - The coordinates, in top, right, bottom, left
 /// format. Parsed as other box model shorthand properties.
 ///
-@mixin stretch (
+@mixin stretch(
     $coords: 0
 ){
     @include absolute($coords);

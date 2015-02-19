@@ -6,9 +6,11 @@
 ///
 /// Create a single color "image" with linear gradient
 ///
-/// @param {color} $color - The color
+/// @param {Color} $color - The color
 ///
-@function image-color (
+/// @return (String) - A string equal to an "image" of the color
+///
+@function image-color(
   $color
 ){
   @return linear-gradient($color 100%, #000)

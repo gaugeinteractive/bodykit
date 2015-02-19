@@ -6,10 +6,10 @@
 ///
 /// Sets the size of an element (`width` and `height`)
 ///
-/// @param {number} $width - The width
-/// @param {number} $height [$width] - The height
+/// @param {Number} $width - The width
+/// @param {Number} $height [$width] - The height
 ///
-@mixin size (
+@mixin size(
     $width,
     $height: $width
 ){

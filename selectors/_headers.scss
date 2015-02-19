@@ -7,14 +7,14 @@
 /// Get a list of header selectors
 /// Will return all header selectors by default
 ///
-/// @param {number} $from [null] - The header index to start with
-/// @param {number} $through [null] - The header index to end with
-/// @return {list} - A list of header selectors
+/// @param {Number} $from [null] - The header index to start with
+/// @param {Number} $through [null] - The header index to end with
+/// @return {List} - A list of header selectors
 ///
 @function headers(
     $from: null,
     $through: null
-) {
+){
 
     @if $from and not $through {
       $through: $from;

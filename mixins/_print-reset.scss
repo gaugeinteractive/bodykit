@@ -8,7 +8,8 @@
 ///
 /// @link http://www.sanbeiji.com/archives/953 Black prints faster
 ///
-@mixin print-reset-color {
+@mixin print-reset-color
+{
     * {
         background: transparent !important;
         color: #000 !important;
@@ -23,7 +24,8 @@
 /// Underlines links, print's link URLs (excluding fragment identifiers and
 /// links using the `javascript:` pseudo protocol)
 ///
-@mixin print-links {
+@mixin print-links
+{
 
     /* Underline links */
     a,
@@ -50,7 +52,8 @@
 ///
 /// Print titles for abbreviations
 ///
-@mixin print-abbrs {
+@mixin print-abbrs
+{
 
     /* Show abbr titles */
     abbr[title]:after {
@@ -62,7 +65,8 @@
 ///
 /// Minimize akward page breaks
 ///
-@mixin print-breaks {
+@mixin print-breaks
+{
 
     pre,
     blockquote {
@@ -93,7 +97,8 @@
 ///
 /// @link http://css-discuss.incutio.com/wiki/Printing_Tables
 ///
-@mixin print-tables {
+@mixin print-tables
+{
 
     thead {
         display: table-header-group;
@@ -104,7 +109,8 @@
 ///
 /// Contain images
 ///
-@mixin print-media {
+@mixin print-media
+{
 
     img {
         max-width: 100% !important;
@@ -115,9 +121,9 @@
 ///
 /// Wrapper mixin for all print resets
 ///
-/// @param {list} $exclude [false] - The resets to exclude
+/// @param {List} $exclude [false] - The resets to exclude
 ///
-@mixin print-reset (
+@mixin print-reset(
     $exclude: false
 ){
 
