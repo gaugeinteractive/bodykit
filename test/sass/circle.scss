@@ -1,4 +1,4 @@
-@import '../../bodykit';
+@import '../../src/bodykit';
 
 .circle { @include circle(); }
 .circle { @include circle(10px); }

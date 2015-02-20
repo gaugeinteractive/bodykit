@@ -1,4 +1,4 @@
-@import '../../bodykit';
+@import '../../src/bodykit';
 
 .drop-cap {
   @include drop-cap(4, 1.3) {

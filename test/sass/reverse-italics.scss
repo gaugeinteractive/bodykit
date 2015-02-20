@@ -1,4 +1,4 @@
-@import '../../bodykit';
+@import '../../src/bodykit';
 
 .reverse-italics { @include reverse-italics; }
 .reverse-italics-single { @include reverse-italics('.italic'); }

@@ -1,4 +1,4 @@
-@import '../../bodykit';
+@import '../../src/bodykit';
 
 .padding-em { @include increase-area(0.5em); }
 .pseudo-em { @include increase-area(0.5em, pseudo); }

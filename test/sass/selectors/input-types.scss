@@ -1,4 +1,4 @@
-@import '../../../bodykit';
+@import '../../../src/bodykit';
 
 #{text-inputs()} { /* All text inputs */ }
 #{text-inputs($exclude: (email, number))} { /* Exclude some text inputs */ }

@@ -1,4 +1,4 @@
-@import '../../bodykit';
+@import '../../src/bodykit';
 
 .color-swap { @include color-swap(#fff, #000); }
 .color-swap-1s-transition { @include color-swap(#fff, #000, 1s); }

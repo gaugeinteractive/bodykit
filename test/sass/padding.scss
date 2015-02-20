@@ -1,4 +1,4 @@
-@import '../../bodykit';
+@import '../../src/bodykit';
 
 .equal-2x { @include padding(1px 1px); }
 .equal-3x { @include padding(1px 1px 1px); }

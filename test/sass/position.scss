@@ -1,4 +1,4 @@
-@import '../../bodykit';
+@import '../../src/bodykit';
 
 .relative-all { @include relative(1px); }
 .relative-y-x { @include relative(1px 2px); }

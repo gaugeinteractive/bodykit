@@ -1,4 +1,4 @@
-@import '../../bodykit';
+@import '../../src/bodykit';
 
 .faux-inset-1px { @include faux-border(inset 1px); }
 .faux-1em { @include faux-border(1em #000); }

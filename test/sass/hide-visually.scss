@@ -1,4 +1,4 @@
-@import '../../bodykit';
+@import '../../src/bodykit';
 
 .hide-visually { @include hide-visually; }
 .hide-visually-focusable { @include hide-visually($focusable: true); }

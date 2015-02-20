@@ -1,4 +1,4 @@
-@import '../../bodykit';
+@import '../../src/bodykit';
 
 .size-single { @include size(10px); }
 .size-width-height { @include size(10px, 20px); }

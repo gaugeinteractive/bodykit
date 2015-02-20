@@ -1,4 +1,4 @@
-@import '../../bodykit';
+@import '../../src/bodykit';
 
 .zero { @include border(0); }
 .zero-unit { @include border(0px); }
@@ -38,7 +38,7 @@ border-style: solid dashed;
     @include border(2px dashed red, 5px, 10px blue);
 }
 .width--width-style-color--width-color {
-    @include border(2px, 5px dashed blue, 10px red); 
+    @include border(2px, 5px dashed blue, 10px red);
 }
 .width-style-color--width-style-color--width-style-color {
     @include border(2px dashed red, 5px double blue, 10px inset green);
@@ -50,7 +50,7 @@ border-style: solid dashed;
     @include border(n, 2px dashed red, blue);
 }
 .width-color--equal-width--equal-color {
-    @include border(2px red, 2px, red);    
+    @include border(2px red, 2px, red);
 }
 .width-color--equal-width--equal-color--null {
     @include border(2px red, 2px, red, n);
