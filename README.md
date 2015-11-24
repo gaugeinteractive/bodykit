@@ -16,6 +16,7 @@ Bodykit is first and foremost a SASS tool set, designed to be style agnostic, an
 Top Mixins & Functions
 ----------------------
 Here are some of the top Mixins in Bodykit, each has directions for use, as well as details on any variables or caveats if applicable.
+
 1. [Ad-Infinitum](https://github.com/gaugeinteractive/bodykit/blob/master/src/mixins/_ad-infinitum.scss)
 2. [Responsive-Tables](https://github.com/gaugeinteractive/bodykit/blob/master/src/mixins/_responsive-table.scss)
 3. [Line-On-Sides](https://github.com/gaugeinteractive/bodykit/blob/master/src/mixins/_line-on-sides.scss)
