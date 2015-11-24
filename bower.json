@@ -1,0 +1,23 @@
+{
+  "name": "Bodykit",
+  "description": "Bodykit is designed to improve frontend web development by providing abstractions of frequently used styling patterns. It's a build your own solution that can scale to fit various sized projects.",
+  "keywords": [
+    "sass",
+    "framework",
+    "front-end",
+    "grid",
+    "responsive"
+  ],
+  "license": "MIT",
+  "main": "src/_bodykit.scss",
+  "homepage": "http://gaugeinteractive.github.io/bodykit/",
+  "authors": [
+    "Gauge Interactive (https://github.com/gaugeinteractive)",
+    "Joey Hoer (https://joeyhoer.com)"
+  ],
+  "ignore": [
+    "**/.*",
+    "test",
+    "tests"
+  ]
+}
