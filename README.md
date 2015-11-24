@@ -27,9 +27,9 @@ Some real world examples of bodykit in use on a variety of platforms.
 
 [Savannah Bee Co.](http://savannahbee.com)
 
-[AskDerm](http://askderm.com)
+[Infowars Store](http://infowarsstore.com)
 
-[Old Time Candy](http://oldtimecandy.com)
+[AskDerm](http://askderm.com)
 
 [Orafol Vehicle Wraps](http://orafolvehiclewraps.com)
 
