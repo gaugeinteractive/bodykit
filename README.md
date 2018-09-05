@@ -1,7 +1,7 @@
 Bodykit
 =======
 
-####_"Simplify, then add lightness"_  – Colin Chapman
+#### _"Simplify, then add lightness"_  – Colin Chapman
 
 
 
